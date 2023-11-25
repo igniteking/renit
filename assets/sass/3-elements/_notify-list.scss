@@ -1,0 +1,59 @@
+
+
+
+//========================================
+//       NOTIFY-LIST COMPONENT STYLE
+//========================================
+.notify-list {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.notify-item {
+    position: relative;
+    border-top: 1px solid var(--border);
+    @include cursor__transition;
+
+    &:hover {
+        background: var(--chalk);
+    }
+}
+
+.notify-item.active {
+    background: #e6f1f9;
+}
+
+.notify-link {
+    padding: 12px 15px;
+    @include flex__start;
+}
+
+.notify-img {
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 2px solid var(--primary);
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+    }
+}
+
+.notify-text {
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--text);
+
+    span {
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+}
+
+.notify-time {
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--primary);
+}

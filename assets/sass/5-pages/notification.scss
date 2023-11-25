@@ -1,0 +1,71 @@
+
+
+@import "../1-helpers/mixin";
+
+
+/*=====================================
+         NOTIFICATION PAGE STYLE
+======================================*/
+body {
+    overflow: hidden;
+}
+
+.notify-part {
+    width: 100%;
+    height: 100vh;
+    padding-top: 30px;
+    background: var(--chalk);
+}
+
+.notify-body {
+    padding: 20px;
+    background: var(--white);
+    border-radius: 8px 8px 0px 0px;
+}
+
+.notify-filter{
+    padding-bottom: 20px;
+    @include flex__center__between;
+}
+
+.notify-action {
+    a {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+        line-height: 38px;
+        border-radius: 50%;
+        margin-left: 12px;
+        text-align: center;
+        color: var(--gray);
+        background: var(--chalk);
+        @include cursor__transition;
+
+        &:first-child {
+            margin-left: 0px;
+        }
+
+        &:hover {
+            color: var(--white);
+            background: var(--primary);
+        }
+    }
+}
+
+.notify-scroll {
+    height: calc(100vh - 210px);
+}
+
+//========================================
+//         RESPONSIVE MEDIA QUERY
+//========================================
+@media (max-width: 575px) {
+    .notify-filter{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .notify-select {
+        margin-bottom: 15px;
+    }
+}

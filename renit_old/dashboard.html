@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title  -->
+  <title>Rent - | Home</title>
+
+  <!-- Favicon  -->
+  <link rel="icon" href="./assets/img/core-img/favicon.ico" />
+
+  <!-- Core Style CSS -->
+  <link rel="stylesheet" href="./assets/css/core-style.css" />
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+
+<body>
+  <a href="#" id="floating" class="float search-nav">
+    <i class="fa fa-search my-float"></i>
+  </a>
+
+  <style>
+    .float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 80%;
+      right: 40px;
+      background-color: #ffba5a;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 1000000000;
+    }
+
+    .my-float {
+      margin-top: 22px;
+    }
+  </style>
+  <!-- Search Wrapper Area Start -->
+  <div class="search-wrapper" style="padding-top: 50px">
+    <div class="search-close">
+      <i class="fa fa-close" aria-hidden="true"></i>
+    </div>
+    <div class="">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+          <div class="card p-3 py-4">
+            <h5>An Easier way to find anything on Renit..</h5>
+
+            <div class="row g-3">
+              <div class="col-md-3">
+                <div class="dropdown">
+                  <button class="btn btn-warning text-white dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-expanded="false">
+                    Location
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#">Rural</a></li>
+                    <li><a class="dropdown-item" href="#">Urban</a></li>
+                    <li><a class="dropdown-item" href="#">All</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <input type="text" class="form-control"
+                  placeholder="Enter address e.g. street, city and state or zip" />
+              </div>
+
+              <div class="col-md-3">
+                <button class="btn btn-warning text-white">Search Results</button>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                aria-controls="collapseExample" class="advanced">
+                Advance Search With Filters <i class="fa fa-angle-down"></i>
+              </a>
+
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <input type="text" placeholder="Property ID" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" placeholder="Search by MAP" />
+                    </div>
+
+                    <div class="col-md-4">
+                      <input type="text" class="form-control" placeholder="Search by Country" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Search Wrapper Area End -->
+
+  <!-- ##### Main Content Wrapper Start ##### -->
+  <div class="main-content-wrapper d-flex clearfix">
+    <!-- Mobile Nav (max width 767px)-->
+    <div class="mobile-nav">
+      <!-- Navbar Brand -->
+      <div class="amado-navbar-brand">
+        <a href="index.html"><img src="./assets/img/core-img/01_R1_Renit .png" alt="" /></a>
+      </div>
+      <!-- Navbar Toggler -->
+      <div class="amado-navbar-toggler">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+
+    <div id="navbarphone" class="mobile-nav">
+      <!-- Navbar Brand -->
+      <div class="amado-navbar-brand">
+        <a href="index.html"><img src="./assets/img/core-img/01_R1_Renit .png" alt="" /></a>
+      </div>
+      <!-- Navbar Toggler -->
+      <div class="amado-navbar-toggler" onclick="openback()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- Header Area Start -->
+    <header id="navbardesk" class="header-area clearfix">
+      <!-- Close Icon -->
+      <div class="nav-close">
+        <i class="fa fa-close" aria-hidden="true"></i>
+      </div>
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html"><img src="./assets/img/core-img/01_R1_Renit logo-04.png" alt="" /></a>
+      </div>
+      <!-- Amado Nav -->
+      <nav class="amado-nav">
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Rent</a></li>
+          <li><a href="chat.html">Chat (0)</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <!-- Button Group -->
+      <div class="amado-btn-group mt-30 mb-100">
+        <button onclick="setTimeout(closeNav, 200)" href="#" id="clickhere" class="btn amado-btn mb-15">Close</button>
+      </div>
+      <script>
+        document.getElementById("clickhere").click();
+        function closeNav() {
+          document.getElementById("navbardesk").style = "display: none";
+          document.getElementById("navbarphone").style = "display: block";
+          document.getElementById("makewidth").className = "";
+          document.getElementById("makewidth").style.marginTop = "5%";
+          var done = document.getElementById("makewidth").style.width = "100%";
+          if (done) {
+            console.log("Done")
+          } else {
+            console.log("Not Done")
+          }
+        }
+        function openback() {
+          document.getElementById("navbardesk").style = "display: block";
+          document.getElementById("navbarphone").style = "display: none";
+          document.getElementById("makewidth").className = "products-catagories-area clearfix";
+
+        }
+      </script>
+      <!-- Cart Menu -->
+      <div class="cart-fav-search mb-100">
+        <a href="#" class="fav-nav"><img src="./assets/img/core-img/favorites.png" alt="" />
+          Favourite</a>
+        <a href="#" class="search-nav"><img src="./assets/img/core-img/search.png" alt="" /> Search</a>
+      </div>
+      <!-- Social Button -->
+      <div class="social-info d-flex justify-content-between">
+        <a href="https://www.linkedin.com/company/renitinc/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/renitinc/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/people/Renit/100083612162204/"><i class="fa fa-facebook"
+            aria-hidden="true"></i></a>
+        <a href="https://twitter.com/Renit_Inc"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      </div>
+    </header>
+    <!-- Header Area End -->
+
+    <!-- Product Catagories Area Start -->
+    <div id="makewidth" class="products-catagories-area clearfix">
+      <div class="content mt-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <!-- meta -->
+              <div class="profile-user-box card-box bg-custom">
+                <div class="row">
+                  <div class="col-sm-6"><span class="float-left mr-3"><img
+                        src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""
+                        class="thumb-lg rounded-circle" /></span>
+                    <div class="media-body text-white">
+                      <h4 class="mt-1 mb-1 font-18">Michael A. Franklin</h4>
+                      <p class="font-13 text-light">User Experience Specialist</p>
+                      <p class="text-light mb-0">California, United States</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="text-right">
+                      <button type="button" class="btn btn-light waves-effect"><i
+                          class="mdi mdi-account-settings-variant mr-1"></i>
+                        Edit Profile</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ meta -->
+            </div>
+          </div>
+          <!-- end row -->
+          <div class="row">
+            <div class="col-xl-4">
+              <!-- Personal-Information -->
+              <div class="card-box">
+                <h4 class="header-title mt-0">Personal Information</h4>
+                <div class="panel-body">
+                  <p class="text-muted font-13">Hye, I’m Johnathan Doe residing in this beautiful world.
+                    I create websites and mobile apps with great UX and UI
+                    design. I have done work with big companies like Nokia,
+                    Google and Yahoo. Meet me or Contact me for any queries.
+                    One Extra line for filling space. Fill as many you
+                    want.</p>
+                  <hr />
+                  <div class="text-left">
+                    <p class="text-muted font-13"><strong>Full Name :</strong>
+                      <span class="m-l-15">Johnathan Deo</span>
+                    </p>
+                    <p class="text-muted font-13"><strong>Mobile :</strong><span class="m-l-15">(+12) 123 1234
+                        567</span></p>
+                    <p class="text-muted font-13"><strong>Email :</strong>
+                      <span class="m-l-15">coderthemes@gmail.com</span>
+                    </p>
+                    <p class="text-muted font-13"><strong>Location :</strong>
+                      <span class="m-l-15">USA</span>
+                    </p>
+                    <p class="text-muted font-13"><strong>Languages :</strong>
+                      <span class="m-l-5"><span class="flag-icon flag-icon-us m-r-5 m-t-0" title="us"></span>
+                        <span>English</span> </span><span class="m-l-5"><span class="flag-icon flag-icon-de m-r-5"
+                          title="de"></span>
+                        <span>German</span> </span><span class="m-l-5"><span class="flag-icon flag-icon-es m-r-5"
+                          title="es"></span>
+                        <span>Spanish</span> </span><span class="m-l-5"><span class="flag-icon flag-icon-fr m-r-5"
+                          title="fr"></span>
+                        <span>French</span></span>
+                    </p>
+                  </div>
+                  <ul class="social-links list-inline mt-4 mb-0">
+                    <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips"
+                        href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips"
+                        href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips"
+                        href="" data-original-title="Skype"><i class="fa fa-skype"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-8">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="card-box tilebox-one"><i class="icon-layers float-right text-muted"></i>
+                    <h6 class="text-muted text-uppercase mt-0">Orders</h6>
+                    <h2 class="" data-plugin="counterup">1,587</h2><span class="badge badge-custom">+11% </span><span
+                      class="text-muted">From previous period</span>
+                  </div>
+                </div>
+                <!-- end col -->
+                <div class="col-sm-4">
+                  <div class="card-box tilebox-one"><i class="icon-paypal float-right text-muted"></i>
+                    <h6 class="text-muted text-uppercase mt-0">Revenue</h6>
+                    <h2 class="">$<span data-plugin="counterup">46,782</span></h2><span class="badge badge-danger">-29%
+                    </span><span class="text-muted">From previous period</span>
+                  </div>
+                </div>
+                <!-- end col -->
+                <div class="col-sm-4">
+                  <div class="card-box tilebox-one"><i class="icon-rocket float-right text-muted"></i>
+                    <h6 class="text-muted text-uppercase mt-0">Product Sold</h6>
+                    <h2 class="" data-plugin="counterup">1,890</h2><span class="badge badge-custom">+89% </span><span
+                      class="text-muted">Last year</span>
+                  </div>
+                </div>
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+              <div class="card-box">
+                <h4 class="header-title mb-3">My Items</h4>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Project Name</th>
+                        <th>Start Date</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Assign</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <style>
+                          @media (min-width: 600) {
+                            .onmobile {
+                              width: 500px;
+                              height: 500px;
+                            }
+                          }
+                        </style>
+                        <td><img src="./assets/img/product-img/pro-big-1.jpg" width="250px" class="onmobile" alt=""></td>
+                        <td>Adminox Admin</td>
+                        <td>01/01/2015</td>
+                        <td>07/05/2015</td>
+                        <td><span class="label label-info">Work in Progress</span></td>
+                        <td>Coderthemes</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- container -->
+      </div>
+    </div>
+  </div>
+  <!-- ##### Footer Area Start ##### -->
+  <footer class="footer_area clearfix">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Single Widget Area -->
+        <div class="col-12 col-lg-4">
+          <div class="single_widget_area">
+            <!-- Logo -->
+            <div class="footer-logo mr-50">
+              <a href="index.html"><img width="250px" src="./assets/img/core-img/01_R1_Renit logo-04.png" alt="" /></a>
+            </div>
+            <!-- Copywrite Text -->
+            <p class="copywrite"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              All rights reserved to Rentit.co.in | Made with
+              <i class="fa fa-heart-o" aria-hidden="true"></i> by
+              <a href="https://laaemal.com" target="_blank">La'aemal</a>
+            </p>
+          </div>
+        </div>
+        <!-- Single Widget Area -->
+        <div class="col-12 col-lg-8">
+          <div class="single_widget_area">
+            <!-- Footer Menu -->
+            <div class="footer_menu">
+              <nav class="navbar navbar-expand-lg justify-content-end">
+                <!-- <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#footerNavContent"
+                aria-controls="footerNavContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                ><i class="fa fa-bars"></i
+              ></button> -->
+                <div class="collapse navbar-collapse" id="footerNavContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="privacy.html">Privacy Policy</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="terms.html">Terms and Conditions</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ##### Footer Area End ##### -->
+
+  <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+  <script src="./assets/js/jquery/jquery-2.2.4.min.js"></script>
+  <!-- Popper js -->
+  <script src="./assets/js/popper.min.js"></script>
+  <!-- Bootstrap js -->
+  <script src="./assets/js/bootstrap.min.js"></script>
+  <!-- Plugins js -->
+  <script src="./assets/js/plugins.js"></script>
+  <!-- Active js -->
+  <script src="./assets/js/active.js"></script>
+</body>
+
+</html>
+
+<style>
+  body {
+    background-color: #f3f6f8;
+  }
+
+  .thumb-lg {
+    height: 88px;
+    width: 88px;
+  }
+
+  .profile-user-box {
+    position: relative;
+    border-radius: 5px;
+  }
+
+  .bg-custom {
+    background-color: #ffba5a !important;
+  }
+
+  .profile-user-box {
+    position: relative;
+    border-radius: 5px;
+  }
+
+  .card-box {
+    padding: 20px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    background-color: #fff;
+  }
+
+  .inbox-widget .inbox-item img {
+    width: 40px;
+  }
+
+  .inbox-widget .inbox-item {
+    border-bottom: 1px solid #f3f6f8;
+    overflow: hidden;
+    padding: 10px 0;
+    position: relative;
+  }
+
+  .inbox-widget .inbox-item .inbox-item-img {
+    display: block;
+    float: left;
+    margin-right: 15px;
+    width: 40px;
+  }
+
+  .inbox-widget .inbox-item img {
+    width: 40px;
+  }
+
+  .inbox-widget .inbox-item .inbox-item-author {
+    color: #313a46;
+    display: block;
+    margin: 0;
+  }
+
+  .inbox-widget .inbox-item .inbox-item-text {
+    color: #98a6ad;
+    display: block;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .inbox-widget .inbox-item .inbox-item-date {
+    color: #98a6ad;
+    font-size: 11px;
+    position: absolute;
+    right: 7px;
+    top: 12px;
+  }
+
+  .comment-list .comment-box-item {
+    position: relative;
+  }
+
+  .comment-list .comment-box-item .commnet-item-date {
+    color: #98a6ad;
+    font-size: 11px;
+    position: absolute;
+    right: 7px;
+    top: 2px;
+  }
+
+  .comment-list .comment-box-item .commnet-item-msg {
+    color: #313a46;
+    display: block;
+    margin: 10px 0;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .comment-list .comment-box-item .commnet-item-user {
+    color: #98a6ad;
+    display: block;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .comment-list a+a {
+    margin-top: 15px;
+    display: block;
+  }
+
+  .ribbon-box .ribbon-primary {
+    background: #2d7bf4;
+  }
+
+  .ribbon-box .ribbon {
+    position: relative;
+    float: left;
+    clear: both;
+    padding: 5px 12px 5px 12px;
+    margin-left: -30px;
+    margin-bottom: 15px;
+    font-family: Rubik, sans-serif;
+    -webkit-box-shadow: 2px 5px 10px rgba(49, 58, 70, 0.15);
+    -o-box-shadow: 2px 5px 10px rgba(49, 58, 70, 0.15);
+    box-shadow: 2px 5px 10px rgba(49, 58, 70, 0.15);
+    color: #fff;
+    font-size: 13px;
+  }
+
+  .text-custom {
+    color: #02c0ce !important;
+  }
+
+  .badge-custom {
+    background: #02c0ce;
+    color: #fff;
+  }
+
+  .badge {
+    font-family: Rubik, sans-serif;
+    -webkit-box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06),
+      0 1px 0 0 rgba(0, 0, 0, 0.02);
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06),
+      0 1px 0 0 rgba(0, 0, 0, 0.02);
+    padding: 0.35em 0.5em;
+    font-weight: 500;
+  }
+
+  .text-muted {
+    color: #98a6ad !important;
+  }
+
+  .font-13 {
+    font-size: 13px !important;
+  }
+</style>
+</div>
+</div>
+</body>
+
+</html>

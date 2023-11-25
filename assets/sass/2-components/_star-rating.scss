@@ -1,0 +1,69 @@
+
+
+
+//========================================
+//       STAR-RATING COMPONENT STYLE
+//========================================
+.star-rating {
+    direction: rtl;
+    margin-bottom: 25px;
+    text-align: center;
+
+    input {
+        display: none;
+
+        &:checked ~ label {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    label {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        margin: 0px 8px;
+
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+
+            &:hover ~ label {
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &::before {
+            content: "\f005";
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 35px;
+            display: block;
+            color: #bbbbbb;
+        }
+
+        &::after {
+            content: "\f005";
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 35px;
+            position: absolute;
+            display: block;
+            top: 0px;
+            left: 0px;
+            color: #ffcc23;
+            opacity: 0;
+        }
+    }
+}
+
+// FOR RESPONSIVE STYLE
+@media (max-width: 575px) {
+    .star-rating label {
+        margin: 0px 3px;
+    }
+}

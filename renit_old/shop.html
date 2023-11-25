@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Renit - Home</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="./assets/img/core-img/01_R1_Renit logo-04.png" />
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="./assets/css/core-style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+
+  <body>
+    <a href="#" id="floating" class="float search-nav">
+      <i class="fa fa-search my-float"></i>
+    </a>
+
+    <style>
+      .float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 80%;
+        right: 40px;
+        background-color: #ffba5a;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 1000000000;
+      }
+
+      .my-float {
+        margin-top: 22px;
+      }
+    </style>
+    <!-- Search Wrapper Area Start -->
+    <div class="search-wrapper" style="padding-top: 50px">
+      <div class="search-close">
+        <i class="fa fa-close" aria-hidden="true"></i>
+      </div>
+      <div class="">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-10">
+            <div class="card p-3 py-4">
+              <h5>An Easier way to find anything on Renit..</h5>
+
+              <div class="row g-3">
+                <div class="col-md-3">
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-warning text-white dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Location
+                    </button>
+                    <ul
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <li><a class="dropdown-item" href="#">Rural</a></li>
+                      <li><a class="dropdown-item" href="#">Urban</a></li>
+                      <li><a class="dropdown-item" href="#">All</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter address e.g. street, city and state or zip"
+                  />
+                </div>
+
+                <div class="col-md-3">
+                  <button class="btn btn-warning text-white"
+                    >Search Results</button
+                  >
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <a
+                  data-toggle="collapse"
+                  href="#collapseExample"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="advanced"
+                >
+                  Advance Search With Filters <i class="fa fa-angle-down"></i>
+                </a>
+
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-body">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <input
+                          type="text"
+                          placeholder="Property ID"
+                          class="form-control"
+                        />
+                      </div>
+
+                      <div class="col-md-4">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Search by MAP"
+                        />
+                      </div>
+
+                      <div class="col-md-4">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Search by Country"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Search Wrapper Area End -->
+
+    <!-- ##### Main Content Wrapper Start ##### -->
+    <div class="main-content-wrapper d-flex clearfix">
+      <!-- Mobile Nav (max width 767px)-->
+      <div class="mobile-nav">
+        <!-- Navbar Brand -->
+        <div class="amado-navbar-brand">
+          <a href="index.html"
+            ><img src="./assets/img/core-img/01_R1_Renit logo-04.png" alt=""
+          /></a>
+        </div>
+        <!-- Navbar Toggler -->
+        <div class="amado-navbar-toggler">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div id="navbarphone" class="mobile-nav">
+        <!-- Navbar Brand -->
+        <div class="amado-navbar-brand">
+          <a href="index.html"
+            ><img src="./assets/img/core-img/01_R1_Renit .png" alt=""
+          /></a>
+        </div>
+        <!-- Navbar Toggler -->
+        <div class="amado-navbar-toggler" onclick="openback()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- Header Area Start -->
+      <header id="navbardesk" class="header-area clearfix">
+        <!-- Close Icon -->
+        <div class="nav-close">
+          <i class="fa fa-close" aria-hidden="true"></i>
+        </div>
+        <!-- Logo -->
+        <div class="logo">
+          <a href="index.html"
+            ><img src="./assets/img/core-img/01_R1_Renit logo-04.png" alt=""
+          /></a>
+        </div>
+        <!-- Amado Nav -->
+        <nav class="amado-nav">
+          <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Rent</a></li>
+            <li><a href="chat.html">Chat (0)</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+        <!-- Button Group -->
+        <div class="amado-btn-group mt-30 mb-100">
+          <button
+            onclick="setTimeout(closeNav, 200)"
+            href="#"
+            id="clickhere"
+            class="btn amado-btn mb-15"
+            >Close</button
+          >
+        </div>
+        <script>
+          document.getElementById("clickhere").click();
+          function closeNav() {
+            document.getElementById("navbardesk").style = "display: none";
+            document.getElementById("navbarphone").style = "display: block";
+            document.getElementById("makewidth").className = "";
+            document.getElementById("makewidth").style.marginTop = "5%";
+            var done = (document.getElementById("makewidth").style.width =
+              "80%");
+            if (done) {
+              console.log("Done");
+            } else {
+              console.log("Not Done");
+            }
+          }
+          function openback() {
+            document.getElementById("navbardesk").style = "display: block";
+            document.getElementById("navbarphone").style = "display: none";
+            document.getElementById("makewidth").className =
+              "amado_product_area section-padding-100";
+            document.getElementById("makewidth").style.width = "10%";
+          }
+        </script>
+        <!-- Cart Menu -->
+        <div class="cart-fav-search mb-100">
+          <a href="#" class="fav-nav"
+            ><img src="./assets/img/core-img/favorites.png" alt="" />
+            Favourite</a
+          >
+          <a href="#" class="search-nav"
+            ><img src="./assets/img/core-img/search.png" alt="" /> Search</a
+          >
+        </div>
+        <!-- Social Button -->
+        <div class="social-info d-flex justify-content-between">
+          <a href="https://www.linkedin.com/company/renitinc/"
+            ><i class="fa fa-linkedin" aria-hidden="true"></i
+          ></a>
+          <a href="https://www.instagram.com/renitinc/"
+            ><i class="fa fa-instagram" aria-hidden="true"></i
+          ></a>
+          <a href="https://www.facebook.com/people/Renit/100083612162204/"
+            ><i class="fa fa-facebook" aria-hidden="true"></i
+          ></a>
+          <a href="https://twitter.com/Renit_Inc"
+            ><i class="fa fa-twitter" aria-hidden="true"></i
+          ></a>
+        </div>
+      </header>
+      <!-- Header Area End -->
+
+      <div class="shop_sidebar_area">
+        <!-- ##### Single Widget ##### -->
+        <div class="widget catagory mb-50">
+          <!-- Widget Title -->
+          <h6 class="widget-title mb-30">Catagories</h6>
+
+          <!--  Catagories  -->
+          <div class="catagories-menu">
+            <ul>
+              <li class="active"><a href="#">Chairs</a></li>
+              <li><a href="#">Beds</a></li>
+              <li><a href="#">Accesories</a></li>
+              <li><a href="#">Furniture</a></li>
+              <li><a href="#">Home Deco</a></li>
+              <li><a href="#">Dressings</a></li>
+              <li><a href="#">Tables</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ##### Single Widget ##### -->
+        <div class="widget brands mb-50">
+          <!-- Widget Title -->
+          <h6 class="widget-title mb-30">Brands</h6>
+
+          <div class="widget-desc">
+            <!-- Single Form Check -->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="amado"
+              />
+              <label class="form-check-label" for="amado">Amado</label>
+            </div>
+            <!-- Single Form Check -->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="ikea"
+              />
+              <label class="form-check-label" for="ikea">Ikea</label>
+            </div>
+            <!-- Single Form Check -->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="furniture"
+              />
+              <label class="form-check-label" for="furniture"
+                >Furniture Inc</label
+              >
+            </div>
+            <!-- Single Form Check -->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="factory"
+              />
+              <label class="form-check-label" for="factory">The factory</label>
+            </div>
+            <!-- Single Form Check -->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="artdeco"
+              />
+              <label class="form-check-label" for="artdeco">Artdeco</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ##### Single Widget ##### -->
+        <div class="widget color mb-50">
+          <!-- Widget Title -->
+          <h6 class="widget-title mb-30">Color</h6>
+
+          <div class="widget-desc">
+            <ul class="d-flex">
+              <li><a href="#" class="color1"></a></li>
+              <li><a href="#" class="color2"></a></li>
+              <li><a href="#" class="color3"></a></li>
+              <li><a href="#" class="color4"></a></li>
+              <li><a href="#" class="color5"></a></li>
+              <li><a href="#" class="color6"></a></li>
+              <li><a href="#" class="color7"></a></li>
+              <li><a href="#" class="color8"></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ##### Single Widget ##### -->
+        <div class="widget price mb-50">
+          <!-- Widget Title -->
+          <h6 class="widget-title mb-30">Price</h6>
+
+          <div class="widget-desc">
+            <div class="slider-range">
+              <div
+                data-min="10"
+                data-max="1000"
+                data-unit="$"
+                class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                data-value-min="10"
+                data-value-max="1000"
+                data-label-result=""
+              >
+                <div
+                  class="ui-slider-range ui-widget-header ui-corner-all"
+                ></div>
+                <span
+                  class="ui-slider-handle ui-state-default ui-corner-all"
+                  tabindex="0"
+                ></span>
+                <span
+                  class="ui-slider-handle ui-state-default ui-corner-all"
+                  tabindex="0"
+                ></span>
+              </div>
+              <div class="range-price">$10 - $1000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="makewidth" class="amado_product_area section-padding-100">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div
+                class="product-topbar d-xl-flex align-items-end justify-content-between"
+              >
+                <!-- Total Products -->
+                <div class="total-products">
+                  <p>Showing 1-8 0f 25</p>
+                  <div class="view d-flex">
+                    <a href="#"
+                      ><i class="fa fa-th-large" aria-hidden="true"></i
+                    ></a>
+                    <a href="#"
+                      ><i class="fa fa-bars" aria-hidden="true"></i
+                    ></a>
+                  </div>
+                </div>
+                <!-- Sorting -->
+                <div class="product-sorting d-flex">
+                  <div class="sort-by-date d-flex align-items-center mr-15">
+                    <p>Sort by</p>
+                    <form action="#" method="get">
+                      <select name="select" id="sortBydate">
+                        <option value="value">Date</option>
+                        <option value="value">Newest</option>
+                        <option value="value">Popular</option>
+                      </select>
+                    </form>
+                  </div>
+                  <div class="view-product d-flex align-items-center">
+                    <p>View</p>
+                    <form action="#" method="get">
+                      <select name="select" id="viewProduct">
+                        <option value="value">12</option>
+                        <option value="value">24</option>
+                        <option value="value">48</option>
+                        <option value="value">96</option>
+                      </select>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-md-12 col-xl-3">
+              <div class="single-product-wrapper">
+                <!-- Product Image -->
+                <div class="product-img">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnu04MHwTqPwjwyylKqfcwUJtq5TAeAwYLrw&usqp=CAU" alt="" />
+                  <!-- Hover Thumb -->
+                  <img
+                    class="hover-img"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnu04MHwTqPwjwyylKqfcwUJtq5TAeAwYLrw&usqp=CAU"
+                    alt=""
+                  />
+                </div>
+
+                <!-- Product Description -->
+                <div
+                  class="product-description d-flex align-items-center justify-content-between"
+                >
+                  <!-- Product Meta Data -->
+                  <div class="product-meta-data">
+                    <div class="line"></div>
+                    <p class="product-price">$180</p>
+                    <a href="product-details.html">
+                      <h6>Modern Chair</h6>
+                    </a>
+                  </div>
+                  <!-- Ratings & Cart -->
+                  <div class="ratings-cart text-right">
+                    <div class="ratings">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="cart">
+                      <a
+                        href="cart.html"
+                        data-toggle="tooltip"
+                        data-placement="left"
+                        title="Add to Cart"
+                        ><img src="./assets/img/core-img/cart.png" alt=""
+                      /></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-md-12 col-xl-3">
+              <div class="single-product-wrapper">
+                <!-- Product Image -->
+                <div class="product-img">
+                  <img src="https://helpdeskgeek.com/wp-content/pictures/2021/07/mouse1.png" alt="" />
+                  <!-- Hover Thumb -->
+                  <img
+                    class="hover-img"
+                    src="https://helpdeskgeek.com/wp-content/pictures/2021/07/mouse1.png"
+                    alt=""
+                  />
+                </div>
+
+                <!-- Product Description -->
+                <div
+                  class="product-description d-flex align-items-center justify-content-between"
+                >
+                  <!-- Product Meta Data -->
+                  <div class="product-meta-data">
+                    <div class="line"></div>
+                    <p class="product-price">$180</p>
+                    <a href="product-details.html">
+                      <h6>Modern Chair</h6>
+                    </a>
+                  </div>
+                  <!-- Ratings & Cart -->
+                  <div class="ratings-cart text-right">
+                    <div class="ratings">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="cart">
+                      <a
+                        href="cart.html"
+                        data-toggle="tooltip"
+                        data-placement="left"
+                        title="Add to Cart"
+                        ><img src="./assets/img/core-img/cart.png" alt=""
+                      /></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-md-12 col-xl-3">
+              <div class="single-product-wrapper">
+                <!-- Product Image -->
+                <div class="product-img">
+                  <img src="./assets/img/product-img/product3.jpg" alt="" />
+                  <!-- Hover Thumb -->
+                  <img
+                    class="hover-img"
+                    src="./assets/img/product-img/product4.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <!-- Product Description -->
+                <div
+                  class="product-description d-flex align-items-center justify-content-between"
+                >
+                  <!-- Product Meta Data -->
+                  <div class="product-meta-data">
+                    <div class="line"></div>
+                    <p class="product-price">$180</p>
+                    <a href="product-details.html">
+                      <h6>Modern Chair</h6>
+                    </a>
+                  </div>
+                  <!-- Ratings & Cart -->
+                  <div class="ratings-cart text-right">
+                    <div class="ratings">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="cart">
+                      <a
+                        href="cart.html"
+                        data-toggle="tooltip"
+                        data-placement="left"
+                        title="Add to Cart"
+                        ><img src="./assets/img/core-img/cart.png" alt=""
+                      /></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-md-12 col-xl-3">
+              <div class="single-product-wrapper">
+                <!-- Product Image -->
+                <div class="product-img">
+                  <img src="./assets/img/product-img/product4.jpg" alt="" />
+                  <!-- Hover Thumb -->
+                  <img
+                    class="hover-img"
+                    src="./assets/img/product-img/product5.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <!-- Product Description -->
+                <div
+                  class="product-description d-flex align-items-center justify-content-between"
+                >
+                  <!-- Product Meta Data -->
+                  <div class="product-meta-data">
+                    <div class="line"></div>
+                    <p class="product-price">$180</p>
+                    <a href="product-details.html">
+                      <h6>Modern Chair</h6>
+                    </a>
+                  </div>
+                  <!-- Ratings & Cart -->
+                  <div class="ratings-cart text-right">
+                    <div class="ratings">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="cart">
+                      <a
+                        href="cart.html"
+                        data-toggle="tooltip"
+                        data-placement="left"
+                        title="Add to Cart"
+                        ><img src="./assets/img/core-img/cart.png" alt=""
+                      /></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-md-12 col-xl-3">
+              <div class="single-product-wrapper">
+                <!-- Product Image -->
+                <div class="product-img">
+                  <img src="./assets/img/product-img/product5.jpg" alt="" />
+                  <!-- Hover Thumb -->
+                  <img
+                    class="hover-img"
+                    src="./assets/img/product-img/product6.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <!-- Product Description -->
+                <div
+                  class="product-description d-flex align-items-center justify-content-between"
+                >
+                  <!-- Product Meta Data -->
+                  <div class="product-meta-data">
+                    <div class="line"></div>
+                    <p class="product-price">$180</p>
+                    <a href="product-details.html">
+                      <h6>Modern Chair</h6>
+                    </a>
+                  </div>
+                  <!-- Ratings & Cart -->
+                  <div class="ratings-cart text-right">
+                    <div class="ratings">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="cart">
+                      <a
+                        href="cart.html"
+                        data-toggle="tooltip"
+                        data-placement="left"
+                        title="Add to Cart"
+                        ><img src="./assets/img/core-img/cart.png" alt=""
+                      /></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Product Area -->
+            <div class="col-12 col-sm-6 col-md-12 col-xl-3">
+              <div class="single-product-wrapper">
+                <!-- Product Image -->
+                <div class="product-img">
+                  <img src="./assets/img/product-img/product6.jpg" alt="" />
+                  <!-- Hover Thumb -->
+                  <img
+                    class="hover-img"
+                    src="./assets/img/product-img/product1.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <!-- Product Description -->
+                <div
+                  class="product-description d-flex align-items-center justify-content-between"
+                >
+                  <!-- Product Meta Data -->
+                  <div class="product-meta-data">
+                    <div class="line"></div>
+                    <p class="product-price">$180</p>
+                    <a href="product-details.html">
+                      <h6>Modern Chair</h6>
+                    </a>
+                  </div>
+                  <!-- Ratings & Cart -->
+                  <div class="ratings-cart text-right">
+                    <div class="ratings">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="cart">
+                      <a
+                        href="cart.html"
+                        data-toggle="tooltip"
+                        data-placement="left"
+                        title="Add to Cart"
+                        ><img src="./assets/img/core-img/cart.png" alt=""
+                      /></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <!-- Pagination -->
+              <nav aria-label="navigation">
+                <ul class="pagination justify-content-end mt-50">
+                  <li class="page-item active"
+                    ><a class="page-link" href="#">01.</a></li
+                  >
+                  <li class="page-item"
+                    ><a class="page-link" href="#">02.</a></li
+                  >
+                  <li class="page-item"
+                    ><a class="page-link" href="#">03.</a></li
+                  >
+                  <li class="page-item"
+                    ><a class="page-link" href="#">04.</a></li
+                  >
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ##### Main Content Wrapper End ##### -->
+    <!-- ##### Newsletter Area Start ##### -->
+    <section class="newsletter-area" style="padding-top: 25px">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Newsletter Text -->
+          <div class="col-12 col-lg-6 col-xl-7">
+            <div class="newsletter-text mb-100">
+              <h2><span style="color: #ffba5a">Simply Rent It ! </span></h2>
+              <p>“The more we share, the more we have” - Leonard Nimoy</p>
+            </div>
+          </div>
+          <!-- Newsletter Form -->
+          <div class="col-12 col-lg-6 col-xl-5">
+            <div class="newsletter-form" style="margin-bottom: 150px">
+              <form action="#" method="post">
+                <input type="submit" value="Sign Up" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ##### Newsletter Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer_area clearfix">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Single Widget Area -->
+          <div class="col-12 col-lg-4">
+            <div class="single_widget_area">
+              <!-- Logo -->
+              <div class="footer-logo mr-50">
+                <a href="index.html"
+                  ><img
+                    width="250px"
+                    src="./assets/img/core-img/01_R1_Renit logo-04.png"
+                    alt=""
+                /></a>
+              </div>
+              <!-- Copywrite Text -->
+              <p class="copywrite"
+                ><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                All rights reserved to Rentit.co.in | Made with
+                <i class="fa fa-heart-o" aria-hidden="true"></i> by
+                <a href="https://laaemal.com" target="_blank">La'aemal</a>
+              </p>
+            </div>
+          </div>
+          <!-- Single Widget Area -->
+          <div class="col-12 col-lg-8">
+            <div class="single_widget_area">
+              <!-- Footer Menu -->
+              <div class="footer_menu">
+                <nav class="navbar navbar-expand-lg justify-content-end">
+                  <!-- <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#footerNavContent"
+                  aria-controls="footerNavContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                  ><i class="fa fa-bars"></i
+                ></button> -->
+                  <div class="collapse navbar-collapse" id="footerNavContent">
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="privacy.html"
+                          >Privacy Policy</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="terms.html"
+                          >Terms and Conditions</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+    <script src="./assets/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="./assets/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="./assets/js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="./assets/js/active.js"></script>
+  </body>
+</html>

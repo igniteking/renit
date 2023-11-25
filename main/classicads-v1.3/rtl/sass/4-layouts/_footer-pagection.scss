@@ -1,0 +1,33 @@
+
+
+
+//========================================
+//     FOOTER-PAGECTION LAYOUT STYLE
+//========================================
+.footer-pagection {
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+    @include flex__center__between;
+}
+
+.page-info {
+    font-weight: 500;
+    color: var(--gray);
+}
+
+@media (max-width: 575px) {
+    .footer-pagection {
+        margin-bottom: 30px;
+        flex-direction: column;
+    }
+
+    .page-info {
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .footer-pagection {
+        margin-bottom: 30px;
+    }
+}

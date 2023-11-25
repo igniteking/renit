@@ -1,0 +1,91 @@
+
+
+//========================================
+//          SECTION COMPONENT STYLE
+//========================================
+.section {
+    padding: 120px 0px 0px;
+}
+
+.section-center-heading {
+    text-align: center;
+    margin-bottom: 45px;
+
+    h2 {
+        margin-bottom: 15px;
+
+        span {
+            color: var(--primary);
+        }
+    }
+
+    p {
+        width: 600px;
+        margin: 0 auto;
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+.section-side-heading {
+    h2 {
+        margin-bottom: 15px;
+
+        span {
+            color: var(--primary);
+            font-style: italic;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 45px;
+    }
+}
+
+.inner-section {
+    margin-bottom: 100px;
+}
+
+// for responsive style
+@media (max-width: 767px) {
+    .section {
+        padding: 60px 0px 0px;
+    }
+
+    .inner-section {
+        margin-bottom: 60px;
+    }
+
+    .section-side-heading {
+        margin-bottom: 60px;
+    }
+
+    .section-center-heading {
+        margin-bottom: 30px;
+
+        p {
+            width: 100%;
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    h2 {
+        font-size: 28px; 
+        line-height: 36px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .section {
+        padding: 80px 0px 0px;
+    }
+
+    .inner-section {
+        margin-bottom: 80px;
+    }
+}

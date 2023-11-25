@@ -1,0 +1,51 @@
+
+
+
+//========================================
+//          BUTTON COMPONENT STYLE
+//========================================
+.btn {
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    border: 2px solid;
+    padding: 14px 32px;
+    border-radius:  8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-shadow: var(--primary-tshadow);
+    @include cursor__transition;
+
+    &:focus {
+        box-shadow: none !important;
+    }
+
+    i {
+        margin-top: -1px;
+        margin-right: 5px;
+    }
+}
+
+.btn-inline {
+    color: var(--white);
+    background: var(--primary);
+    border-color: var(--primary);
+
+    &:hover {
+        color: var(--white);
+        background: var(--primary-hover);
+        border-color: var(--primary-hover);
+    }
+}
+
+.btn-outline {
+    color: var(--primary);
+    background: var(--white);
+    border-color: var(--primary);
+
+    &:hover {
+        color: var(--white);
+        background: var(--primary);
+        border-color: var(--primary);
+    }
+}

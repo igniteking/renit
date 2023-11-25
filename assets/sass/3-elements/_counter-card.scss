@@ -1,0 +1,38 @@
+
+
+
+
+//========================================
+//          COUNTER CARD ELEMENT
+//========================================
+.counter-card {
+    @include flex__center;
+}
+
+.counter-image {
+    img {
+        width: 60px;
+        margin-right: 30px;
+    }
+}
+
+.counter-content {
+   text-align: left;
+
+   h2 {
+       font-family: sans-serif;
+   }
+
+   p {
+       font-size: 18px;
+       font-weight: 500;
+       text-transform: capitalize;
+   }
+}
+
+// FOR RESPONSIVE STYEL
+@media (max-width: 767px) {
+    .counter-card {
+        margin-bottom: 60px;
+    }
+}

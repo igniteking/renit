@@ -1,0 +1,150 @@
+
+
+
+//========================================
+//          TABLE COMPONENT STYLE
+//========================================
+.table-list {
+    width: 100%;
+}
+
+.table-head {
+    box-shadow: 0px 8px 25px 0px rgba(0, 0, 0, 0.25);
+
+    tr {
+        background: var(--primary);
+
+        th {
+            text-align: center;
+            padding: 16px 25px;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            text-transform: uppercase;
+            border-right: 1px solid #003399;
+
+            &:first-child {
+                border-radius: 6px 0px 0px 6px;
+            }
+
+            &:last-child {
+                border-right: none;
+                border-radius: 0px 6px 6px 0px;
+            }
+        }
+    }
+}
+
+.table-body {
+    tr {
+        border-bottom: 1px solid var(--border);
+
+        td {
+            padding: 15px 25px;
+            text-align: center;
+            text-transform: capitalize;
+            border-right: 1px solid var(--border);
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+
+    .badge {
+        font-size: 14px;
+        font-weight: 400;
+        padding: 6px 10px;
+        letter-spacing: 0.5px;
+        color: var(--white);
+    }
+}
+
+.table-product {
+    img {
+        width: 100px;
+        border-radius: 6px;
+    }
+}
+
+.table-category {
+    h6 {
+        a {
+            color: var(--heading);
+
+            &:hover {
+                color: var(--primary);
+            }
+        }
+    }
+}
+
+.table-price {
+    h5 {
+        font-family: sans-serif;
+        font-weight: 700;
+    }
+}
+
+.table-condition {
+    .use {
+        background: var(--orange);
+    }
+
+    .new {
+        background: var(--green);
+    }
+}
+
+.table-status {
+    .runs {
+        background: var(--purple);
+    }
+
+    .clos {
+        background: var(--red);
+    }
+}
+
+.table-action {
+    text-align: center;
+
+    .icon {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+        line-height: 35px;
+        text-align: center;
+        border-radius: 5px;
+        margin: 3px;
+        color: var(--primary);
+        background: var(--chalk);
+        text-shadow: var(--primary-tshadow);
+        @include cursor__transition;
+
+        &:hover {
+            color: var(--white);
+            background: var(--primary);
+        }
+    }
+
+    .active {
+        color: var(--white);
+        background: var(--primary);
+    }
+}
+
+//========================================
+//         RESPONSIVE MEDIA QUERY
+//========================================
+@media (max-width: 991px) {
+    .table-scroll {
+        overflow-x: scroll;
+    }
+
+    .table-list {
+        width: 900px;
+    }
+}

@@ -1,0 +1,35 @@
+
+
+
+//========================================
+//          SUGGEST CARD ELEMENT
+//========================================
+.suggest-card {
+    margin: 0px 8px;
+    border-radius: 8px;
+    padding: 28px 0px 21px;
+    text-align: center;
+    border-bottom: 2px solid var(--primary);
+    background: #dffbff;
+
+    img {
+        height: 50px;
+        margin-bottom: 18px;
+    }
+
+    h6 {
+        font-weight: 500;
+        margin-bottom: 5px;
+        text-transform: capitalize;
+
+        &:hover {
+            color: var(--primary);
+        }
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--primary);
+    }
+}

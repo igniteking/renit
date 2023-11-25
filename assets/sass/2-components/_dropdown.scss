@@ -1,0 +1,145 @@
+
+
+//========================================
+//          DROPDOWN COMPONENT STYLE
+//========================================
+.dropdown-list {
+    width: 100%;
+    display: none;
+    background: var(--white);
+    border-top: 2px solid var(--primary);
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
+    @include cursor__transition;
+
+    li {
+        border-bottom: 1px solid var(--border);
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        a {
+            span {
+                color: var(--sale);
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.dropdown-link {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text);
+    padding: 10px 0px 10px 50px;
+    text-transform: capitalize;
+    position: relative;
+    @include cursor__transition;
+
+    &:hover {
+        color: var(--primary);
+        background: var(--chalk);
+
+        &::before {
+            background: var(--primary);
+        }
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 48%;
+        left: 30px;
+        width: 10px;
+        height: 2px;
+        background: var(--gray);
+        transform: translateY(-50%);
+        @include cursor__transition;
+    }
+}
+
+// FOR NASTED DROPDOWN
+.nasted-dropdown {
+    height: 292px;
+    padding: 0px 8px;
+    overflow-y: scroll;
+
+    li {
+        border-bottom: 1px solid var(--border);
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+// FOR NASTED MENU
+.nasted-menu {
+    width: 100%;
+    cursor: pointer;
+    padding: 8px 0px;
+    color: var(--gray);
+    @include flex__center;
+    justify-content: space-between;
+    @include cursor__transition;
+
+    &:hover {
+        color: var(--primary);
+    }
+
+    p {
+        font-size: 15px;
+        text-transform: capitalize;
+
+        span {
+            font-size: 12px;
+            margin-right: 8px;
+        }
+    }
+
+    i {
+        font-size: 10px;
+    }
+}
+
+// FOR NASTED MENU LIST
+.nasted-menu-list {
+    padding: 0px 15px;
+    display: none;
+
+    li {
+        a {
+            font-size: 14px;
+            padding: 6px 0px;
+            position: relative;
+            margin-left: 25px;
+            color: var(--gray);
+
+            &::before {
+                position: absolute;
+                content: "";
+                top: 50%;
+                left: -20px;
+                transform: translateY(-50%);
+                width: 10px;
+                height: 1px;
+                background: var(--gray);
+            }
+
+            &:hover {
+                color: var(--primary);
+
+                &::before {
+                    background: var(--primary);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .nasted-dropdown {
+        height: 200px;
+    }
+}

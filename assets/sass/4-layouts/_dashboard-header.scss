@@ -1,0 +1,317 @@
+
+
+
+
+
+//========================================
+//         PROFILE LAYOUT STYLE
+//========================================
+
+// SINGLE BANNER
+.dashboard-banner {
+    padding: 100px 0px 200px;
+}
+
+// DASHBOARD LAYOUT
+.dash-header-part {
+    margin-top: -100px;
+    position: relative;
+    z-index: 1;
+}
+
+// DASHBOARD HEADER CARD
+.dash-header-card {
+    padding: 30px 30px 0px 30px;
+    background: var(--white);
+    border-radius: 8px;
+}
+
+// DASHBOARD HEADER LEFT
+.dash-header-left {
+    @include flex__center;
+    justify-content: flex-start;
+}
+
+// DASHBOARD HEADER RIGHT
+.dash-header-right {
+    @include flex__center;
+}
+
+// DASHBOARD AVATAR
+.dash-avatar {
+    margin-right: 30px;
+
+    a {
+        border-radius: 50%;
+        border: 3px solid var(--primary);
+
+        img {
+            width: 140px;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+        }
+    }
+}
+
+// DASHBOARD INTRODUCTION
+.dash-intro {
+    h4 {
+        a {
+            color: var(--heading);
+            text-transform: capitalize;
+        }
+    }
+
+    h5 {
+        font-size: 14px;
+        line-height: 22px;
+        color: var(--gray);
+        text-transform: capitalize;
+        margin-bottom: 8px;
+    }
+}
+
+// DASHBOARD META
+.dash-meta {
+    li {
+        @include flex__start;
+        margin-bottom: 3px;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+
+        i {
+            font-size: 14px;
+            margin-top: 5px;
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        span {
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+}
+
+// DASHBOARD FOCUS
+.dash-focus {
+    width: 100%;
+    padding: 25px 0px;
+    text-align: center;
+    margin-right: 20px;
+    border-radius: 8px;
+    background: url(../../images/bg/04.png);
+    @include background__property;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        background: var(--primary);
+        opacity: 0.8;
+        z-index: -1;
+    }
+
+    &:last-child {
+        margin-right: 0px;
+    }
+
+    h2 {
+        color: var(--white);
+        font-family: sans-serif;
+    }
+
+    p {
+        color: var(--white);
+        text-transform: capitalize;
+    }
+}
+
+.dash-list {
+    &::before {
+        background: #df1313;
+    }
+}
+
+.dash-book {
+    &::before {
+        background: #00af1e;
+    }
+}
+
+.dash-rev {
+    &::before {
+        background: #d0a300;
+    }
+}
+
+// DASHBOARD ALERT
+.dash-header-alert {
+    margin: 0px;
+    margin-top: 30px;
+    padding: 15px 25px;
+    border-radius: 3px;
+    background: var(--white);
+    box-shadow: var(--primary-bshadow);
+    border-left: 3px solid var(--primary);
+    @include flex__start;
+    justify-content: space-between;
+
+    button {
+        border: none;
+        outline: none;
+        background: none;
+        margin-left: 100px;
+        
+        i {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 3px;
+            display: inline-block;
+            color: var(--primary);
+            background: var(--chalk);
+            @include cursor__transition;
+
+            &:hover {
+                color: var(--white);
+                background: var(--primary);
+            }
+        }
+    }
+}
+
+// DASHBOARD MENU
+.dash-menu-list {
+    margin-top: 30px;
+
+    ul {
+        @include flex__center;
+        justify-content: space-between;
+        
+        li {
+            width: 100%;
+    
+            a {
+                width: 100%;
+                font-size: 14px;
+                font-weight: 500;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 12px 0px;
+                color: var(--heading);
+                background: var(--white);
+                border-bottom: 2px solid var(--white);
+            }
+    
+            .active {
+                color: var(--primary);
+                text-shadow: var(--primary-tshadow);
+                border-bottom: 2px solid var(--primary);
+            }
+        }
+    }
+}
+
+// FOR RESPONSIVE STYLE
+@media (max-width: 991px) {
+    .dash-menu-list {
+        overflow-x: scroll;
+
+        ul {
+            width: 900px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .single-banner {
+        padding: 60px 0px 160px;
+    }
+
+    .dash-header-card {
+        padding: 20px 20px 0px 20px;
+    }
+
+    .dash-header-left {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dash-avatar {
+        margin-right: 0px;
+        margin-bottom: 5px;
+    }
+
+    .dash-intro {
+        h5 {
+            margin-bottom: 12px;
+        }
+    }
+
+    .dash-meta {
+        margin-bottom: 25px;
+    }
+
+    .dash-header-right {
+        flex-direction: column;
+    }
+
+    .dash-focus {
+        margin-bottom: 20px;
+        margin-right: 0px;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+
+    .dash-header-alert {
+        button {
+            margin-left: 0px;
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .dash-header-right {
+        margin-top: 30px;
+    }
+
+    .dash-focus {
+        h2 {
+            font-size: 32px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .single-banner {
+        padding: 80px 0px 180px;
+    }
+
+    .dash-header-right {
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .dash-avatar {
+        margin-right: 25px;
+    
+        a {
+            img {
+                width: 120px;
+            }
+        }
+    }
+}

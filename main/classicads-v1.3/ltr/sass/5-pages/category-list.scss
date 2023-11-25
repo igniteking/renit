@@ -1,0 +1,71 @@
+
+
+
+// MIXINS
+@import "../1-helpers/_mixin.scss";
+
+
+/*=====================================
+            INTRO PART STYLE
+======================================*/
+.intro-part {
+    padding: 112px 0px 415px;
+    position: relative;
+    background: linear-gradient(#0044bb, #080229);
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: url(../../images/bg/02.png);
+        @include background__property;
+    }
+
+    .section-center-heading {
+        margin-bottom: 0px;
+
+        h2 {
+            font-size: 45px;
+            line-height: 55px;
+            color: var(--white);
+            margin-bottom: 22px;
+        }
+
+        p {
+            color: var(--white);
+            margin-bottom: 45px;
+        }
+    }
+}
+
+/*=====================================
+            PRICE PART STYLE
+======================================*/
+.price-part {
+    margin-top: -300px;
+
+    .section-center-heading {
+        h2,
+        p {
+            color: var(--white);
+        }
+    }
+}
+
+
+// for responsive style
+@media (max-width: 575px) {
+    .intro-part {
+        .section-center-heading {
+            h2 {
+                font-size: 28px;
+                line-height: 36px;
+            }
+        }
+    }
+}
+
+

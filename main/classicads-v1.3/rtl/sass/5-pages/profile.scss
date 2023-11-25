@@ -1,0 +1,36 @@
+
+
+
+// MIXINS
+@import "../1-helpers/_mixin.scss";
+
+// COMPONENTS
+
+// ELEMENTS
+@import "../3-elements/_account-card.scss";
+
+
+/*=====================================
+            PROFILE PAGE STYLE
+======================================*/
+body {
+    background: #f2f2f4;
+}
+
+.profile-part {
+    padding: 50px 0px 70px;
+}
+
+
+// FOR RESPONSVE STYLE
+@media (max-width: 767px) {
+    .profile-part {
+        padding: 50px 0px 30px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .profile-part {
+        padding: 50px 0px 50px;
+    }
+}

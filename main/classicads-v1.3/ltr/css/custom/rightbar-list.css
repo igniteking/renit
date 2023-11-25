@@ -1,0 +1,39 @@
+/*=====================================
+        RIGHTBAR-LIST PAGE STYLE
+======================================*/
+.ad-list-part {
+  padding: 100px 0px 70px;
+}
+
+@media (max-width: 767px) {
+  .ad-list-part {
+    padding: 60px 0px 30px;
+  }
+  .product-filter {
+    flex-direction: column;
+  }
+  .product-short-select {
+    margin: 15px 0px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 575px) {
+  .ad-list-part .container {
+    width: 400px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .ad-list-part {
+    padding: 80px 0px 50px;
+  }
+  .ad-list-part .container {
+    max-width: 760px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .ad-list-part .container {
+    max-width: 990px;
+  }
+}

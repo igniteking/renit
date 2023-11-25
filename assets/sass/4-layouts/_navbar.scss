@@ -1,0 +1,29 @@
+
+
+
+//========================================
+//         NAVBAR LAYOUT STYLE
+//========================================
+.navbar-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar-link {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 12px 15px;
+    color: var(--heading);
+    text-transform: capitalize;
+    @include flex__center;
+    justify-content: space-between;
+    @include cursor__transition;
+
+    &:hover {
+        color: var(--primary);
+        background: var(--chalk);
+    }
+
+    i {
+        font-size: 10px;
+    }
+}

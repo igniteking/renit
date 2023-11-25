@@ -1,0 +1,110 @@
+
+
+
+//========================================
+//          PRICE CARD ELEMENT
+//========================================
+.price-card {
+    padding: 55px 50px 40px;
+    background: var(--white);
+    border-radius: 8px;
+    border: 2px solid var(--white);
+    box-shadow: 0px 15px 35px 0px rgba(0, 0, 0, 0.1);
+    position: relative;
+    @include cursor__transition;
+
+    &:hover {
+        border-color: var(--primary);
+    }
+}
+
+.price-head {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+
+    i {
+        font-size: 50px;
+        line-height: 50px;
+        display: inline-block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: var(--primary);
+    }
+
+    h3 {
+        font-size: 40px;
+        font-family: sans-serif;
+        color: var(--primary);
+        margin-bottom: 20px;
+        letter-spacing: -0.5px;
+    }
+
+    h4 {
+        text-transform: uppercase;
+    }
+}
+
+.price-list {
+    margin-bottom: 42px;
+
+    li {
+        @include flex__start;
+        margin: 20px 0px;
+
+        i {
+            color: var(--primary);
+            margin-right: 12px;
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        p {
+            color: var(--gray);
+        }
+    }
+}
+
+.price-btn {
+    .btn {
+        padding: 12px 30px;
+    }
+}
+
+.price-active {
+    border-color: var(--primary);
+}
+
+// for responsive style
+@media (max-width: 991px) {
+    .price-card {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 575px) {
+    .price-card {
+        padding: 55px 30px 40px;
+    }
+}
+
+@media(min-width: 350px) and (max-width: 575px) {
+    .price-card {
+        width: 320px;
+        margin: 0px auto 30px;
+    }
+}
+
+@media(min-width: 576px) and (max-width: 767px) {
+    .price-card {
+        width: 380px;
+        margin: 0px auto 30px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .price-card {
+        padding: 65px 35px 50px;
+    }
+}

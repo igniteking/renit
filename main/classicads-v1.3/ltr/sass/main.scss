@@ -1,0 +1,89 @@
+
+
+/*========================================
+
+Template type   :  Classified Ads
+Version         :  v1.3
+Author name     :  Mironcoder
+Support mail    :  mironcoder@gmail.com
+Author Profile  :  https://themeforest.net/user/mironcoder
+
+=========================================*/
+
+
+/*========================================
+            COMMON STYLE START
+=========================================*/
+@import "1-helpers/font";
+@import "1-helpers/variable";
+@import "1-helpers/mixin";
+@import "1-helpers/common";
+/*========================================
+            COMMON STYLE END
+=========================================*/
+
+
+/*========================================
+            COMPONENT STYLE START
+=========================================*/
+@import "2-components/form";
+@import "2-components/button";
+@import "2-components/dropdown";
+@import "2-components/nav-tabs";
+@import "2-components/section";
+@import "2-components/alert";
+@import "2-components/table";
+@import "2-components/modal";
+@import "2-components/breadcrumb";
+@import "2-components/card-badge";
+@import "2-components/pagination";
+@import "2-components/slider-arrow";
+@import "2-components/star-rating";
+/*========================================
+            COMPONENT STYLE END
+=========================================*/
+
+
+/*========================================
+            ELEMENT STYLE START
+=========================================*/
+@import "3-elements/dropdown-card";
+@import "3-elements/suggest-card";
+@import "3-elements/product-card";
+@import "3-elements/feature-card";
+@import "3-elements/city-card";
+@import "3-elements/category-card";
+@import "3-elements/price-card";
+@import "3-elements/blog-card";
+@import "3-elements/best-card";
+@import "3-elements/team-card";
+@import "3-elements/counter-card";
+@import "3-elements/account-card";
+@import "3-elements/common-card";
+@import "3-elements/message-list";
+@import "3-elements/notify-list";
+@import "3-elements/review-list";
+/*========================================
+            ELEMENT STYLE END
+=========================================*/
+
+
+/*========================================
+            LAYOUT STYLE START
+=========================================*/
+@import "4-layouts/header";
+@import "4-layouts/navbar";
+@import "4-layouts/sidebar";
+@import "4-layouts/mobile-nav";
+@import "4-layouts/header-filter";
+@import "4-layouts/product-widget";
+@import "4-layouts/footer-pagection";
+@import "4-layouts/blog-widget";
+@import "4-layouts/newsletter";
+@import "4-layouts/footer";
+@import "4-layouts/single-banner";
+@import "4-layouts/dashboard-header";
+/*========================================
+            LAYOUT STYLE END
+=========================================*/
+

@@ -1,0 +1,122 @@
+
+
+//========================================
+//      MESSAGE-LIST COMPONENT STYLE
+//========================================
+.message-list {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.message-item {
+    border-top: 1px solid var(--border);
+    @include cursor__transition;
+
+    &:hover {
+        background: var(--chalk);
+    }
+}
+
+.message-link {
+    padding: 12px 15px;
+    @include flex__center__start;
+    position: relative;
+}
+
+.message-img {
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 2px solid var(--primary);
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        bottom: 0px;
+        right: 0px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #aaaaaa;
+        border: 2px solid var(--white);
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+    }
+}
+
+.message-img.active {
+    &::before {
+        background: var(--green);
+    }
+}
+
+.message-text {
+    h6 {
+        margin-bottom: 5px;
+        text-transform: capitalize;
+
+        span {
+            font-size: 400;
+            font-size: 12px;
+            color: var(--gray);
+            padding-left: 5px;
+            margin-left: 5px;
+            white-space: nowrap;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: "";
+                top: 50%;
+                left: 0px;
+                width: 3px;
+                height: 3px;
+                border-radius: 50%;
+                background: var(--gray);
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--text);
+
+        span {
+            font-weight: 500;
+            margin-right: 3px;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.message-count {
+    font-size: 12px;
+    padding: 0px 6px;
+    line-height: 20px;
+    border-radius: 30px;
+    color: var(--white);
+    background: var(--primary);
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+
+.message-item.unread {
+    border-radius: 8px;
+    background: #e6f1f9;
+
+    .message-text {
+        p {
+            font-weight: 500;
+            color: var(--heading);
+        }
+    }
+}

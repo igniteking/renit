@@ -1,0 +1,74 @@
+
+
+
+//========================================
+//        NAV-TABS COMPONENT STYLE
+//========================================
+.nav {
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-tabs {
+    li {
+        width: 100%;
+
+        .nav-link {
+            width: 100%;
+            border: none;
+            padding: 16px 0px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--heading);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border-radius: var(--tab-radius);
+            border-bottom: 3px solid transparent;
+            text-shadow: var(--primary-tshadow);
+
+            &:hover {
+                background: var(--chalk);
+                border-color: transparent;
+            }
+        }
+
+        .active {
+            color: var(--primary) !important;
+            background: var(--chalk) !important;
+            border-color: var(--primary) !important;
+        }
+    }
+}
+
+.tab-pane {
+    display: none;
+    padding: 0px 50px;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+// for responsive nav-tabs style
+
+@media (max-width: 575px) {
+    .nav-tabs {
+        li {
+            .nav-link {
+                padding: 10px 0px;
+            }
+        }
+    }
+
+    .tab-pane {
+        padding: 0px 15px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .tab-pane {
+        padding: 0px 25px;
+    }
+}

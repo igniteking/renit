@@ -1,0 +1,77 @@
+
+
+//========================================
+//      SLIDER-ARROW COMPONENT STYLE
+//========================================
+.slider-arrow {
+    &:hover {
+        .dandik,
+        .bamdik {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.slider-dots {
+    ul {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        li {
+            width: 25px;
+            height: 5px;
+            border-radius: 30px;
+            background: var(--gray);
+            margin: 0px 10px;
+            display: inline-block;
+            cursor: pointer;
+            box-shadow: 0px 15px 35px 0px rgba(0, 0, 0, 0.1);
+
+            button {
+                display: none;
+            }
+        }
+
+        li.slick-active {
+            background: var(--primary);
+        }
+    }
+}
+
+.dandik,
+.bamdik {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    text-align: center;
+    color: var(--primary);
+    background: var(--white);
+    text-shadow: var(--primary-tshadow);
+    box-shadow: var(--primary-bshadow);
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+    @include cursor__transition;
+
+     &:hover{
+        color: var(--white);
+        background: var(--primary);
+    }
+}
+
+.dandik {
+    right: -25px;
+}
+
+.bamdik{
+    left: -25px;
+}

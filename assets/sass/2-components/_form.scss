@@ -1,0 +1,64 @@
+
+
+
+//========================================
+//          FORM COMPONENT STYLE
+//========================================
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border: none;
+    width: 100%;
+    height: 50px;
+    padding: 0px 20px;
+    border-radius: 0px;
+    color: var(--heading);
+    background: var(--chalk);
+    border-bottom: 2px solid var(--border);
+    @include cursor__transition;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+        color: var(--gray);
+        background: var(--chalk);
+        border-color: var(--primary);
+    }
+}
+
+textarea.form-control {
+    height: 215px;
+    padding: 15px 20px;
+}
+
+.form-btn {
+    .btn {
+        width: 100%;
+        height: 50px;
+        padding: 10px 30px;
+    }
+}
+
+.form-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gray);
+    margin-bottom: 8px;
+    text-transform: capitalize;
+}
+
+.form-control::-webkit-file-upload-button {
+    height: 45px;
+    border: none;
+    background: none;
+    color: var(--placeholder);
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+}
+
+

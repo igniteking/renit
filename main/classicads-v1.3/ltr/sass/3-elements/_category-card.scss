@@ -1,0 +1,97 @@
+
+
+
+//========================================
+//          CATEGORY CARD ELEMENT
+//========================================
+.category-card {
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background: var(--chalk);
+    border: 1px solid var(--border);
+    @include cursor__transition;
+
+    &:hover {
+        background: var(--white);
+        box-shadow: 0px 8px 25px 0px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.category-head {
+    position: relative;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.category-content {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    @include flex__center;
+    flex-direction: column;
+    background: linear-gradient(rgba(0, 69, 187, 0.5), rgba(8, 2, 41, 0.5));
+
+    h4 {
+        text-transform: capitalize;
+        color: var(--chalk);
+        margin-bottom: 5px;
+        font-weight: 500;
+        opacity: 1;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 14px;
+        color: var(--chalk);
+    }
+}
+
+.category-list {
+    padding: 12px 20px;
+
+    li {
+        border-bottom: 1px solid var(--border);
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        a {
+            padding: 12px 0px;
+            @include flex__center;
+            justify-content: space-between;
+
+            &:hover {
+                h6,
+                p {
+                    color: var(--primary);
+                }
+            }
+
+            h6 {
+                font-size: 15px;
+                text-transform: capitalize;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 14px;
+                color: var(--heading);
+            }
+        }
+    }
+}
+
+// FOR RESPONSIVE STYLE
+@media (min-width: 350px) and (max-width: 575px) {
+    .category-card {
+        width: 320px;
+        margin: 0px auto 30px;
+    }
+}

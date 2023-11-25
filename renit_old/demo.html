@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Title  -->
+    <title>Rent - | Home</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="./assets/img/core-img/favicon.ico" />
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="./assets/css/core-style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+
+  <body>
+    <a href="#" id="floating" class="float search-nav">
+      <i class="fa fa-search my-float"></i>
+    </a>
+
+    <style>
+      .float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 80%;
+        right: 40px;
+        background-color: #ffba5a;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 1000000000;
+      }
+
+      .my-float {
+        margin-top: 22px;
+      }
+    </style>
+    <!-- Search Wrapper Area Start -->
+    <div class="search-wrapper" style="padding-top: 50px">
+      <div class="search-close">
+        <i class="fa fa-close" aria-hidden="true"></i>
+      </div>
+      <div class="">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-10">
+            <div class="card p-3 py-4">
+              <h5>An Easier way to find anything on Renit..</h5>
+
+              <div class="row g-3">
+                <div class="col-md-3">
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-warning text-white dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Location
+                    </button>
+                    <ul
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <li><a class="dropdown-item" href="#">Rural</a></li>
+                      <li><a class="dropdown-item" href="#">Urban</a></li>
+                      <li><a class="dropdown-item" href="#">All</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter address e.g. street, city and state or zip"
+                  />
+                </div>
+
+                <div class="col-md-3">
+                  <button class="btn btn-warning text-white"
+                    >Search Results</button
+                  >
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <a
+                  data-toggle="collapse"
+                  href="#collapseExample"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="advanced"
+                >
+                  Advance Search With Filters <i class="fa fa-angle-down"></i>
+                </a>
+
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-body">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <input
+                          type="text"
+                          placeholder="Property ID"
+                          class="form-control"
+                        />
+                      </div>
+
+                      <div class="col-md-4">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Search by MAP"
+                        />
+                      </div>
+
+                      <div class="col-md-4">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Search by Country"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Search Wrapper Area End -->
+
+    <!-- ##### Main Content Wrapper Start ##### -->
+    <div class="main-content-wrapper d-flex clearfix">
+      <!-- Mobile Nav (max width 767px)-->
+      <div class="mobile-nav">
+        <!-- Navbar Brand -->
+        <div class="amado-navbar-brand">
+          <a href="index.html"
+            ><img src="./assets/img/core-img/01_R1_Renit .png" alt=""
+          /></a>
+        </div>
+        <!-- Navbar Toggler -->
+        <div class="amado-navbar-toggler">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+
+      <div id="navbarphone" class="mobile-nav">
+        <!-- Navbar Brand -->
+        <div class="amado-navbar-brand">
+          <a href="index.html"
+            ><img src="./assets/img/core-img/01_R1_Renit .png" alt=""
+          /></a>
+        </div>
+        <!-- Navbar Toggler -->
+        <div class="amado-navbar-toggler" onclick="openback()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- Header Area Start -->
+      <header id="navbardesk" class="header-area clearfix">
+        <!-- Close Icon -->
+        <div class="nav-close">
+          <i class="fa fa-close" aria-hidden="true"></i>
+        </div>
+        <!-- Logo -->
+        <div class="logo">
+          <a href="index.html"
+            ><img src="./assets/img/core-img/01_R1_Renit logo-04.png" alt=""
+          /></a>
+        </div>
+        <!-- Amado Nav -->
+        <nav class="amado-nav">
+          <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Rent</a></li>
+            <li><a href="chat.html">Chat (0)</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+        <!-- Button Group -->
+        <div class="amado-btn-group mt-30 mb-100">
+          <button onclick="setTimeout(closeNav, 200)" href="#" id="clickhere" class="btn amado-btn mb-15">Close</button>
+        </div>
+        <script>
+          document.getElementById("clickhere").click();
+          function closeNav() {
+            document.getElementById("navbardesk").style = "display: none";
+            document.getElementById("navbarphone").style = "display: block";
+            document.getElementById("makewidth").className = "";
+            var done = document.getElementById("makewidth").style.width = "100%";
+            if(done){
+              console.log("Done")
+            } else{
+              console.log("Not Done")
+            }
+          }
+          function openback() {
+            document.getElementById("navbardesk").style = "display: block";
+            document.getElementById("navbarphone").style = "display: none";
+            document.getElementById("makewidth").className = "products-catagories-area clearfix";
+            
+          }
+        </script>
+        <!-- Cart Menu -->
+        <div class="cart-fav-search mb-100">
+          <a href="#" class="fav-nav"
+            ><img src="./assets/img/core-img/favorites.png" alt="" />
+            Favourite</a
+          >
+          <a href="#" class="search-nav"
+            ><img src="./assets/img/core-img/search.png" alt="" /> Search</a
+          >
+        </div>
+        <!-- Social Button -->
+        <div class="social-info d-flex justify-content-between">
+          <a href="https://www.linkedin.com/company/renitinc/"
+            ><i class="fa fa-linkedin" aria-hidden="true"></i
+          ></a>
+          <a href="https://www.instagram.com/renitinc/"
+            ><i class="fa fa-instagram" aria-hidden="true"></i
+          ></a>
+          <a href="https://www.facebook.com/people/Renit/100083612162204/"
+            ><i class="fa fa-facebook" aria-hidden="true"></i
+          ></a>
+          <a href="https://twitter.com/Renit_Inc"
+            ><i class="fa fa-twitter" aria-hidden="true"></i
+          ></a>
+        </div>
+      </header>
+      <!-- Header Area End -->
+
+      <!-- Product Catagories Area Start -->
+      <div  id="makewidth" class="products-catagories-area clearfix">
+
+
+        </div>
+        </div>
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer_area clearfix">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Single Widget Area -->
+      <div class="col-12 col-lg-4">
+        <div class="single_widget_area">
+          <!-- Logo -->
+          <div class="footer-logo mr-50">
+            <a href="index.html"
+              ><img
+                width="250px"
+                src="./assets/img/core-img/01_R1_Renit logo-04.png"
+                alt=""
+            /></a>
+          </div>
+          <!-- Copywrite Text -->
+          <p class="copywrite"
+            ><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved to Rentit.co.in | Made with
+            <i class="fa fa-heart-o" aria-hidden="true"></i> by
+            <a href="https://laaemal.com" target="_blank">La'aemal</a>
+          </p>
+        </div>
+      </div>
+      <!-- Single Widget Area -->
+      <div class="col-12 col-lg-8">
+        <div class="single_widget_area">
+          <!-- Footer Menu -->
+          <div class="footer_menu">
+            <nav class="navbar navbar-expand-lg justify-content-end">
+              <!-- <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#footerNavContent"
+                aria-controls="footerNavContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                ><i class="fa fa-bars"></i
+              ></button> -->
+              <div class="collapse navbar-collapse" id="footerNavContent">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="privacy.html"
+                      >Privacy Policy</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="terms.html"
+                      >Terms and Conditions</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- ##### Footer Area End ##### -->
+
+<!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+<script src="./assets/js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="./assets/js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="./assets/js/bootstrap.min.js"></script>
+<!-- Plugins js -->
+<script src="./assets/js/plugins.js"></script>
+<!-- Active js -->
+<script src="./assets/js/active.js"></script>
+</body>
+</html>

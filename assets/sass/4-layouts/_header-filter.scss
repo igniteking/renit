@@ -1,0 +1,92 @@
+
+
+
+
+//========================================
+//        HEADER-FILTER LAYOUT STYLE
+//========================================
+.header-filter {
+    @include flex__center__between;
+    margin-bottom: 30px;
+}
+
+.filter-short {
+    width: 220px;
+    @include flex__center;
+}
+
+.filter-show {
+    width: 120px;
+    @include flex__center;
+}
+
+.filter-label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 8px;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.filter-select {
+    height: 40px;
+    font-size: 14px;
+    border-radius: 3px;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &:focus {
+        border-color: #ced4da;
+        box-shadow: none;
+    }
+}
+
+.filter-action {
+    @include flex__center__end;
+
+    a {
+        i {
+            width: 40px;
+            height: 40px;
+            font-size: 15px;
+            line-height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            color: var(--text);
+            background: var(--white);
+
+            &:hover {
+                color: var(--primary);
+            }
+        }
+    }
+
+    .active {
+        i {
+            color: var(--white);
+            background: var(--primary);
+
+            &:hover {
+                color: var(--white);
+            }
+        }
+    }
+}
+
+//========================================
+//        RESPONSIVE MEDIA QUERY
+//========================================
+@media (max-width: 575px) {
+    .filter-label,
+    .filter-action {
+        display: none;
+    }
+
+    .filter-show {
+        width: 80px;
+    }
+
+    .filter-short {
+        width: 130px;
+    }
+}

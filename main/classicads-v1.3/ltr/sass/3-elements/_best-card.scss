@@ -1,0 +1,42 @@
+
+
+
+
+//========================================
+//          BEST CARD ELEMENT
+//========================================
+.best-card {
+    display: flex;
+    margin: 0px 15px 50px 0px;
+
+    &:hover {
+        .best-icon {
+            i {
+                color: var(--white);
+                background: var(--primary);
+            }
+        }
+    }
+}
+
+.best-icon {
+    i {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        border-radius: 50%;
+        background: var(--chalk);
+        color: var(--heading);
+        font-size: 18px;
+        margin-right: 25px;
+        @include cursor__transition;
+    }
+}
+
+.best-content {
+    h4 {
+        text-transform: capitalize;
+        margin-bottom: 15px;
+    }
+}

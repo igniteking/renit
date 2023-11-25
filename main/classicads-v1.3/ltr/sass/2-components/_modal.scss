@@ -1,0 +1,113 @@
+
+
+//========================================
+//         MODAL COMPONENT STYLE
+//========================================
+.modal-header {
+    h4 {
+        font-weight: 500;
+    }
+
+    button {
+        font-size: 20px;
+        color: var(--text);
+        @include cursor__transition;
+
+        &:hover {
+            color: var(--primary);
+        }
+    }
+}
+
+.modal-link {
+    display: block;
+    text-align: left;
+    position: relative;
+    text-transform: capitalize;
+    padding: 10px 0px 10px 60px;
+    border-radius: 5px;
+    width: 100%;
+    color: var(--text);
+    @include cursor__transition;
+
+    &:hover {
+        color: var(--primary);
+        background: var(--chalk);
+
+        &::before {
+            color: var(--primary);
+        }
+    }
+
+    &::before {
+        position: absolute;
+        content: "\f00c";
+        top: 50%;
+        left: 30px;
+        font-size: 12px;
+        font-weight: 700;
+        font-family: 'Font Awesome 5 Free';
+        color: var(--text);
+        transform: translateY(-50%);
+    }
+}
+
+.modal-link.active {
+    color: var(--primary);
+    background: var(--chalk);
+
+    &::before {
+        color: var(--primary);
+    }
+}
+
+.modal-number {
+    margin: 15px 0px;
+    text-align: center;
+    font-family: sans-serif;
+    color: var(--primary);
+}
+
+.modal-share {
+    text-align: center;
+    @include flex__center;
+    flex-wrap: wrap;
+
+    a {
+        margin: 15px 15px;
+        @include flex__center;
+        flex-direction: column;
+
+        i {
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            line-height: 60px;
+            border-radius: 50%;
+            margin-bottom: 5px;
+            text-align: center;
+            color: var(--white);
+            background: var(--primary);
+        }
+
+        span {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--heading);
+            white-space: nowrap;
+            text-transform: capitalize;
+        }
+    }
+
+    .facebook {
+        background: var(--facebook);
+    }
+
+    .twitter {
+        background: var(--twitter);
+    }
+
+    .linkedin {
+        background: var(--linkedin);
+    }
+}

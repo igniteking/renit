@@ -1,0 +1,102 @@
+
+
+
+//========================================
+//         MOBILE-NAV LAYOUT STYLE
+//========================================
+.mobile-nav {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 3;
+    background: var(--white);
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0px -5px 15px 0px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.mobile-group {
+    @include flex__center__between;
+}
+
+.mobile-widget {
+    @include flex__center;
+    flex-direction: column;
+    width: 80px;
+    padding: 8px 0px;
+    border-radius: 8px;
+    position: relative;
+
+    &:hover {
+        background: var(--chalk);
+
+        i {
+            color: var(--primary);
+        }
+
+        span {
+            color: var(--primary);
+        }
+    }
+
+    i {
+        font-size: 15px;
+        margin-bottom: 5px;
+        color: var(--text);
+        text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    span {
+        font-size: 10px;
+        line-height: 12px;
+        color: var(--text);
+        text-transform: uppercase;
+    }
+
+    sup {
+        position: absolute;
+        top: -5px;
+        left: 70%;
+        font-size: 12px;
+        padding: 0px 6px;
+        line-height: 20px;
+        border-radius: 50%;
+        transform: translateX(-50%);
+        color: var(--white);
+        background: var(--primary);
+        border: 2px solid var(--green-chalk);
+        text-shadow: var(--primary-tshadow);
+    }
+}
+
+.plus-btn {
+    margin-top: -35px;
+
+    i {
+        width: 60px;
+        height: 60px;
+        font-size: 16px;
+        line-height: 42px;
+        border-radius: 50%;
+        margin-bottom: 0px;
+        text-align: center;
+        color: var(--white);
+        background: var(--primary);
+        border: 8px solid var(--white);
+    }
+
+    &:hover {
+        background: transparent;
+
+        i {
+            color: var(--white);
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .mobile-nav {
+        display: block
+    }
+}

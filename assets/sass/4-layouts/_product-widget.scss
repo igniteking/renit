@@ -1,0 +1,218 @@
+
+
+
+
+//========================================
+//      PRODUCT-WIDGET LAYOUT STYLE
+//========================================
+.product-widget {
+    padding: 20px 15px 15px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    background: var(--chalk);
+    border: 1px solid var(--border);
+}
+
+.product-widget-title {
+    font-weight: 500;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+}
+
+.product-widget-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin: 15px 0px;
+
+    input {
+        width: 100%;
+        height: 40px;
+        padding: 0px 15px;
+        border-radius: 6px;
+        background: var(--white);
+    }
+}
+
+.product-widget-btn {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 0px;
+    border-radius: 6px;
+    letter-spacing: 0.3px;
+    @include flex__center;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: var(--white);
+    border: 1px solid var(--primary);
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
+    @include cursor__transition;
+
+    &:hover {
+        color: var(--white);
+        background: var(--primary);
+    }
+
+    i {
+        margin-top: -2px;
+        margin-right: 6px;
+    }
+}
+
+.product-widget-list {
+    margin: 10px 0px;
+}
+
+.product-widget-item {
+    margin: 12px 0px;
+    @include flex__center__start;
+}
+
+.product-widget-checkbox {
+    line-height: 0px;
+
+    input {
+        width: 15px;
+        height: 15px;
+        margin-right: 15px;
+        cursor: pointer;
+    }
+}
+
+.product-widget-label {
+    width: 100%;
+    cursor: pointer;
+    @include flex__center__between;
+
+    &:hover {
+        .product-widget-number {
+            color: var(--primary);
+        }
+
+        .product-widget-text {
+            color: var(--primary);
+        }
+    }
+}
+
+.product-widget-type {
+    font-size: 14px;
+    padding: 0px 10px;
+    line-height: 26px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+    text-align: center;
+    display: inline-block;
+    text-transform: capitalize;
+    color: var(--white);
+}
+
+.product-widget-number {
+    font-size: 15px;
+}
+
+.product-widget-star {
+    i {
+        font-size: 14px;
+        margin-right: 3px;
+        color: var(--yellow);
+    }
+}
+
+.product-widget-search {
+    input {
+        width: 100%;
+        height: 40px;
+        padding: 0px 15px;
+        border-radius: 6px;
+        background: var(--white);
+        border: 1px solid var(--border);
+    }
+}
+
+.product-widget-text {
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.product-widget-scroll {
+    height: 242px;
+    padding-right: 8px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.product-widget-dropitem {
+    margin: 15px 0px;
+}
+
+.product-widget-link {
+    width: 100%;
+    font-size: 15px;
+    color: var(--text);
+    text-transform: capitalize;
+    text-align: left;
+    position: relative;
+
+    &:hover {
+        color: var(--primary);
+    }
+
+    &::before {
+        position: absolute;
+        content: "\f054";
+        font-size: 12px;
+        font-weight: 900;
+        font-family: "Font Awesome 5 Free";
+        top: 50%;
+        right: 0px;
+        transform: translateY(-50%) rotate(0deg);
+        @include cursor__transition;
+    }
+
+    i {
+        font-size: 12px;
+        margin-right: 5px;
+    }
+}
+
+.product-widget-link.active {
+    color: var(--primary);
+
+    &::before {
+        transform: translateY(-50%) rotate(90deg);
+    }
+}
+
+.product-widget-dropdown {
+    padding: 10px;
+    margin: 8px 10px;
+    border-radius: 6px;
+    background: var(--white);
+    display: none;
+
+    li {
+        a {
+            width: 100%;
+            font-size: 14px;
+            line-height: 18px;
+            border-radius: 6px;
+            padding: 8px 15px;
+            color: var(--text);
+            background: var(--white);
+            white-space: nowrap;
+            text-transform: capitalize;
+            @include cursor__transition;
+
+            &:hover {
+                color: var(--primary);
+                background: var(--chalk);
+            }
+        }
+    }
+}

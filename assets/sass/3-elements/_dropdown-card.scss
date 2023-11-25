@@ -1,0 +1,39 @@
+
+
+//========================================
+//          DROPDOWN CARD ELEMENT
+//========================================
+.dropdown-card {
+    position: absolute;
+    top: 62px;
+    right: 0px;
+    z-index: 3;
+    width: 320px;
+    border-radius: 8px;
+    padding-bottom: 15px;
+    background: var(--white);
+    box-shadow: var(--primary-bshadow);
+    display: none;
+}
+
+.dropdown-header {
+    padding: 15px 15px;
+    @include flex__center__between;
+
+    h5 {
+        text-transform: capitalize;
+    }
+
+    a {
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        color: var(--primary);
+        text-transform: uppercase;
+        @include cursor__transition;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
