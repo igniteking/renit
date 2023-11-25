@@ -513,7 +513,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
                         <i class="fas fa-paperclip random"></i>
                     </label>
                 </div>
-                <button class="form-control col-2 col-md-1 srt mt-1" id="buttonprop" onclick="upload()">Send</button=>
+                <button class="form-control col-2 col-md-1 srt mt-1" id="buttonprop" onclick="upload()" style="margin-right: 14px;">Send</button=>
                     <style>
                         .image-upload>input {
                             display: none;
