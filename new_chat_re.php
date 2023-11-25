@@ -91,13 +91,13 @@ if (isset($_POST['submite'])) {
     <section class="">
         <div class="">
             <div class="tile tile-alt" id="messages-main" style=" width: 100%;">
-                <div class="ms-menu" style="height: 100%; overflow-y: none; background-color: #e5e5e5;">
+                <div class="ms-menu" style="height: 100vh; overflow-y: none; background-color: #e5e5e5;">
                     <div style="background-color: black; color: white; height: 68px;">
                         <div class="card-body row justify-content-between align-items-between">
                             <div class="col-10">
                                 <center>
 
-                                    <h4 class="text-white">Your Chats</h4>
+                                    <h5 class="text-white" style="line-height: 38px;">Your Chats</h5>
                                 </center>
                             </div>
                             <button class="col-2 d-block d-md-none text-white" id="ms-menu-cross" style="border-radius: 100px; border: 1px solid white; padding: 5px"><b>X</b></button>
@@ -352,7 +352,7 @@ if (isset($_POST['submite'])) {
                                     @media only screen and (max-width: 350px) {
                                         #amsndbams {
                                             white-space: nowrap;
-                                            width: 50px;
+                                            width: 75px;
                                             overflow: hidden;
                                             text-overflow: ellipsis;
                                             float: right;
@@ -363,12 +363,12 @@ if (isset($_POST['submite'])) {
                                     @media only screen and (max-width: 800px) {
                                         #amsndbams {
                                             white-space: nowrap;
-                                            width: 50px;
+                                            width: 75px;
                                             overflow: hidden;
                                             text-overflow: ellipsis;
                                             float: right;
                                             margin-top: 7px;
-                                            margin-left: 12px
+                                            margin-left: 10px
                                         }
                                     }
                                 </style>
