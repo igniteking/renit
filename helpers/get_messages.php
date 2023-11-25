@@ -137,8 +137,8 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
         if ($message_sender_id == $user_id) {
             echo '
                 <div class="row mt-3 mt-3 mb-3" style="width: 100%;">
-                <div class="col-md-9"></div>
-            <div class="col-md-3">';
+                <div class="col-md-9 col-2"></div>
+            <div class="col-md-3 col-10">';
             cardWidget($asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon);
             echo "
             </div>
@@ -147,11 +147,10 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
         } else {
             echo '
                 <div class="row mt-3 mt-3 mb-3" style="width: 100%;">
-            <div class="col-md-3">';
+            <div class="col-md-3 col-10" style="margin-left: -20px;">';
             cardWidget($asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon);
             echo '
-            <div class="col-md-9"></div>
-
+            <div class="col-md-9 col-2" ></div>
             </div>
             </div>
             ';
@@ -159,12 +158,12 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
     } else if ($message_type == 'detailed') {
         (getimagesize("../" . $asset_thumbnail)[1]);
         if (getimagesize("../" . $asset_thumbnail)[1] > 500) {
-            $width = "310";
+            $width = "260";
             $height = "200";
             $margin = "50px";
         } else {
             $margin = "50px";
-            $width = "310";
+            $width = "200";
             $height = "200px";
             $margin = "0px";
         }
@@ -188,8 +187,8 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
         if ($message_sender_id == $user_id) {
             echo '
             <div class="row mt-3 mt-3 mb-3" style="width: 100%;">
-            <div class="col-md-9"></div>
-            <div class="col-md-3">
+            <div class="col-md-9 col-2"></div>
+            <div class="col-md-3 col-10">
             ';
             echo DetailedCardWidget($message, $asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, "test", $user_id, "@");
             echo '
@@ -199,11 +198,11 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
         } else {
             echo '
             <div class="row mt-3 mt-3 mb-3" style="width: 100%;">
-            <div class="col-md-3">
+            <div class="col-md-3 col-10">
             ';
             echo DetailedCardWidget($message, $asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, "test", $user_id, "@");
             echo '
-            <div class="col-md-9"></div>
+            <div class="col-md-9 col-2"></div>
             </div>
             </div>';
         }
