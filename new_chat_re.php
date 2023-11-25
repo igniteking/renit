@@ -486,7 +486,7 @@ if (isset($_POST['submite'])) {
         <div id="test" style="overflow-x: hidden; display: flex; flex-direction: column-reverse; background-color: #e5e5e5; position:static;" hx-trigger="load, every 2s" hx-get="./helpers/get_messages.php?chat_id=<?= @$_GET['chat_id'] ?>"></div>
         <?php
         if (@$_GET['chat_id']) { ?>
-            <div class="row navbar navbar-default" style="width: 100%; margin-left: 0px; background-color: #e5e5e5; border: 2px solid white; border-left: none; position:fixed; bottom:0; height:70px;">
+            <div class="row navbar navbar-default" style="width: -webkit-fill-available; margin-left: 0px; background-color: #e5e5e5; border: 2px solid white; border-left: none; position:fixed; bottom:0; height:70px;">
                 <input type="text" id="chat-" name="message" autocomplete="off" class="form-control col-md-10 col-8 mr-md-5 message" placeholder="Type a message ..." style="background-color: #e5e5e5;">
                 <div class="col-md-1 col-3 form-control" style="margin-right: -50px; background-color: #e5e5e5;">
                     <?php
