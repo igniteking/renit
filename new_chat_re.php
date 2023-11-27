@@ -92,15 +92,15 @@ if (isset($_POST['submite'])) {
         <div class="">
             <div class="tile tile-alt" id="messages-main" style=" width: 100%;">
                 <div class="ms-menu" style="height: 100vh; overflow-y: none; background-color: #e5e5e5;">
-                    <div style="background-color: black; color: white; height: 68px;">
+                    <div style="background-color: black; color: white; height: 69px;">
                         <div class="card-body row justify-content-between align-items-between">
                             <div class="col-10">
                                 <center>
 
-                                    <h5 class="text-white" style="line-height: 38px;">Your Chats</h5>
+                                    <h5 class="text-white" style="line-height: 32px; padding:2px; margin-left:-64px;">Your Chats</h5>
                                 </center>
                             </div>
-                            <button class="col-2 d-block d-md-none text-white" id="ms-menu-cross" style="border-radius: 100px; border: 1px solid white; padding: 5px"><b>X</b></button>
+                            <button class="col-2 d-block d-md-none text-white" id="ms-menu-cross" style="border-radius: 100px; padding: 5px; bottom:1px;"><b>X</b></button>
                         </div>
                     </div>
                     <style>
@@ -111,7 +111,7 @@ if (isset($_POST['submite'])) {
                         }
                     </style>
                     <div class="card" style="background-color: #e5e5e5;">
-                        <input type="text" hx-get="./helpers/search_chat_user.php" hx-trigger="change" hx-target="#result_search" name="chat_name_search" style="border: 0px solid #e5e5e5; outline:none; background-color: #e5e5e5;" placeholder=" Search name here ..." class="form-control">
+                        <input type="text" hx-get="./helpers/search_chat_user.php" hx-trigger="change" hx-target="#result_search" name="chat_name_search" style="border: 0px solid #e5e5e5; outline:none; background-color: #e5e5e5;" placeholder=" Search name here..." class="form-control">
                     </div>
                     <div class="card"></div>
                     <div class="list-group lg-alt" style="background-color: #e5e5e5;" id="result_search">
@@ -251,6 +251,7 @@ if (isset($_POST['submite'])) {
                                     margin-left: -12px;
                                     margin-top: 15px;
                                     width: 350px;
+
                                 }
 
 
@@ -330,12 +331,12 @@ if (isset($_POST['submite'])) {
                                 }
                             </style>
                             <div class="row">
-                                <div class="col-2" id="hideonmobile" style="margin-top: -12px; margin-left: -5px;">
+                                <div class="col-2" id="hideonmobile" style="margin-top: -9px; margin-left: -5px; ">
                                     <div class="visible-xs" id="ms-menu-trigger">
                                         <i class="fa fa-bars"></i>
                                     </div>
                                 </div>
-                                <div class="col-5" style="margin-left: -15px;">
+                                <div class="col-5" style="margin-left: -28px; margin-top:3px;">
                                     <div class="pull-left hidden-xs">
                                         <a href="./profile_view.php?user_id=<?= $get_user_name_id ?>"><img src="<?= $get_user_picture != '' ? $get_user_picture : './assets/images/user.png'  ?>" alt="" class="img-avatar rounded-circle avatar ml-1">
                                             <span class="text-white" id="amsndbams"><b><?= $get_user_name ?></b></span>
@@ -371,8 +372,9 @@ if (isset($_POST['submite'])) {
                                             margin-left: 10px
                                         }
                                     }
+                                   
                                 </style>
-                                <div class="col-5 row" style="margin-top: 10px; margin-left: 10px" id="newtest">
+                                <div class="col-5 row" style="margin-top: 10px; margin-left: 36px" id="newtest">
                                     <div class="col-4">
                                         <button onclick="showDialog()" class="text-white hidenstuff">
                                             <i class="fas fa-trash"></i>
@@ -487,7 +489,8 @@ if (isset($_POST['submite'])) {
         <?php
         if (@$_GET['chat_id']) { ?>
             <div class="row navbar navbar-default" style="width: -webkit-fill-available; margin-left: 0px; background-color: #e5e5e5; border: 2px solid white; border-left: none; position:fixed; bottom:0; height:70px;">
-                <input type="text" id="chat-" name="message" autocomplete="off" class="form-control col-md-10 col-8 mr-md-5 message" placeholder="Type a message ..." style="background-color: #e5e5e5;">
+                <input type="text" id="chat-" name="message" autocomplete="off" class="form-control col-md-10 col-8 mr-md-5 message" placeholder="Type a message..." style="background-color: #e5e5e5; top
+                :1px;">
                 <div class="col-md-1 col-3 form-control" style="margin-right: -50px; background-color: #e5e5e5;">
                     <?php
                     $uploadpic = @$_POST['uploadpic'];
@@ -513,7 +516,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
                         <i class="fas fa-paperclip random"></i>
                     </label>
                 </div>
-                <button class="form-control col-2 col-md-1 srt mt-1" id="buttonprop" onclick="upload()" style="margin-right: 14px;">Send</button=>
+                <button class="form-control col-2 col-md-1 srt mt-1" id="buttonprop" onclick="upload()" style="margin-right: 10px; bottom:3px; border-radius:5px;">Send</button=>
                     <style>
                         .image-upload>input {
                             display: none;
@@ -606,7 +609,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
             position: absolute;
             left: 0;
             top: 0;
-            border-right: 2px solid #eee;
+            border-right: 1px solid     #919191;
             padding-bottom: 50px;
             height: 100%;
             width: 240px;
@@ -711,7 +714,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
 
         .mf-content {
             padding: 12px 17px 13px;
-            border-radius: 2px;
+            border-radius: 0px;
             display: inline-block;
             max-width: 80%
         }
