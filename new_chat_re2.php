@@ -250,9 +250,7 @@ if (isset($_POST['submite'])) {
                                     width: 350px;
 
                                 }
-
-
-
+                                
                                 @supports (-webkit-touch-callout: none) {
 
                                     /* CSS specific to iOS devices */
@@ -270,11 +268,6 @@ if (isset($_POST['submite'])) {
                                         background-color: #2196f3;
                                     }
                                 }
-
-
-
-
-
 
                                 @media only screen and (max-width: 600px) {
 
