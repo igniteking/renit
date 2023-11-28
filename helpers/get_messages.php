@@ -188,7 +188,7 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
             echo '
             <div class="row mt-3 mt-3 mb-3" style="width: 100%;">
             <div class="col-md-9 col-2"></div>
-            <div class="col-md-3 col-10">
+            <div class="col-md-3 col-10" style="margin-left: -20px;">
             ';
             echo DetailedCardWidget($message, $asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, "test", $user_id, "@");
             echo '

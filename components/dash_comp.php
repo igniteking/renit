@@ -123,6 +123,18 @@
                             <?php
                             }
                             ?>
+                            <?php
+                            $curPageName = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1);
+                            if ($curPageName == 'unavaibility_form.php') {
+                            ?>
+                                <li><a href="unavaibility_form.php" class="active">Ad Information</a></li>
+                            <?php
+                            } else {
+                            ?>
+                                <li><a href="unavaibility_form.php">Ad Information</a></li>
+                            <?php
+                            }
+                            ?>
                             <li><a href="./helpers/logout.php">logout</a></li>
 
 

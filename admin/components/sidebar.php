@@ -87,6 +87,12 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item ">
+                    <a href="./unavail.php" class='sidebar-link'>
+                        <i class="bi bi-tree-fill"></i>
+                        <span>Unavailbility Form</span>
+                    </a>
+                </li>
                 <li class="sidebar-title">Settings</li>
 
                 <!-- <li class="sidebar-item">
