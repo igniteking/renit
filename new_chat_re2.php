@@ -338,6 +338,10 @@ if (isset($_POST['submite'])) {
                                 </div>
                                 <style>
                                     #amsndbams {
+                                        white-space: nowrap;
+                                        width: 75px;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
                                         float: right;
                                         margin-top: 7px;
                                         margin-left: 20px
