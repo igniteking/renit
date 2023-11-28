@@ -337,16 +337,15 @@ if (isset($_POST['submite'])) {
                                     </div>
                                 </div>
                                 <style>
+                                    #amsndbams {
+                                        float: right;
+                                        margin-top: 7px;
+                                        margin-left: 20px
+                                    }
+
                                     #zaidan {
                                         margin-left: -85px;
                                     }
-
-                                    @media only screen and (min-width: 1000px) {
-                                        #amsndbams {
-                                            margin-left: 12px
-                                        }
-                                    }
-
 
                                     @media only screen and (max-width: 350px) {
                                         #amsndbams {
@@ -356,20 +355,7 @@ if (isset($_POST['submite'])) {
                                             text-overflow: ellipsis;
                                             float: right;
                                             margin-top: 5px;
-                                            margin-RIGHT: -20px
-                                        }
-                                    }
-
-                                    @media only screen and (min-width: 400px) {
-
-                                        #amsndbams {
-                                            white-space: nowrap;
-                                            width: 70px;
-                                            overflow: hidden;
-                                            text-overflow: ellipsis;
-                                            float: right;
-                                            margin-top: 7px;
-                                            margin-left: 20px
+                                            margin-RIGHT: -42px
                                         }
                                     }
 
@@ -381,16 +367,11 @@ if (isset($_POST['submite'])) {
                                             text-overflow: ellipsis;
                                             float: right;
                                             margin-top: 7px;
-                                            margin-left: 45px
+                                            margin-left: 50px
                                         }
 
                                         #zaidan {
                                             margin-left: -73px;
-                                        }
-
-                                        .amsndbams {
-                                            margin-right: -50px;
-
                                         }
 
                                         .asdasdasdasd {
@@ -469,7 +450,7 @@ if (isset($_POST['submite'])) {
                     <div id="test" style="overflow-x: hidden; display: flex; flex-direction: column-reverse; background-color: #e5e5e5; position:static;" hx-trigger="load, every 2s" hx-get="./helpers/get_messages.php?chat_id=<?= @$_GET['chat_id'] ?>"></div>
                     <?php
                     if (@$_GET['chat_id']) { ?>
-                        <div class="row navbar navbar-default" style="width: -webkit-fill-available; margin-left: 0px; background-color: #e5e5e5; border: 2px solid white; border-left: none; position:fixed; bottom:0; height:70px;">
+                        <div class="row" style="padding: 0.5rem 1rem; width: -webkit-fill-available; margin-left: 0px; background-color: #e5e5e5; border: 2px solid white; border-left: none; position:fixed; bottom:0; height:70px;">
                             <input type="text" id="chat-" name="message" autocomplete="off" class="form-control col-md-10 col-8 mr-md-5 message" placeholder="Type a message..." style="background-color: #e5e5e5; top
                 :1px;">
                             <div class="col-md-1 col-3 form-control" style="margin-right: -50px; background-color: #e5e5e5;">
@@ -497,7 +478,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
                                     <i class="fas fa-paperclip random"></i>
                                 </label>
                             </div>
-                            <button class="form-control col-2 col-md-1 srt mt-1" id="buttonprop" onclick="upload()" style="margin-right: 10px; bottom:3px; border-radius:5px;">Send</button=>
+                            <button class="form-control col-2 col-md-1 srt mt-1" id="buttonprop" onclick="upload()" style="margin-right: 0px; bottom:3px; border-radius:5px;">Send</button=>
                                 <style>
                                     .image-upload>input {
                                         display: none;
