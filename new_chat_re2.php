@@ -14,6 +14,11 @@ if (isset($_SESSION['user_email'])) {
     echo "<meta http-equiv=\"refresh\" content=\"0; url=./helpers/logout.php\">";
     exit();
 }
+$cont = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM chat_link WHERE chat_owner_id = '$user_id' OR chat_reciever_id = '$user_id'"));
+
+if ($cont <= 0) {
+    echo "<meta http-equiv=\"refresh\" content=\"0; url=./index.php\">";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -404,11 +409,11 @@ if (isset($_POST['submite'])) {
                                         .form-control {
                                             margin-right: -18px;
                                         }
-                                       
+
                                     }
 
                                     @media only screen and (max-width: 768px) {
-                                        .form-control{
+                                        .form-control {
                                             margin-right: -22px;
                                         }
                                     }
@@ -524,20 +529,21 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
                                             margin-left: -67px !important;
                                         }
                                     }
-                                    @media (min-width: 1281px) {                                    
-                                           .form-control {
-                                            margin-left: -22px ;
+
+                                    @media (min-width: 1281px) {
+                                        .form-control {
+                                            margin-left: -22px;
 
                                         }
 
-                                        .clip{
+                                        .clip {
                                             margin-left: 40px;
                                         }
                                     }
 
-                                    @media only screen and (max-width: 768px){
-                                        .clip{
-                                            margin-left:20px;
+                                    @media only screen and (max-width: 768px) {
+                                        .clip {
+                                            margin-left: 20px;
                                         }
                                     }
                                 </style>

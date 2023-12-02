@@ -110,7 +110,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                     </div>
                     <div class="ad-details-author">
                         <a href="#" class="author-img">
-                            <img src="<?= $asset_profile_picture == '' ? './assets/images/user.png' : $asset_profile_picture; ?>" alt="avatar">
+                            <img src="<?= $asset_profile_picture == '' ? './assets/images/user.png' : $asset_profile_picture; ?>" height="100" style="object-fit: cover;" alt="avatar">
                         </a>
                         <div class="author-meta">
                             <h4><a href="#"><?= $asset_username; ?></a></h4>
@@ -138,88 +138,46 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                         </ul>
                     </div>
                 </div>
-                <!-- SAFETY CARD -->
-                <div class="common-card">
-                    <div class="card-header">
-                        <h5 class="card-title">Make An Offer</h5>
-                    </div>
-                    <div class="ad-details-safety">
-                        <form action="./helpers/chat_link.php" method="get">
-                            <div class="form-group">
-                                <label for="from">From</label>
-                                <input type="date" name="from" min="<?= date('Y-m-d') ?>" class="form-control" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="from">To</label>
-                                <input type="date" name="to" min="<?= date('Y-m-d') ?>" class="form-control" placeholder="Email">
-                            </div>
-                            <input type="hidden" name="asset_id" value="<?= $_GET['asset_id']; ?>" class="form-control" placeholder="Email">
-                            <input type="hidden" name="reciver_id" value="<?= $user_id ?>" class="form-control" placeholder="Email">
-                            <input type="hidden" name="owner_id" value="<?= $asset_user_id ?>" class="form-control" placeholder="Email">
-                            <input type="hidden" name="message" value="<?= $message ?>" class="form-control" placeholder="Email">
-                            <div class="form-group">
-                                <label for="from">Your Price</label>
-                                <input type="number" name="price" class="form-control" placeholder="00.00">
-                            </div>
-                            <button type="submit" name="offer" class="btn btn-inline review-submit">
-                                <i class="fas fa-clipboard"></i>
-                                <span>Make An Offer</span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
+
                 <div class="common-card">
                     <div class="card-header">
                         <h5 class="card-title">area map</h5>
                     </div>
                     <iframe class="ad-details-map" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDpYx_XZEi34ZSg0JH5JunRo8zTe67Q-Aw&q=<?= $asset_location ?>"></iframe>
                 </div>
-
-                <!-- SAFETY CARD -->
-                <div class="common-card">
-                    <div class="card-header">
-                        <h5 class="card-title">safety tips</h5>
-                    </div>
-                    <div class="ad-details-safety">
-                        <p>Check the item before you buy</p>
-                        <p>Pay only after collecting item</p>
-                        <p>Beware of unrealistic offers</p>
-                        <p>Meet seller at a safe location</p>
-                        <p>Do not make an abrupt decision</p>
-                        <p>Be honest with the ad you post</p>
-                    </div>
-                </div>
             </div>
             <div class="col-lg-8">
 
                 <!-- AD DETAILS CARD -->
                 <div class="common-card">
-                    <div class="ad-details-slider-group">
+                    <div class="ad-details-slider-group" dir="rlt">
                         <div class="ad-details-slider slider-arrow">
                             <div class="product-media">
-                                <div class="ml-5 ml-md-0">
+                                <div class="ml-sm-5 ml-md-0">
                                     <img class="object-fit-contain border rounded" style="object-position: center; object-fit: contain;" width="500px" height="500px" src="<?= $firstasset_thumbnail ?>" alt="product">
                                 </div>
                             </div>
                             <?php
-                            $files = glob($asset_images . '*');
-                            $var = count($files);
-                            for ($i = 0; $i < $var; $i++) {
-                                echo '
+                            if ($asset_images != "") {
+                                $files = glob($asset_images . '*');
+                                $var = count($files);
+                                for ($i = 0; $i < $var; $i++) {
+                                    echo '
                                 <div class="product-media">
-                                <div class="ml-5 ml-md-0">
-                                    <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $files[$i] . '" alt="product">
-                                    </div>
+                                <div class="">
+                                <img class="object-fit-contain border rounded" style="object-position: center; object-fit: contain;" width="500px" height="500px" src="' . $files[$i] . '" alt="product">
+                                </div>
                         </div>
                                 
                                 ';
+                                }
                             }
                             ?>
                         </div>
                     </div>
                     <style>
                         .style {
-                            height: 150px;
+                            height: 100px;
                         }
 
                         @media only screen and (max-width: 600px) {
@@ -228,23 +186,25 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                             }
                         }
                     </style>
-                    <div class="ad-thumb-slider">
+                    <div class="ad-thumb-slider" dir="rlt">
                         <div class="product-media">
                             <div class="ml-5 ml-md-0">
-                                <img class="object-fit-contain border rounded style" style="object-position: center; object-fit: contain;" width="500px" src="<?= $firstasset_thumbnail ?>" alt="product">
+                                <img class="object-fit-contain border rounded style" style="object-position: center; object-fit: contain;" width="500px" height="500px" src=" <?= $firstasset_thumbnail ?>" alt="product">
                             </div>
                         </div>
                         <?php
-                        $files = glob($asset_images . '*');
-                        $var = count($files);
-                        for ($i = 0; $i < $var; $i++) {
-                            echo '
+                        if ($asset_images != "") {
+                            $files = glob($asset_images . '*');
+                            $var = count($files);
+                            for ($i = 0; $i < $var; $i++) {
+                                echo '
                             <div class="product-media">
-                            <div class="ml-5 ml-md-0">
-                                    <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $files[$i] . '" alt="product">
-                                    </div>
+                            <div class="">
+                                <img class="object-fit-contain border rounded style" style="object-position: center; object-fit: contain;" width="500px" height="500px" src="' . $files[$i] . '" alt="product">
+                                </div>
                     </div>
                                 ';
+                            }
                         }
                         ?>
                     </div>
@@ -278,6 +238,42 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                             <div type="button" style="background-color: white; font-size:27px; font-weight:bold; text-transform: capitalize;" class="wish"><?= $asset_name ?></div>
                         </div>
                     </div>
+                    <div class="ad-details-action">
+                        <?php
+                        if (isset($user_id)) {
+                            // Get bookmarks for this asset
+                            $asset__get_id = $_GET['asset_id'];
+                            $get_bookmark = mysqli_query($conn, "SELECT * FROM bookmark WHERE user_id = '$user_id' AND asset_id = '$asset__get_id'");
+                            if (mysqli_num_rows($get_bookmark) > 0) {
+                                $var = '<i class="fas fa-check"></i>bookmarked';
+                                $type = "remove";
+                            } else {
+                                $var = '<i class="fas fa-heart"></i>bookmark';
+                                $type = "add";
+                            }
+                        }
+                        if (@$_SESSION['user_email']) {
+                            echo '<div id="notify">
+                                <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?state=button&&type=' . $type . '&&asset_id=' . $asset__get_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify">' . $var . '</button>
+                                </div>
+                                '; ?>
+                            <?php
+                            if ($asset_user_id == $user_id) {
+                                echo '<a href="#" style="all: unset;" title="Owned By You"><button type="button">Owned By You</button></a>';
+                            } else {
+                            ?>
+                                <a href="./helpers/chat_link.php?asset_id=<?= $get_asset_id ?>&&owner_id=<?= $asset_user ?>&&reciver_id=<?= $user_id ?>" style="all: unset;" title="Chat"><button type="button"><i class="fa fa-comment"></i>Chat</button></a>
+                            <?php } ?>
+                            <a href="./contact.php" style="all: unset;" title="Report"><button type="button"><i class="fas fa-exclamation-triangle"></i>report</button></a>
+                        <?php
+                        } else { ?>
+                            <a href="./auth/auth.php" style="all: unset;" title="Bookmark"><button type="button"><i class="fas fa-heart"></i>bookmark</button></a>
+                            <a href="./auth/auth.php" style="all: unset;" title="Chat"><button type="button"><i class="fa fa-comment"></i>Chat</button></a>
+                            <a href="./contact.php" style="all: unset;" title="Report"><button type="button"><i class="fas fa-exclamation-triangle"></i>report</button></a>
+
+                        <?php } ?>
+
+                    </div>
                 </div>
 
                 <!-- SPECIFICATION CARD -->
@@ -288,7 +284,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                     <ul class="ad-details-specific">
                         <li>
                             <h6>price:</h6>
-                            <p><?= $asset_price . ' ' . $symbol  ?></p>
+                            <p><?= $symbol . ' ' . $asset_price ?></p>
                         </li>
                         <li>
                             <h6>published:</h6>
@@ -296,19 +292,19 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                         </li>
                         <li>
                             <h6>location:</h6>
-                            <p style="white-space: normal; margin-left: 15px;"><?= $asset_location ?></p>
+                            <p style="white-space: normal; margin-left: 15px; text-align:right;"><?= $asset_location ?></p>
                         </li>
                         <li>
                             <h6>category:</h6>
-                            <p><?= $asset_category_name ?></p>
+                            <p style="margin-left: 36px;"><?= $asset_category_name ?> / <?= $asset_sub_category_name ?></p>
                         </li>
                         <li>
                             <h6>asset model:</h6>
                             <p><?= $asset_model ?></p>
                         </li>
                         <li>
-                            <h6>asset deposite:</h6>
-                            <p><?= $asset_safety_deposite ?></p>
+                            <h6>asset deposit:</h6>
+                            <p><?= $symbol . ' ' . $asset_safety_deposite ?></p>
                         </li>
                     </ul>
                 </div>

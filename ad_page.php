@@ -299,17 +299,19 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                                 </div>
                             </div>
                             <?php
-                            $files = glob($asset_images . '*');
-                            $var = count($files);
-                            for ($i = 0; $i < $var; $i++) {
-                                echo '
-                                <div class="product-media">
-                                <div class="">
-                                <img class="object-fit-contain border rounded" style="object-position: center; object-fit: contain;" width="500px" height="500px" src="' . $files[$i] . '" alt="product">
-                                </div>
-                        </div>
-                                
-                                ';
+                            if ($asset_images != "") {
+                                $files = glob($asset_images . '*');
+                                $var = count($files);
+                                for ($i = 0; $i < $var; $i++) {
+                                    echo '
+                                    <div class="product-media">
+                                    <div class="">
+                                    <img class="object-fit-contain border rounded" style="object-position: center; object-fit: contain;" width="500px" height="500px" src="' . $files[$i] . '" alt="product">
+                                    </div>
+                                    </div>
+                                    
+                                    ';
+                                }
                             }
                             ?>
                         </div>
@@ -332,16 +334,18 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                             </div>
                         </div>
                         <?php
-                        $files = glob($asset_images . '*');
-                        $var = count($files);
-                        for ($i = 0; $i < $var; $i++) {
-                            echo '
+                        if ($asset_images != "") {
+                            $files = glob($asset_images . '*');
+                            $var = count($files);
+                            for ($i = 0; $i < $var; $i++) {
+                                echo '
                             <div class="product-media">
                             <div class="">
                                 <img class="object-fit-contain border rounded style" style="object-position: center; object-fit: contain;" width="500px" height="500px" src="' . $files[$i] . '" alt="product">
                                 </div>
                     </div>
                                 ';
+                            }
                         }
                         ?>
                     </div>

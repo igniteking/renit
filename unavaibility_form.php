@@ -10,7 +10,8 @@ if (@$_SESSION['user_email']) {
     include('./components/sidebar.php');
 }
 ?>
-<link rel="stylesheet" href="./assets/css/custom/ad-post.css">
+<link rel="stylesheet" href="./assets/css/custom/ad-details.css">
+
 
 <?php // Fetch user details
 $get_user = mysqli_query($conn, "SELECT * FROM user_data WHERE id = '$user_id'");
@@ -58,7 +59,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                         $to = $_POST['to'];
                         $Describe = $_POST['Describe'];
                         $created_at = date('Y-m-d H:i:s');
-                        if ($Product and $Email  and $asset_category and $sub_categories and $key and $date) {
+                        if ($Product and $Email  and $asset_category and $sub_categories and $key and $from and $to) {
                             $query = mysqli_query($conn, "INSERT INTO `unavailability`(`id`, `product_name`, `email`, `mobile`, `date`, `date_to`, `categories`, `sub_categories`, `location`, `details`, `created_at`) VALUES 
                         (NULL,'$Product','$Email','$Number','$from','$to','$asset_category','$sub_categories','$key','$Describe','$created_at')");
                             if ($query) {
@@ -163,16 +164,16 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 col-12">
                                 <div class="form-group">
                                     <label for="">From when do you need it?</label>
-                                    <input type="date" name="from" id="date_from" onchange="change_min_date2()" min="<?= date('Y-m-d') ?>" class="form-control" placeholder="Email">
+                                    <input type="date" name="from" id="date_from" onchange="change_min_date2()" min="<?= date('Y-m-d') ?>" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 col-12">
                                 <div class="form-group">
                                     <label for="">Till when do you need it?</label>
-                                    <input type="date" name="to" id="date_to" min="<?= date('Y-m-d') ?>" class="form-control" placeholder="Email">
+                                    <input type="date" name="to" id="date_to" min="<?= date('Y-m-d') ?>" class="form-control">
                                 </div>
                             </div>
                             <script>

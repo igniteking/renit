@@ -25,10 +25,10 @@
             if (@$_SESSION['user_email']) { ?>
                 <div class="sidebar-profile">
                     <?php if (empty($profile_picture)) { ?>
-                        <a href="#" class="sidebar-avatar"><img src="./assets/images/user.png" height="110" style="object-fit: cover;" alt="avatar"></a>
+                        <a href="#" class="sidebar-avatar"><img src="./assets/images/user.png" height="120" style="object-fit: cover;" alt="avatar"></a>
                     <?php
                     } else { ?>
-                        <a href="#" class="sidebar-avatar"><img src="<?= $profile_picture ?>" height="110" style="object-fit: cover;" alt="avatar"></a>
+                        <a href="#" class="sidebar-avatar"><img src="<?= $profile_picture ?>" height="120" style="object-fit: cover;" alt="avatar"></a>
                     <?php } ?>
                     <h4><a href="#" class="sidebar-name"><?= $username ?></a></h4>
                     <a href="ad_post.php" class="btn btn-inline sidebar-post">
@@ -76,6 +76,7 @@
                             <li class="navbar-item"><a class="navbar-link" href="my_ad.php">My Products</a></li>
                             <li class="navbar-item"><a class="navbar-link" href="setting.php">Settings</a></li>
                             <li class="navbar-item"><a class="navbar-link" href="bookmark.php">bookmark</a></li>
+                            <li class="navbar-item"><a class="navbar-link" href="unavaibility_form.php">Unavailability Form</a></li>
                             <li class="navbar-item">
                                 <?php
                                 $cont = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM chat_link WHERE chat_owner_id = '$user_id' OR chat_reciever_id = '$user_id'"));

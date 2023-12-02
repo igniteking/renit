@@ -7,12 +7,12 @@
                         <?php
                         if (!empty($logged_profile_picture)) { ?>
                             <div class="dash-avatar">
-                                <a href="./setting.php"><img src="<?= $logged_profile_picture ?>" class="img img-avatar rounded-circle" height="150" style="object-fit: cover;" alt="avatar"></a>
+                                <a href="setting.php"><img src="<?= $logged_profile_picture ?>" class="img img-avatar rounded-circle" height="150" style="object-fit: cover;" alt="avatar"></a>
                             </div>
                         <?php } else {
                         ?>
                             <div class="dash-avatar">
-                                <a href="/setting.php"><img src="./assets/images/user.png" alt="avatar"></a>
+                                <a href="setting.php"><img src="./assets/images/user.png" alt="avatar"></a>
                             </div>
                         <?php } ?>
                         <div class="dash-intro">

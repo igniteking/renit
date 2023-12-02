@@ -243,7 +243,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">@</span>
                                         </div>
-                                        <input hx-get="./helpers/get_country.php" hx-include="[id=asset_location_search]" hx-target="#basic-addon1" hx-trigger="click keyup change" type="number" class="form-control" name="asset_price" placeholder="Enter your pricing amount">
+                                        <input style="z-index: 1;" hx-get="./helpers/get_country.php" hx-include="[id=asset_location_search]" hx-target="#basic-addon1" hx-trigger="click keyup change" type="number" class="form-control" name="asset_price" placeholder="Enter your pricing amount">
                                     </div>
                                 </div>
                             </div>
@@ -254,7 +254,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon2">@</span>
                                         </div>
-                                        <input hx-get="./helpers/get_country.php" hx-include="[id=asset_location_search]" hx-target="#basic-addon2" hx-trigger="click keyup change" type="number" class="form-control" type="number" class="form-control" id="asset_safety_deposite" name="asset_safety_deposite" placeholder="Enter your pricing amount">
+                                        <input style="z-index: 1;" hx-get="./helpers/get_country.php" hx-include="[id=asset_location_search]" hx-target="#basic-addon2" hx-trigger="click keyup change" type="number" class="form-control" type="number" class="form-control" id="asset_safety_deposite" name="asset_safety_deposite" placeholder="Enter your pricing amount">
                                     </div>
                                 </div>
                             </div>

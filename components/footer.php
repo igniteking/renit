@@ -30,7 +30,6 @@
                         <li><a href="./terms.php" class="text-white">Terms & Conditions</a></li>
                         <li><a href="./privacy.php" class="text-white">Privacy Policy</a></li>
                         <li><a href="./contact.php" class="text-white">Contact Us</a></li>
-                        <li><a href="./unavaibility_form.php" class="text-white">Unavailability Form</a></li>
                     </ul>
                 </div>
             </div>

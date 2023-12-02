@@ -77,7 +77,7 @@
         <div class="mx-4">
             <div class="header-content">
                 <div class="header-left">
-                    <button type="button" class="header-widget sidebar-btn">
+                    <button type="button" style="margin-top: 3px;" class="header-widget sidebar-btn">
                         <i class="fas fa-align-left"></i>
                     </button>
                     <?php
@@ -93,6 +93,7 @@
                             }
 
                             #logo {
+                                margin-bottom: -7px;
                                 padding: 20px;
                                 margin-right: 0px;
                                 margin-left: 30px;
@@ -252,7 +253,7 @@
                 <div class="header-right">
                     <?php
                     if (isset($_SESSION['user_email'])) { ?>
-                        <ul class="header-list">
+                        <ul class="header-list" style="margin-top: 3px;">
                             <li class="header-item">
                                 <a href="./bookmark.php" class="header-widget">
                                     <i class="fas fa-heart"></i>
@@ -293,7 +294,7 @@
                             </li>
                         </ul>
                     <?php } else { ?>
-                        <ul class="header-list" style="margin-right: 7px">
+                        <ul class="header-list" style="margin-right: 7px;">
                             <li class="header-item">
                                 <a href="./auth/auth.php" class="header-widget">
                                     <i class="fas fa-heart"></i>
