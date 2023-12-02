@@ -14,11 +14,6 @@ if (isset($_SESSION['user_email'])) {
     echo "<meta http-equiv=\"refresh\" content=\"0; url=./helpers/logout.php\">";
     exit();
 }
-$cont = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM chat_link WHERE chat_owner_id = '$user_id' OR chat_reciever_id = '$user_id'"));
-
-if ($cont <= 0) {
-    echo "<meta http-equiv=\"refresh\" content=\"0; url=./index.php\">";
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -116,7 +111,7 @@ if (isset($_POST['submite'])) {
                         }
                     </style>
                     <div class="card" style="background-color: #e5e5e5;">
-                        <input type="text" hx-get="./helpers/search_chat_user.php" hx-trigger="change" hx-target="#result_search" name="chat_name_search" style="border: 0px solid #e5e5e5; outline:none; background-color: #e5e5e5;" placeholder=" Search name here..." class="form-control">
+                        <input type="text" hx-get="./helpers/search_chat_user.php" hx-trigger="change" hx-target="#result_search" name="chat_name_search" style="border-top: 0px solid #919191; outline:none; background-color: #e5e5e5;" placeholder=" Search name here..." class="form-control">
                     </div>
                     <div class="card"></div>
                     <div class="list-group lg-alt" style="background-color: #e5e5e5;" id="result_search">
@@ -369,24 +364,8 @@ if (isset($_POST['submite'])) {
                                             margin-right: -25px;
                                         } */
 
+
                                     @media only screen and (max-width: 350px) {
-                                        .pull-left {
-                                            margin-left: 30px;
-                                        }
-                                    }
-
-                                    @media only screen and (min-width: 390px) {
-                                        .pull-left {
-                                            margin-left: 10px;
-                                        }
-                                    }
-
-                                    /* @media only screen and (min-device-width : 350px) and (max-device-width : 400px) {
-                                        .pull-left{
-                                            margin-left: 30px;
-                                        }
-                                        } */
-                                    @media only screen and (max-width: 375px) {
                                         #amsndbams {
                                             white-space: nowrap;
                                             width: 75px;
@@ -394,13 +373,9 @@ if (isset($_POST['submite'])) {
                                             text-overflow: ellipsis;
                                             float: right;
                                             margin-top: 5px;
-                                            margin-right: -42px;
-
+                                            margin-RIGHT: -42px
                                         }
 
-                                        .pull-left {
-                                            margin-left: 27px;
-                                        }
                                     }
 
                                     @media only screen and (max-width: 450px) {
@@ -411,11 +386,11 @@ if (isset($_POST['submite'])) {
                                             text-overflow: ellipsis;
                                             float: right;
                                             margin-top: 7px;
-                                            margin-left: 58px
+                                            margin-left: 50px
                                         }
 
                                         #zaidan {
-                                            margin-left: -107px;
+                                            margin-left: -89px;
                                         }
 
                                         .attach {
@@ -429,20 +404,19 @@ if (isset($_POST['submite'])) {
                                         .form-control {
                                             margin-right: -18px;
                                         }
-
+                                       
                                     }
 
-                                    
-
                                     @media only screen and (max-width: 768px) {
-                                        .form-control {
+                                        .form-control{
                                             margin-right: -22px;
                                         }
                                     }
                                 </style>
-                                <div class="col-md-6 col-4 d-flex justify-content-end align-items-between side_nav">
+                                <div class="col-md-6 col-4 d-flex justify-content-end align-items-between" style="margin-left: 45px; margin-top: -5px;">
                                     <div class="dropdown">
-                                        <button class="form-control2" style="color: white; font-size: 25px; background-color: #000; border: none; " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button class="form-control" style="color: white; font-size: 25px; background-color: #000; border: none; margin-left
+                                        :60px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -510,8 +484,8 @@ if (isset($_POST['submite'])) {
                     <div id="test" style="overflow-x: hidden; display: flex; flex-direction: column-reverse; background-color: #e5e5e5; position:static;" hx-trigger="load, every 2s" hx-get="./helpers/get_messages.php?chat_id=<?= @$_GET['chat_id'] ?>"></div>
                     <?php
                     if (@$_GET['chat_id']) { ?>
-                        <div class="row" style="padding: 0.5rem 1rem; width: -webkit-fill-available; margin-left: 0px; background-color: #e5e5e5; border-top: 2px solid #9b9b9b; border-left: none; position:fixed; bottom:0; height:70px;">
-                            <input type="text" id="chat-" name="message" autocomplete="off" class="form-control col-md-10 col-8 message" placeholder="Type a message..." style="background-color: #e5e5e5; top
+                        <div class="row" style="padding: 0.5rem 1rem; width: -webkit-fill-available; margin-left: 0px; background-color: #e5e5e5; border-top: 2px solid #919191; border-left: none; position:fixed; bottom:0; height:70px;">
+                            <input type="text" id="chat-" name="message" autocomplete="off" class="form-control col-md-10 col-8 mr-md-5 message" placeholder="Type a message..." style="background-color: #e5e5e5; top
                 :1px;">
                             <div class="col-md-1 col-3 form-control" style=" background-color: #e5e5e5;">
                                 <?php
@@ -538,7 +512,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
                                     <i class="fas fa-paperclip random"></i>
                                 </label>
                             </div>
-                            <button class="form-control col-2 col-md-1  srt mt-1" id="buttonprop" onclick="upload()" style=" bottom:3px; border-radius:5px; ">Send</button=>
+                            <button class="form-control col-2 col-md-1 srt mt-1" id="buttonprop" onclick="upload()" style=" bottom:3px; border-radius:5px; ">Send</button=>
                                 <style>
                                     .image-upload>input {
                                         display: none;
@@ -550,45 +524,22 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
                                             margin-left: -67px !important;
                                         }
                                     }
-
-                                    @media (min-width: 1281px) {
-                                        .form-control {
-                                            margin-left: -6px;
+                                    @media (min-width: 1281px) {                                    
+                                           .form-control {
+                                            margin-left: -16px ;
 
                                         }
 
-                                        .clip {
-                                            margin-left: 70px;
-                                        }
-                                    }
-
-                                    @media only screen and (min-width: 725px) {
-                                        .clip {
-                                            margin-left: 20px;
-                                        }
-                                    }
-                                    @media only screen and (max-width: 400px){
                                         .clip{
-                                            margin-left:0px;
+                                            margin-left: 40px;
                                         }
                                     }
 
-                                    @media only screen and (min-width: 300px) and (max-width:450px){
-                                        .side_nav{
-                                            margin-left:70px;
-                                            margin-top:10px;
+                                    @media only screen and (max-width: 768px){
+                                        .clip{
+                                            margin-left:20px;
                                         }
                                     }
-
-                                    @media (min-width: 1281px) {
-                                        .side_nav{
-                                            margin-left:110px;
-                                            margin-top:12px;
-                                        }
-
-                                    }
-
-
                                 </style>
                         </div>
                     <?php } ?>
