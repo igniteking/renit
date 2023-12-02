@@ -415,7 +415,7 @@ if (isset($_POST['submite'])) {
                                         }
 
                                         #zaidan {
-                                            margin-left: -100px;
+                                            margin-left: -107px;
                                         }
 
                                         .attach {
@@ -432,16 +432,17 @@ if (isset($_POST['submite'])) {
 
                                     }
 
+                                    
+
                                     @media only screen and (max-width: 768px) {
                                         .form-control {
                                             margin-right: -22px;
                                         }
                                     }
                                 </style>
-                                <div class="col-md-6 col-4 d-flex justify-content-end align-items-between" style="margin-left: 54px; margin-top: -5px;">
+                                <div class="col-md-6 col-4 d-flex justify-content-end align-items-between side_nav">
                                     <div class="dropdown">
-                                        <button class="form-control" style="color: white; font-size: 25px; background-color: #000; border: none; margin-left
-                                        :36px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button class="form-control2" style="color: white; font-size: 25px; background-color: #000; border: none; " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -510,7 +511,7 @@ if (isset($_POST['submite'])) {
                     <?php
                     if (@$_GET['chat_id']) { ?>
                         <div class="row" style="padding: 0.5rem 1rem; width: -webkit-fill-available; margin-left: 0px; background-color: #e5e5e5; border-top: 2px solid #9b9b9b; border-left: none; position:fixed; bottom:0; height:70px;">
-                            <input type="text" id="chat-" name="message" autocomplete="off" class="form-control col-md-10 col-8 mr-md-5 message" placeholder="Type a message..." style="background-color: #e5e5e5; top
+                            <input type="text" id="chat-" name="message" autocomplete="off" class="form-control col-md-10 col-8 message" placeholder="Type a message..." style="background-color: #e5e5e5; top
                 :1px;">
                             <div class="col-md-1 col-3 form-control" style=" background-color: #e5e5e5;">
                                 <?php
@@ -537,7 +538,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
                                     <i class="fas fa-paperclip random"></i>
                                 </label>
                             </div>
-                            <button class="form-control col-2 col-md-1 srt mt-1" id="buttonprop" onclick="upload()" style=" bottom:3px; border-radius:5px; ">Send</button=>
+                            <button class="form-control col-2 col-md-1  srt mt-1" id="buttonprop" onclick="upload()" style=" bottom:3px; border-radius:5px; ">Send</button=>
                                 <style>
                                     .image-upload>input {
                                         display: none;
@@ -552,20 +553,42 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
 
                                     @media (min-width: 1281px) {
                                         .form-control {
-                                            margin-left: -22px;
+                                            margin-left: -6px;
 
                                         }
 
                                         .clip {
-                                            margin-left: 40px;
+                                            margin-left: 70px;
                                         }
                                     }
 
-                                    @media only screen and (max-width: 768px) {
+                                    @media only screen and (min-width: 725px) {
                                         .clip {
                                             margin-left: 20px;
                                         }
                                     }
+                                    @media only screen and (max-width: 400px){
+                                        .clip{
+                                            margin-left:0px;
+                                        }
+                                    }
+
+                                    @media only screen and (min-width: 300px) and (max-width:450px){
+                                        .side_nav{
+                                            margin-left:70px;
+                                            margin-top:10px;
+                                        }
+                                    }
+
+                                    @media (min-width: 1281px) {
+                                        .side_nav{
+                                            margin-left:110px;
+                                            margin-top:12px;
+                                        }
+
+                                    }
+
+
                                 </style>
                         </div>
                     <?php } ?>
