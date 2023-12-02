@@ -39,16 +39,17 @@
                         .flogo {
                             width: 350px;
                             margin-top: 70px;
+                            margin-left: 124px;
                         }
 
                         @media only screen and (max-width: 600px) {
                             .flogo {
-                                width: 250px;
-                                margin-left: 15px;
+                                display: none;
                             }
+
                         }
                     </style>
-                    <h1 class="flogo" style="font-size: 100px; color:white;">Renit</h1>
+                    <h1 class="flogo" style="font-size: 100px; color:white; ">Renit</h1>
                     <!-- <img src="./assets/images/Renit-logo.jpeg" class="flogo" alt="logo"> -->
                     <ul class="footer-count">
                         <!-- <li>
@@ -62,17 +63,17 @@
                     </ul>
                 </div>
             </div>
-        </div> <br><br>
+        </div>
     </div>
-    <div class="footer-end">
+    <div class="footer-end" id="akldal">
         <div class="container">
             <div class="footer-end-content text-white">
                 <p>All Rights Reserved &copy; by <a href="./index.php" class="text-white">Renit Classifieds LLP</a> <?= date('Y'); ?>
                 <ul class="footer-social">
-                    <li><a target="_blank" href="https://www.facebook.com/people/Renit/100083612162204/"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a target="_blank" href="https://twitter.com/Renit_Inc"><i class="fab fa-twitter"></i></a></li>
-                    <li><a target="_blank" href="https://www.linkedin.com/company/Renitinc/"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a target="_blank" href="https://www.instagram.com/Renitinc/"><i class="fab fa-instagram"></i></a></li>
+                    <li><a target="_blank" href="https://www.facebook.com/people/Renit/100083612162204/"><i class="text-white fab fa-facebook-f"></i></a></li>
+                    <li><a target="_blank" href="https://twitter.com/Renit_Inc"><img src="./assets/twitterx.png" width="20px" style="margin: 10px;" alt="" srcset=""></a></li>
+                    <li><a target="_blank" href="https://www.linkedin.com/company/Renitinc/"><i class="text-white fab fa-linkedin-in"></i></a></li>
+                    <li><a target="_blank" href="https://www.instagram.com/Renitinc/"><i class="text-white fab fa-instagram"></i></a></li>
                 </ul>
             </div>
         </div>
