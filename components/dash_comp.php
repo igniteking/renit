@@ -127,11 +127,11 @@
                             $curPageName = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1);
                             if ($curPageName == 'unavaibility_form.php') {
                             ?>
-                                <li><a href="unavaibility_form.php" class="active">Ad Information</a></li>
+                                <li><a href="unavaibility_form.php" class="active">Unavailability Form</a></li>
                             <?php
                             } else {
                             ?>
-                                <li><a href="unavaibility_form.php">Ad Information</a></li>
+                                <li><a href="unavaibility_form.php">Unavailability Form</a></li>
                             <?php
                             }
                             ?>

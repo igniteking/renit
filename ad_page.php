@@ -193,7 +193,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                 </div>
 
                 <!-- SAFETY CARD -->
-                <div class="common-card">
+                <!-- <div class="common-card">
                     <div class="card-header">
                         <h5 class="card-title">safety tips</h5>
                     </div>
@@ -205,7 +205,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                         <p>Do not make an abrupt decision</p>
                         <p>Be honest with the ad you post</p>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- FEATURE CARD -->
                 <div class="common-card">

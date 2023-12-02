@@ -36,7 +36,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
 <section class="adpost-part">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <?php
                 if (@$_GET["code"] == 1) {
                     Toast('black', 'You have successfully Uploaded your product.');
@@ -106,7 +106,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                 <form class="adpost-form" method="POST" action="./ad_post.php" enctype="multipart/form-data">
                     <div class="adpost-card">
                         <div class="adpost-title">
-                            <h3>Ad Information</h3>
+                            <h3>Product Information</h3>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
@@ -397,7 +397,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                     </div>
                 </form>
             </div>
-            <div class="col-lg-4">
+            <!-- <div class="col-lg-4">
                 <div class="account-card alert fade show">
                     <div class="account-title">
                         <h3>Safety Tips</h3>
@@ -421,7 +421,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>

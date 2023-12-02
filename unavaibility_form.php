@@ -10,7 +10,7 @@ if (@$_SESSION['user_email']) {
     include('./components/sidebar.php');
 }
 ?>
-<link rel="stylesheet" href="./assets/css/custom/setting.css">
+<link rel="stylesheet" href="./assets/css/custom/ad-post.css">
 
 <?php // Fetch user details
 $get_user = mysqli_query($conn, "SELECT * FROM user_data WHERE id = '$user_id'");
@@ -37,13 +37,15 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                 DASHBOARD HEADER PART END
         =======================================-->
 <section class="myads-part mt-4">
-    
+
     <div class="d-block d-md-none"><br></div>
     <section class="contact-part">
         <div class="container">
             <div class="row d-flex justify-content-center">
-                <div class="col-lg-12 m-3 card card-body">
-                    <div class="card-title mb-2">Ad Information</div>
+                <div class="col-lg-12 m-3 card card-body adpost-form">
+                    <div class="adpost-title">
+                        <h3>Product Information</h3>
+                    </div>
                     <?php
                     if (isset($_POST['post'])) {
                         $Product = $_POST['Product'];
@@ -52,12 +54,13 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                         $asset_category = $_POST['asset_category'];
                         $sub_categories = $_POST['sub-categories'];
                         $key = $_POST['key'];
-                        $date = $_POST['date'];
+                        $from = $_POST['from'];
+                        $to = $_POST['to'];
                         $Describe = $_POST['Describe'];
                         $created_at = date('Y-m-d H:i:s');
                         if ($Product and $Email  and $asset_category and $sub_categories and $key and $date) {
-                            $query = mysqli_query($conn, "INSERT INTO `unavailability`(`id`, `product_name`, `email`, `mobile`, `date`, `categories`, `sub_categories`, `location`, `details`, `created_at`) VALUES 
-                        (NULL,'$Product','$Email','$Number','$date','$asset_category','$sub_categories','$key','$Describe','$created_at')");
+                            $query = mysqli_query($conn, "INSERT INTO `unavailability`(`id`, `product_name`, `email`, `mobile`, `date`, `date_to`, `categories`, `sub_categories`, `location`, `details`, `created_at`) VALUES 
+                        (NULL,'$Product','$Email','$Number','$from','$to','$asset_category','$sub_categories','$key','$Describe','$created_at')");
                             if ($query) {
                                 Toast('black', "Sent successfully ...");
                             }
@@ -162,10 +165,22 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label for="">When do you need it?</label>
-                                    <input type="date" name="date" min="<?php echo date('Y-m-d') ?>" class="form-control" placeholder="Contact Number">
+                                    <label for="">From when do you need it?</label>
+                                    <input type="date" name="from" id="date_from" onchange="change_min_date2()" min="<?= date('Y-m-d') ?>" class="form-control" placeholder="Email">
                                 </div>
                             </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="">Till when do you need it?</label>
+                                    <input type="date" name="to" id="date_to" min="<?= date('Y-m-d') ?>" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <script>
+                                function change_min_date2() {
+                                    var date = document.getElementById('date_from').value;
+                                    document.getElementById('date_to').setAttribute("min", date);
+                                }
+                            </script>
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="">Describe a product you're looking for a bit more. </label>
