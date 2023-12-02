@@ -87,7 +87,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                     </div>
                     <div class="ad-details-author">
                         <a href="#" class="author-img">
-                            <img src="<?= $asset_profile_picture == '' ? './assets/images/user.png' : $asset_profile_picture; ?>" alt="avatar">
+                            <img src="<?= $asset_profile_picture == '' ? './assets/images/user.png' : $asset_profile_picture; ?>" height="100" style="object-fit: cover;" alt="avatar">
                         </a>
                         <div class="author-meta">
                             <h4><a href="#"><?= $asset_username; ?></a></h4>
