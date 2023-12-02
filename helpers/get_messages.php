@@ -6,7 +6,7 @@ function cardWidget($asset_id, $width, $height, $asset_thumbnail, $asset_categor
 {
     echo '
                 
-            <div class="col-md-12" style="margin-left: 30px;">
+            <div class="col-md-12 card-width">
                         <div class="product-card">
                             <a href="./ad_page.php?asset_id=' . $asset_id . '">
                                 <div class="product-media">
@@ -43,13 +43,90 @@ function cardWidget($asset_id, $width, $height, $asset_thumbnail, $asset_categor
                     </div>
                                 ';
 }
-
+function cardWidgetRight($asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon)
+{
+    echo '
+                
+            <div class="col-md-12 card-width-right">
+                        <div class="product-card">
+                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
+                                <div class="product-media">
+                                    <div class="side_margin_for_card">
+                                    <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="product-content">
+                            <ol class="breadcrumb product-category">
+                                <li><i class="fas fa-tags"></i></li>
+                                <li class="breadcrumb-item"><a href="#">' . $asset_category_name . '</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
+                            </ol>
+                            <h5 class="product-title card-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
+                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
+                            </h5>
+                            <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
+                                <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-price">' . $new_symbol . $asset_price . '<span>/Per Day</span></h5>
+                                ';
+    if (@$_SESSION['user_email']) {
+        echo '<div id="notify' . $asset_id . '">
+                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
+                                </div>';
+    }
+    echo '
+    </div>
+    <a href="https://renit.co.in/ad_page.php?asset_id=' . $asset_id . '" class="btn col-md-12 mb-2" style="background-color: #2d2c31; color: white;">View</a>
+                        </div>
+                    </div>
+                    </div>
+                                ';
+}
 function DetailedCardWidget($message, $asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon)
 {
     $array = unserialize($message);
     echo '
                 
-            <div class="col-md-12" style="margin-left: 30px;">
+            <div class="col-12 card-width">
+                        <div class="product-card">
+                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
+                                <div class="product-media">
+                                    <div class="side_margin_for_card">
+                                    <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="product-content">
+                            <ol class="breadcrumb product-category">
+                                <li><i class="fas fa-tags"></i></li>
+                                <li class="breadcrumb-item"><a href="#">' . $asset_category_name . '</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
+                            </ol>
+                            <h5 class="product-title card-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
+                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
+                            </h5>
+                            <p class="text-secondary text-muted">Offer: '  . $new_symbol . $array['price'] . '</p>
+                            <p class="text-secondary text-muted">From: ' . $array['from'] . '</p>
+                            <p class="text-secondary text-muted">To: ' . $array['to'] . '</p>
+                            <div class="product-info">
+                                <h5 class="product-price">' . $new_symbol . $asset_price . '<span>/Per Day</span></h5>
+                                
+    </div>
+    <a href="https://renit.co.in/ad_page.php?asset_id=' . $asset_id . '" class="btn col-md-12 mb-2" style="background-color: #2d2c31; color: white;">View</a>
+                        </div>
+                    </div>
+                    </div>
+                                ';
+}
+
+function DetailedCardWidgetRight($message, $asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon)
+{
+    $array = unserialize($message);
+    echo '
+                
+            <div class="col-12 card-width-right">
                         <div class="product-card">
                             <a href="./ad_page.php?asset_id=' . $asset_id . '">
                                 <div class="product-media">
@@ -114,7 +191,6 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
             $height = "200";
             $margin = "50px";
         } else {
-            $margin = "50px";
             $width = "200px";
             $height = "200px";
             $margin = "0px";
@@ -148,7 +224,7 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
             echo '
                 <div class="row mt-3 mt-3 mb-3" style="width: 100%;">
             <div class="col-md-3 col-10" style="margin-left: -20px;">';
-            cardWidget($asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon);
+            cardWidgetRight($asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon);
             echo '
             <div class="col-md-9 col-2" ></div>
             </div>
@@ -162,8 +238,7 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
             $height = "200";
             $margin = "50px";
         } else {
-            $margin = "50px";
-            $width = "200";
+            $width = "200px";
             $height = "200px";
             $margin = "0px";
         }
@@ -188,7 +263,7 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
             echo '
             <div class="row mt-3 mt-3 mb-3" style="width: 100%;">
             <div class="col-md-9 col-2"></div>
-            <div class="col-md-3 col-10" style="margin-left: -20px;">
+            <div class="col-md-3 col-10">
             ';
             echo DetailedCardWidget($message, $asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, "test", $user_id, "@");
             echo '
@@ -200,7 +275,7 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
             <div class="row mt-3 mt-3 mb-3" style="width: 100%;">
             <div class="col-md-3 col-10">
             ';
-            echo DetailedCardWidget($message, $asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, "test", $user_id, "@");
+            echo DetailedCardWidgetRight($message, $asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, "test", $user_id, "@");
             echo '
             <div class="col-md-9 col-2"></div>
             </div>
@@ -256,10 +331,21 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
 }
 echo "
 <style>
-
+.product-card {
+    width: 250px;
+}
 @media only screen and (max-width: 600px) {
     .khasjdanks {
         margin-left: 25%;
+    }
+    .card-width {
+    margin-left: 15px;
+    width: 250px;
+    }
+
+    .card-width-right {
+        margin-left: 25px;
+        width: 250px;
     }
     
 }
@@ -273,9 +359,14 @@ echo "
         margin: 10px;
         margin-left: 30%;
     }
+    .card-width {
+        margin-left: -20px;
+        width: 250px;
+        }
+        
 }
 
-@media only screen and (max-width: 700px) and (min-width: 350px) {
+@media only screen and (max-width: 400px) and (min-width: 350px) {
     .zxczxczxczxc {
         width: 60%;
         margin-left: 22%;
@@ -284,11 +375,38 @@ echo "
         margin: 10px;
         margin-left: 30%;
     }
+    .card-width {
+        margin-left: 25px;
+        width: 250px;
+    }
 }
 
-@media only screen and (max-width: 1500px) and (min-width: 700px) {
+@media only screen and (max-width: 700px) and (min-width: 400px) {
+    .zxczxczxczxc {
+        width: 60%;
+        margin-left: 22%;
+    }
+    .khasjdanks{
+        margin: 10px;
+        margin-left: 30%;
+    }
+    .card-width {
+        margin-left: 65px;
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 2500px) and (min-width: 700px) {
     .zxczxczxczxc {
         width: 100%;
     }
+    .card-width {
+        margin-left: 35px;
+        width: 250px;
+        }
+        .card-width-right {
+            margin-left: 35px;
+            width: 250px;
+            }
 }
 </style>";

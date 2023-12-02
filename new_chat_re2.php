@@ -92,7 +92,7 @@ if (isset($_POST['submite'])) {
         <div class="">
             <div class="tile tile-alt" id="messages-main" style=" width: 100%;">
                 <div class="ms-menu" style="height: 100vh; overflow-y: none; background-color: #e5e5e5;">
-                    <div style="background-color: black; color: white; height: 69px;">
+                    <div style="background-color: black; color: white; height: 70px;">
                         <div class="card-body row justify-content-between align-items-between">
                             <div class="col-10">
                                 <center>
@@ -250,7 +250,7 @@ if (isset($_POST['submite'])) {
                                     width: 350px;
 
                                 }
-                                
+
                                 @supports (-webkit-touch-callout: none) {
 
                                     /* CSS specific to iOS devices */
@@ -264,10 +264,30 @@ if (isset($_POST['submite'])) {
 
                                     /* CSS for other than iOS devices */
                                     #test {
-                                        height: 80vh;
+                                        height: 75vh;
                                         background-color: #2196f3;
                                     }
                                 }
+
+                                @media (min-width:1025px) {
+
+                                    /* big landscape tablets, laptops, and desktops */
+                                    #test {
+                                        height: 81vh;
+                                        background-color: #2196f3;
+                                    }
+                                }
+
+                                @media (min-width:1281px) {
+
+                                    /* hi-res laptops and desktops */
+                                    #test {
+                                        height: 81vh;
+                                        background-color: #2196f3;
+                                    }
+                                }
+
+
 
                                 @media only screen and (max-width: 600px) {
 
@@ -331,10 +351,6 @@ if (isset($_POST['submite'])) {
                                 </div>
                                 <style>
                                     #amsndbams {
-                                        white-space: nowrap;
-                                        width: 75px;
-                                        overflow: hidden;
-                                        text-overflow: ellipsis;
                                         float: right;
                                         margin-top: 7px;
                                         margin-left: 20px
@@ -383,16 +399,15 @@ if (isset($_POST['submite'])) {
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                             <button class="dropdown-item">
-                                                <a href="./index.php" style="all: unset;">
-                                                    <i class="fas fa-home mr-2"></i> Home
+                                                <a href="./index.php" style="all: unset;"><i class="fas fa-home mr-2"></i> Home
                                                 </a>
                                             </button>
                                             <button data-toggle="modal" data-target="#exampleModal" class="dropdown-item">
-                                                <i class="fas fa-trash mr-2"></i> Delete
+                                                <i class="fas fa-trash mr-2" style="margin-left: 2px;"></i> Delete
                                             </button>
 
                                             <button data-toggle="modal" data-target="#exampleModal1" class="dropdown-item">
-                                                <i class="fas fa-exclamation-triangle mr-2"></i> Report
+                                                <i class="fas fa-exclamation-triangle mr-2" style="margin-left: 1px;"></i> Report
                                             </button>
                                         </div>
                                     </div>
