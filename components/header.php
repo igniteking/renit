@@ -77,8 +77,8 @@
         <div class="mx-4">
             <div class="header-content">
                 <div class="header-left">
-                    <button type="button" style="margin-top: 3px;" class="header-widget sidebar-btn">
-                        <i class="fas fa-align-left"></i>
+                    <button type="button" style="margin-top: 3px;" class="asdasdasdop header-widget sidebar-btn">
+                        <i class="fas fa-bars" id="asdasdasdop"></i>
                     </button>
                     <?php
                     if (isset($_SESSION['user_email'])) { ?>
@@ -102,6 +102,13 @@
                             @media only screen and (max-width: 600px) {
                                 #logo {
                                     margin-right: 20px;
+                                }
+                            }
+
+                            @media only screen and (max-width: 600px) {
+                                #asdasdasdop {
+                                    color: white;
+                                    background-color: black;
                                 }
                             }
                         </style>
@@ -134,8 +141,8 @@
                         ';
                     }
                     ?>
-                    <button type="button" class="header-widget search-btn">
-                        <i class="fas fa-search"></i>
+                    <button type="button btn-dark" class="header-widget search-btn">
+                        <i class="fas fa-search text-white" style="background-color: black;"></i>
                     </button>
                 </div>
                 <style>
