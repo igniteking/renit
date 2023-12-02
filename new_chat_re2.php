@@ -369,8 +369,24 @@ if (isset($_POST['submite'])) {
                                             margin-right: -25px;
                                         } */
 
-
                                     @media only screen and (max-width: 350px) {
+                                        .pull-left {
+                                            margin-left: 30px;
+                                        }
+                                    }
+
+                                    @media only screen and (min-width: 390px) {
+                                        .pull-left {
+                                            margin-left: 10px;
+                                        }
+                                    }
+
+                                    /* @media only screen and (min-device-width : 350px) and (max-device-width : 400px) {
+                                        .pull-left{
+                                            margin-left: 30px;
+                                        }
+                                        } */
+                                    @media only screen and (max-width: 375px) {
                                         #amsndbams {
                                             white-space: nowrap;
                                             width: 75px;
@@ -378,12 +394,16 @@ if (isset($_POST['submite'])) {
                                             text-overflow: ellipsis;
                                             float: right;
                                             margin-top: 5px;
-                                            margin-RIGHT: -42px
+                                            margin-right: -42px;
+
                                         }
 
+                                        .pull-left {
+                                            margin-left: 27px;
+                                        }
                                     }
 
-                                    @media only screen and (max-width: 400px) {
+                                    @media only screen and (max-width: 450px) {
                                         #amsndbams {
                                             white-space: nowrap;
                                             width: 75px;
@@ -391,11 +411,11 @@ if (isset($_POST['submite'])) {
                                             text-overflow: ellipsis;
                                             float: right;
                                             margin-top: 7px;
-                                            margin-left: 50px
+                                            margin-left: 58px
                                         }
 
                                         #zaidan {
-                                            margin-left: -89px;
+                                            margin-left: -100px;
                                         }
 
                                         .attach {
@@ -418,10 +438,10 @@ if (isset($_POST['submite'])) {
                                         }
                                     }
                                 </style>
-                                <div class="col-md-6 col-4 d-flex justify-content-end align-items-between" style="margin-left: 45px; margin-top: -5px;">
+                                <div class="col-md-6 col-4 d-flex justify-content-end align-items-between" style="margin-left: 54px; margin-top: -5px;">
                                     <div class="dropdown">
                                         <button class="form-control" style="color: white; font-size: 25px; background-color: #000; border: none; margin-left
-                                        :60px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        :36px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -489,7 +509,7 @@ if (isset($_POST['submite'])) {
                     <div id="test" style="overflow-x: hidden; display: flex; flex-direction: column-reverse; background-color: #e5e5e5; position:static;" hx-trigger="load, every 2s" hx-get="./helpers/get_messages.php?chat_id=<?= @$_GET['chat_id'] ?>"></div>
                     <?php
                     if (@$_GET['chat_id']) { ?>
-                        <div class="row" style="padding: 0.5rem 1rem; width: -webkit-fill-available; margin-left: 0px; background-color: #e5e5e5; border: 2px solid white; border-left: none; position:fixed; bottom:0; height:70px;">
+                        <div class="row" style="padding: 0.5rem 1rem; width: -webkit-fill-available; margin-left: 0px; background-color: #e5e5e5; border-top: 2px solid #9b9b9b; border-left: none; position:fixed; bottom:0; height:70px;">
                             <input type="text" id="chat-" name="message" autocomplete="off" class="form-control col-md-10 col-8 mr-md-5 message" placeholder="Type a message..." style="background-color: #e5e5e5; top
                 :1px;">
                             <div class="col-md-1 col-3 form-control" style=" background-color: #e5e5e5;">
