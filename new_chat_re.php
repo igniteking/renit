@@ -336,7 +336,7 @@ if (isset($_POST['submite'])) {
                                         <i class="fa fa-bars"></i>
                                     </div>
                                 </div>
-                                <div class="col-5" style="margin-left: -28px; margin-top:3px;">
+                                <div class="col-5 profile_name">
                                     <div class="pull-left hidden-xs">
                                         <a href="./profile_view.php?user_id=<?= $get_user_name_id ?>"><img src="<?= $get_user_picture != '' ? $get_user_picture : './assets/images/user.png'  ?>" alt="" class="img-avatar rounded-circle avatar ml-1">
                                             <span class="text-white" id="amsndbams"><b><?= $get_user_name ?></b></span>
@@ -344,6 +344,10 @@ if (isset($_POST['submite'])) {
                                     </div>
                                 </div>
                                 <style>
+                                    .profile_name{
+                                        margin-left: 23px;
+                                        margin-top: 3px;
+                                    }
                                     @media only screen and (min-width: 1000px) {
                                         #amsndbams {
                                             margin-left: 12px
@@ -359,6 +363,7 @@ if (isset($_POST['submite'])) {
                                             float: right;
                                             margin-top: 5px;
                                         }
+                                       
                                     }
 
                                     @media only screen and (max-width: 800px) {
@@ -370,6 +375,10 @@ if (isset($_POST['submite'])) {
                                             float: right;
                                             margin-top: 7px;
                                             margin-left: 10px
+                                        }
+
+                                        .profile_name{
+                                            margin-left: -28px;
                                         }
                                     }
                                    

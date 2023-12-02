@@ -357,8 +357,13 @@ if (isset($_POST['submite'])) {
                                     }
 
                                     #zaidan {
-                                        margin-left: -85px;
+                                        margin-left: -100px;
                                     }
+
+                                    /* .form-control{
+                                            margin-right: -25px;
+                                        } */
+
 
                                     @media only screen and (max-width: 350px) {
                                         #amsndbams {
@@ -370,6 +375,7 @@ if (isset($_POST['submite'])) {
                                             margin-top: 5px;
                                             margin-RIGHT: -42px
                                         }
+
                                     }
 
                                     @media only screen and (max-width: 400px) {
@@ -384,17 +390,32 @@ if (isset($_POST['submite'])) {
                                         }
 
                                         #zaidan {
-                                            margin-left: -73px;
+                                            margin-left: -89px;
+                                        }
+
+                                        .attach {
+                                            margin-right: -50px;
                                         }
 
                                         .asdasdasdasd {
                                             margin-right: -50px;
                                         }
+
+                                        .form-control {
+                                            margin-right: -18px;
+                                        }
+                                    }
+
+                                    @media only screen and (max-width: 768px) {
+                                        .form-control{
+                                            margin-right: -22px;
+                                        }
                                     }
                                 </style>
                                 <div class="col-md-6 col-4 d-flex justify-content-end align-items-between" style="margin-left: 45px; margin-top: -5px;">
                                     <div class="dropdown">
-                                        <button class="form-control" style="color: white; font-size: 25px; background-color: #000; border: none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button class="form-control" style="color: white; font-size: 25px; background-color: #000; border: none; margin-left
+                                        :60px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -465,7 +486,7 @@ if (isset($_POST['submite'])) {
                         <div class="row" style="padding: 0.5rem 1rem; width: -webkit-fill-available; margin-left: 0px; background-color: #e5e5e5; border: 2px solid white; border-left: none; position:fixed; bottom:0; height:70px;">
                             <input type="text" id="chat-" name="message" autocomplete="off" class="form-control col-md-10 col-8 mr-md-5 message" placeholder="Type a message..." style="background-color: #e5e5e5; top
                 :1px;">
-                            <div class="col-md-1 col-3 form-control" style="margin-right: -50px; background-color: #e5e5e5;">
+                            <div class="col-md-1 col-3 form-control" style=" background-color: #e5e5e5;">
                                 <?php
                                 $uploadpic = @$_POST['uploadpic'];
                                 if ($uploadpic) {
@@ -486,14 +507,37 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
                                     <input id="file-input" name="attachment" onchange="this.form.submit()" type="file" style="display: none;" />
                                     <input type="hidden" value="uploadpic" name="uploadpic" style="display: hidden;"></input>
                                 </form>
-                                <label for="file-input">
+                                <label class="clip" for="file-input" style="margin-right:-10px;">
                                     <i class="fas fa-paperclip random"></i>
                                 </label>
                             </div>
-                            <button class="form-control col-2 col-md-1 srt mt-1" id="buttonprop" onclick="upload()" style="margin-right: 0px; bottom:3px; border-radius:5px;">Send</button=>
+                            <button class="form-control col-2 col-md-1 srt mt-1" id="buttonprop" onclick="upload()" style=" bottom:3px; border-radius:5px; ">Send</button=>
                                 <style>
                                     .image-upload>input {
                                         display: none;
+                                    }
+
+
+                                    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+                                        .form-control {
+                                            margin-left: -67px !important;
+                                        }
+                                    }
+                                    @media (min-width: 1281px) {                                    
+                                           .form-control {
+                                            margin-left: -22px ;
+
+                                        }
+
+                                        .clip{
+                                            margin-left: 40px;
+                                        }
+                                    }
+
+                                    @media only screen and (max-width: 768px){
+                                        .clip{
+                                            margin-right:-10px;
+                                        }
                                     }
                                 </style>
                         </div>
