@@ -388,6 +388,7 @@ if (isset($_POST['submite'])) {
                                         .form-control {
                                             margin-right: -18px;
                                         }
+                                       
                                     }
 
                                     @media only screen and (max-width: 768px) {
@@ -521,7 +522,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
 
                                     @media only screen and (max-width: 768px){
                                         .clip{
-                                            margin-right:-10px;
+                                            margin-left:20px;
                                         }
                                     }
                                 </style>
