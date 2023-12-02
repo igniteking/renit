@@ -91,26 +91,27 @@ if (isset($_POST['submite'])) {
     <section class="">
         <div class="">
             <div class="tile tile-alt" id="messages-main" style=" width: 100%;">
-                <div class="ms-menu" style="height: 100%; overflow-y: none; background-color: #e5e5e5;">
-                    <div style="background-color: black; color: white; height: 68px;">
+                <div class="ms-menu" style="height: 100vh; overflow-y: none; background-color: #e5e5e5;">
+                    <div style="background-color: black; color: white; height: 70px;">
                         <div class="card-body row justify-content-between align-items-between">
                             <div class="col-10">
                                 <center>
 
-                                    <h4 class="text-white">Your Chats</h4>
+                                    <h5 class="text-white" style="line-height: 32px; padding:2px; margin-left:-64px;">Your Chats</h5>
                                 </center>
                             </div>
-                            <button class="col-2 d-block d-md-none text-white" id="ms-menu-cross" style="border-radius: 100px; border: 1px solid white; padding: 5px"><b>X</b></button>
+                            <button class="col-2 d-block d-md-none text-white" id="ms-menu-cross" style="border-radius: 100px; padding: 5px; bottom:1px;"><b>X</b></button>
                         </div>
                     </div>
                     <style>
                         body {
+                            background-color: #e5e5e5;
                             overflow-x: hidden;
                             overflow-y: hidden;
                         }
                     </style>
                     <div class="card" style="background-color: #e5e5e5;">
-                        <input type="text" hx-get="./helpers/search_chat_user.php" hx-trigger="change" hx-target="#result_search" name="chat_name_search" style="border: 0px solid #e5e5e5; outline:none; background-color: #e5e5e5;" placeholder=" Search name here ..." class="form-control">
+                        <input type="text" hx-get="./helpers/search_chat_user.php" hx-trigger="change" hx-target="#result_search" name="chat_name_search" style="border-top: 0px solid #919191; outline:none; background-color: #e5e5e5;" placeholder=" Search name here..." class="form-control">
                     </div>
                     <div class="card"></div>
                     <div class="list-group lg-alt" style="background-color: #e5e5e5;" id="result_search">
@@ -219,7 +220,7 @@ if (isset($_POST['submite'])) {
                                 $get_user_picture = $rows['profile_picture'];
                             }
                         } ?>
-                        <div class="action-header clearfix" style="background-color: black; color: white; height: 68px;">
+                        <div class="action-header clearfix" style="background-color: black; color: white; height: 70px;">
                             <style>
                                 * {
                                     padding: 0;
@@ -230,9 +231,6 @@ if (isset($_POST['submite'])) {
                                     display: none;
                                 }
 
-                                .show {
-                                    display: block;
-                                }
 
                                 .message {
                                     width: 80%;
@@ -250,87 +248,45 @@ if (isset($_POST['submite'])) {
                                     margin-left: -12px;
                                     margin-top: 15px;
                                     width: 350px;
+
                                 }
 
+                                @supports (-webkit-touch-callout: none) {
 
-                                @media only screen and (min-height: 660px) and (max-height: 670px),
-                                (min-width: 370px) and (max-width: 375px) {
+                                    /* CSS specific to iOS devices */
                                     #test {
-                                        overflow-y: hidden;
+                                        height: calc(100vh - 31vh);
+                                        background-color: #2196f3;
+                                    }
+                                }
+
+                                @supports not (-webkit-touch-callout: none) {
+
+                                    /* CSS for other than iOS devices */
+                                    #test {
                                         height: 75vh;
                                         background-color: #2196f3;
                                     }
                                 }
 
-                                @media only screen and (min-height: 890px) and (max-height: 900px),
-                                (min-width: 440px) and (max-width: 450px) {
+                                @media (min-width:1025px) {
+
+                                    /* big landscape tablets, laptops, and desktops */
                                     #test {
-                                        overflow-y: hidden;
-                                        height: 55vh;
+                                        height: 81vh;
                                         background-color: #2196f3;
                                     }
                                 }
 
-                                @media only screen and (min-height: 840px) and (max-height: 850px),
-                                (min-width: 390px) and (max-width: 395px) {
+                                @media (min-width:1281px) {
+
+                                    /* hi-res laptops and desktops */
                                     #test {
-                                        overflow-y: hidden;
-                                        height: 70vh;
+                                        height: 81vh;
                                         background-color: #2196f3;
                                     }
                                 }
 
-                                @media only screen and (min-height: 740px) and (max-height: 750px),
-                                (min-width: 360px) and (max-width: 365px) {
-                                    #test {
-                                        overflow-y: hidden;
-                                        height: 67vh;
-                                        background-color: #2196f3;
-                                    }
-                                }
-
-                                @media only screen and (min-height: 915px) and (max-height: 920px),
-                                (min-width: 400px) and (max-width: 415px) {
-                                    #test {
-                                        overflow-y: hidden;
-                                        height: 55vh;
-                                        background-color: #2196f3;
-                                    }
-                                }
-
-                                @media only screen and (min-height: 720px) and (max-height: 725px),
-                                (min-width: 540px) and (max-width: 545px) {
-                                    #test {
-                                        overflow-y: hidden;
-                                        height: 70vh;
-                                        background-color: #2196f3;
-                                    }
-                                }
-
-                                @media only screen and (min-height: 600px) and (max-height: 610px),
-                                (min-width: 1275px) and (max-width: 1085px) {
-                                    #test {
-                                        overflow-y: hidden;
-                                        height: 77vh;
-                                        background-color: #2196f3;
-                                    }
-                                }
-
-                                @media only screen and (min-width: 1900px) and (max-width: 1930px) {
-                                    #test {
-                                        overflow-y: hidden;
-                                        height: 52vh;
-                                        background-color: #2196f3;
-                                    }
-                                }
-
-                                @media only screen and (min-width: 1200px) and (max-width: 2000px) {
-                                    #test {
-                                        overflow-y: hidden;
-                                        height: 80vh;
-                                        background-color: #2196f3;
-                                    }
-                                }
 
 
                                 @media only screen and (max-width: 600px) {
@@ -347,10 +303,6 @@ if (isset($_POST['submite'])) {
 
                                     .hidenstuff {
                                         display: block;
-                                    }
-
-                                    .show {
-                                        display: none;
                                     }
 
                                     .random {
@@ -385,271 +337,285 @@ if (isset($_POST['submite'])) {
                                 }
                             </style>
                             <div class="row">
-                                <div class="col-2" id="hideonmobile" style="margin-top: -12px; margin-left: -5px;">
+                                <div class="col-4" id="hideonmobile" style="margin-top: -9px; margin-left: -5px; ">
                                     <div class="visible-xs" id="ms-menu-trigger">
                                         <i class="fa fa-bars"></i>
                                     </div>
                                 </div>
-                                <div class="col-5" style="margin-left: -15px;">
+                                <div class="col-5 ml-md-2" id="zaidan" style="margin-top:3px;">
                                     <div class="pull-left hidden-xs">
-                                        <a href="./profile_view.php?user_id=<?= $get_user_name_id ?>"><img src="<?= $get_user_picture != '' ? $get_user_picture : './assets/images/user.png'  ?>" alt="" class="img-avatar rounded-circle avatar ml-1">
+                                        <a href="./profile_view.php?user_id=<?= $get_user_name_id ?>"><img src="<?= $get_user_picture != '' ? $get_user_picture : './assets/images/user.png'  ?>" alt="" class="img-avatar asdasdasdasd rounded-circle avatar ml-1">
                                             <span class="text-white" id="amsndbams"><b><?= $get_user_name ?></b></span>
                                         </a>
                                     </div>
                                 </div>
                                 <style>
-                                    @media only screen and (min-width: 1000px) {
-                                        #amsndbams {
-                                            margin-left: 12px
-                                        }
+                                    #amsndbams {
+                                        float: right;
+                                        margin-top: 7px;
+                                        margin-left: 20px
                                     }
+
+                                    #zaidan {
+                                        margin-left: -100px;
+                                    }
+
+                                    /* .form-control{
+                                            margin-right: -25px;
+                                        } */
+
 
                                     @media only screen and (max-width: 350px) {
                                         #amsndbams {
                                             white-space: nowrap;
-                                            width: 50px;
+                                            width: 75px;
                                             overflow: hidden;
                                             text-overflow: ellipsis;
                                             float: right;
                                             margin-top: 5px;
+                                            margin-RIGHT: -42px
                                         }
+
                                     }
 
-                                    @media only screen and (max-width: 800px) {
+                                    @media only screen and (max-width: 450px) {
                                         #amsndbams {
                                             white-space: nowrap;
-                                            width: 50px;
+                                            width: 75px;
                                             overflow: hidden;
                                             text-overflow: ellipsis;
                                             float: right;
                                             margin-top: 7px;
-                                            margin-left: 12px
+                                            margin-left: 50px
+                                        }
+
+                                        #zaidan {
+                                            margin-left: -89px;
+                                        }
+
+                                        .attach {
+                                            margin-right: -50px;
+                                        }
+
+                                        .asdasdasdasd {
+                                            margin-right: -50px;
+                                        }
+
+                                        .form-control {
+                                            margin-right: -18px;
+                                        }
+                                       
+                                    }
+
+                                    @media only screen and (max-width: 768px) {
+                                        .form-control{
+                                            margin-right: -22px;
                                         }
                                     }
                                 </style>
-                                <div class="col-5 row" style="margin-top: 10px; margin-left: 10px" id="newtest">
-                                    <div class="col-4">
-                                        <button onclick="showDialog()" class="text-white hidenstuff">
-                                            <i class="fas fa-trash"></i>
+                                <div class="col-md-6 col-4 d-flex justify-content-end align-items-between" style="margin-left: 45px; margin-top: -5px;">
+                                    <div class="dropdown">
+                                        <button class="form-control" style="color: white; font-size: 25px; background-color: #000; border: none; margin-left
+                                        :60px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                         </button>
-                                    </div>
-                                    <div class="col-4">
-                                        <button onclick="showDialog2()" class="text-white hidenstuff">
-                                            <i class="fas fa-exclamation-triangle"></i>
-                                        </button>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="./index.php">
-                                            <button class="text-white hidenstuff">
-                                                <i class="fas fa-home"></i>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <button class="dropdown-item">
+                                                <a href="./index.php" style="all: unset;"><i class="fas fa-home mr-2"></i> Home
+                                                </a>
                                             </button>
-                                        </a>
-                                    </div>
-                                </div>
+                                            <button data-toggle="modal" data-target="#exampleModal" class="dropdown-item">
+                                                <i class="fas fa-trash mr-2" style="margin-left: 2px;"></i> Delete
+                                            </button>
 
-                                <div class="col-4 row d-flex justify-content-end align-items-between" style="margin-top: -40px; margin-left: 810px;" id="newtest">
-                                    <div class="col-3" style="margin-right: -30px;">
-                                        <button onclick="showDialog()" class="header-widget show">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </div>
-                                    <div class="col-3" style="margin-right: -30px;">
-                                        <button onclick="showDialog2()" class="header-widget show">
-                                            <i class="fas fa-exclamation-triangle"></i>
-                                        </button>
-                                    </div>
-                                    <div class="col-1">
-                                        <a href="./index.php">
-                                            <button class="header-widget show">
-                                                <i class="fas fa-home"></i>
+                                            <button data-toggle="modal" data-target="#exampleModal1" class="dropdown-item">
+                                                <i class="fas fa-exclamation-triangle mr-2" style="margin-left: 1px;"></i> Report
                                             </button>
-                                        </a>
+                                        </div>
                                     </div>
                                 </div>
-                                <center>
-                                    <dialog id="myDialog" style="position: absolute; top: 100%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);  border: none; width: 450px; z-index:50000;">
-                                        <div class="card m-2">
-                                            <div class="card-body">
-                                                <p class="px-5">
-                                                    ARE YOU SURE YOU WANT TO REMOVE THIS CHAT?
-                                                </p>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Remove This Chat?</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
                                             </div>
-                                            <div class="card-footer">
-                                                <div class="row">
-                                                    <div id="notify"></div>
-                                                    <div class="col-md-6">
-                                                        <button hx-get="./helpers/delete_chat.php?chat_id=<?= @$_GET['chat_id'] ?>" hx-trigger="click" hx-target="#notify" class="btn btn-dark col-sm-12">YES</button>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <button onclick="closeDialog()" class="btn btn-dark col-sm-12">NO</button>
-                                                    </div>
-                                                </div>
-                                                <script>
-                                                    const dialog = document.getElementById("myDialog");
-
-                                                    function showDialog() {
-                                                        dialog.show();
-                                                    }
-
-                                                    function closeDialog() {
-                                                        dialog.close();
-                                                    }
-                                                </script>
+                                            <div class="modal-body" style="color:#000;">
+                                                Are you sure you want to delete this chat?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <centeR>
+                                                    <button type="button" class="btn btn-dark" data-dismiss="modal">No</button>
+                                                    <button hx-get="./helpers/delete_chat.php?chat_id=<?= @$_GET['chat_id'] ?>" hx-trigger="click" hx-target="#notify" class="btn btn-dark">YES</button>
+                                                </centeR>
                                             </div>
                                         </div>
-                                    </dialog>
-                                </center>
-                                <center>
-                                    <dialog id="myDialog2" style="position: absolute; top: 500%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);  border: none; width: 450px; z-index:50000;">
-                                        <div class="card m-2">
-                                            <div class="card-body">
-                                                <p class="px-5">
-                                                    TELL US THE REASON FOR THE REPORT?
-                                                </p>
-                                                <br>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Reason For Report?</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body" style="color:#000;">
+                                                Tell us the reason for the report?
                                                 <form action="./chat.php?chat_id=<?= @$_GET['chat_id'] ?>" method="POST">
-                                                    <textarea name="message" id="" cols="30" class="form-control" rows="10"></textarea>
-                                                    <div class="card-footer">
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <input name="submite" value="Submit" class="btn btn-primary col-md-12 form-control" type="submit">
-                                                            </div>
+                                                    <textarea name="message" class="form-control"></textarea>
                                                 </form>
-                                                <div class="col-md-6">
-                                                    <button onclick="closeDialog2()" class="btn btn-dark form-control col-sm-12">CLOSE</button>
-                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-dark" data-dismiss="modal">No</button>
+                                                <input name="submite" value="Submit" class="btn btn-dark" type="submit">
                                             </div>
                                         </div>
-                                        <script>
-                                            const dialog2 = document.getElementById("myDialog2");
-
-                                            function showDialog2() {
-                                                dialog2.show();
-                                            }
-
-                                            function closeDialog2() {
-                                                dialog2.close();
-                                            }
-                                        </script>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        </dialog>
-                        </center>
-                </div>
-            </div>
-        <?php } ?>
-        <div id="test" style="overflow-y: auto; display: flex; flex-direction: column-reverse; background-color: #e5e5e5;" hx-trigger="load, every 2s" hx-get="./helpers/get_messages.php?chat_id=<?= @$_GET['chat_id'] ?>"></div>
-        <?php
-        if (@$_GET['chat_id']) { ?>
-            <div class="row navbar navbar-default navbar-fixed-bottom" style="width: 100%; margin-left: 0px; background-color: #e5e5e5; border: 2px solid white; border-left: none;">
-                <input type="text" id="chat-" name="message" autocomplete="off" class="form-control col-md-10 col-8 mr-md-5 message" placeholder="Type a message ..." style="background-color: #e5e5e5;">
-                <div class="col-md-1 col-3 form-control" style="margin-right: -50px; background-color: #e5e5e5;">
+                    <?php } ?>
+                    <div id="test" style="overflow-x: hidden; display: flex; flex-direction: column-reverse; background-color: #e5e5e5; position:static;" hx-trigger="load, every 2s" hx-get="./helpers/get_messages.php?chat_id=<?= @$_GET['chat_id'] ?>"></div>
                     <?php
-                    $uploadpic = @$_POST['uploadpic'];
-                    if ($uploadpic) {
-                        $attacment = $_FILES['attachment']['name'];
-                        $done = uploadImage($attacment, "attachment", "./ateachments");
-                        if ($done) {
-                            $chat_id = $_GET['chat_id'];
-                            $date = date('Y-m-d H:i:s');
-                            $create_message = mysqli_query($conn, "INSERT INTO `message`(`asset_id`, `date`, `id`, `message`, `message_type`, `sender_id`, `status`, `chat_link_id`) 
+                    if (@$_GET['chat_id']) { ?>
+                        <div class="row" style="padding: 0.5rem 1rem; width: -webkit-fill-available; margin-left: 0px; background-color: #e5e5e5; border-top: 2px solid #919191; border-left: none; position:fixed; bottom:0; height:70px;">
+                            <input type="text" id="chat-" name="message" autocomplete="off" class="form-control col-md-10 col-8 mr-md-5 message" placeholder="Type a message..." style="background-color: #e5e5e5; top
+                :1px;">
+                            <div class="col-md-1 col-3 form-control" style=" background-color: #e5e5e5;">
+                                <?php
+                                $uploadpic = @$_POST['uploadpic'];
+                                if ($uploadpic) {
+                                    $attacment = $_FILES['attachment']['name'];
+                                    $done = uploadImage($attacment, "attachment", "./ateachments");
+                                    if ($done) {
+                                        $chat_id = $_GET['chat_id'];
+                                        $date = date('Y-m-d H:i:s');
+                                        $create_message = mysqli_query($conn, "INSERT INTO `message`(`asset_id`, `date`, `id`, `message`, `message_type`, `sender_id`, `status`, `chat_link_id`) 
 VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')");
-                            Toast('black', 'successfully uploaded');
-                        } else {
-                            echo 'ERROR';
+                                        Toast('black', 'successfully uploaded');
+                                    } else {
+                                        echo 'ERROR';
+                                    }
+                                }
+                                ?>
+                                <form action="./chat.php?chat_id=<?= $_GET['chat_id']; ?>" method="POST" enctype="multipart/form-data">
+                                    <input id="file-input" name="attachment" onchange="this.form.submit()" type="file" style="display: none;" />
+                                    <input type="hidden" value="uploadpic" name="uploadpic" style="display: hidden;"></input>
+                                </form>
+                                <label class="clip" for="file-input" style="margin-right:-10px;">
+                                    <i class="fas fa-paperclip random"></i>
+                                </label>
+                            </div>
+                            <button class="form-control col-2 col-md-1 srt mt-1" id="buttonprop" onclick="upload()" style=" bottom:3px; border-radius:5px; ">Send</button=>
+                                <style>
+                                    .image-upload>input {
+                                        display: none;
+                                    }
+
+
+                                    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+                                        .form-control {
+                                            margin-left: -67px !important;
+                                        }
+                                    }
+                                    @media (min-width: 1281px) {                                    
+                                           .form-control {
+                                            margin-left: -16px ;
+
+                                        }
+
+                                        .clip{
+                                            margin-left: 40px;
+                                        }
+                                    }
+
+                                    @media only screen and (max-width: 768px){
+                                        .clip{
+                                            margin-left:20px;
+                                        }
+                                    }
+                                </style>
+                        </div>
+                    <?php } ?>
+                    <script>
+                        // Get the input field
+                        var input = document.getElementById("chat-");
+
+                        // Execute a function when the user presses a key on the keyboard
+                        input.addEventListener("keypress", function(event) {
+                            // If the user presses the "Enter" key on the keyboard
+                            if (event.key === "Enter") {
+                                // Cancel the default action, if needed
+                                event.preventDefault();
+                                // Trigger the button element with a click
+                                upload();
+                            }
+                        });
+
+
+
+                        function upload() {
+                            var xhttp = new XMLHttpRequest();
+                            xhttp.onreadystatechange = function() {
+                                if (this.readyState == 4 && this.status == 200) {
+                                    document.getElementById("test").innerHTML = this.responseText;
+                                }
+                            };
+                            var message = input.value;
+                            xhttp.open("GET", "./helpers/message.php?sender_id=<?= $user_id ?>&&asset_id=<?= $chat_asset_id ?>&&chat_id=<?= @$_GET['chat_id'] ?>&&message=" + message, true);
+                            xhttp.send();
+                            input.value = "";
+
                         }
-                    }
-                    ?>
-                    <form action="./chat.php?chat_id=<?= $_GET['chat_id']; ?>" method="POST" enctype="multipart/form-data">
-                        <input id="file-input" name="attachment" onchange="this.form.submit()" type="file" style="display: none;" />
-                        <input type="hidden" value="uploadpic" name="uploadpic" style="display: hidden;"></input>
-                    </form>
-                    <label for="file-input">
-                        <i class="fas fa-paperclip random"></i>
-                    </label>
+
+
+
+
+
+                        // tinymce.init({
+                        //     selector: "#chat-emoj",
+                        //     menubar: false,
+                        //     toolbar_location: "bottom",
+                        //     plugins: "autoresize link lists emoticons",
+                        //     autoresize_bottom_margin: 0,
+                        //     skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : 'oxide'),
+                        //     content_css: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'),
+                        //     max_height: 1080,
+                        //     placeholder: "Enter message . . .",
+                        //     toolbar: "bold italic strikethrough forecolor backcolor formatpainter | numlist bullist outdent indent | link | code | addcomment | checklist | casechange | mySendButton",
+                        //     setup: function(editor) {
+                        //         editor.ui.registry.addButton("mySendButton", {
+                        //             tooltip: "Send Message",
+                        //             text: "Send Message",
+                        //             onAction: function() {
+                        //                 var xhttp = new XMLHttpRequest();
+                        //                 xhttp.onreadystatechange = function() {
+                        //                     if (this.readyState == 4 && this.status == 200) {
+                        //                         document.getElementById("test").innerHTML = this.responseText;
+                        //                     }
+                        //                 };
+                        //                 var message = editor.getContent();
+                        //                 xhttp.open("GET", "./helpers/message.php?sender_id=<?= $user_id ?>&&asset_id=<?= $chat_asset_id ?>&&chat_id=<?= @$_GET['chat_id'] ?>&&message=" + message, true);
+                        //                 xhttp.send();
+                        //                 editor.resetContent();
+                        //             },
+                        //         });
+                        //     },
+                        // });
+                    </script>
                 </div>
-                <button class="form-control col-2 col-md-1 srt mt-1" id="buttonprop" onclick="upload()">Send</button=>
-                    <style>
-                        .image-upload>input {
-                            display: none;
-                        }
-                    </style>
             </div>
-        <?php } ?>
-        <script>
-            // Get the input field
-            var input = document.getElementById("chat-");
-
-            // Execute a function when the user presses a key on the keyboard
-            input.addEventListener("keypress", function(event) {
-                // If the user presses the "Enter" key on the keyboard
-                if (event.key === "Enter") {
-                    // Cancel the default action, if needed
-                    event.preventDefault();
-                    // Trigger the button element with a click
-                    upload();
-                }
-            });
-
-
-
-            function upload() {
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("test").innerHTML = this.responseText;
-                    }
-                };
-                var message = input.value;
-                xhttp.open("GET", "./helpers/message.php?sender_id=<?= $user_id ?>&&asset_id=<?= $chat_asset_id ?>&&chat_id=<?= @$_GET['chat_id'] ?>&&message=" + message, true);
-                xhttp.send();
-                input.value = "";
-
-            }
-
-
-
-
-
-            // tinymce.init({
-            //     selector: "#chat-emoj",
-            //     menubar: false,
-            //     toolbar_location: "bottom",
-            //     plugins: "autoresize link lists emoticons",
-            //     autoresize_bottom_margin: 0,
-            //     skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : 'oxide'),
-            //     content_css: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'),
-            //     max_height: 1080,
-            //     placeholder: "Enter message . . .",
-            //     toolbar: "bold italic strikethrough forecolor backcolor formatpainter | numlist bullist outdent indent | link | code | addcomment | checklist | casechange | mySendButton",
-            //     setup: function(editor) {
-            //         editor.ui.registry.addButton("mySendButton", {
-            //             tooltip: "Send Message",
-            //             text: "Send Message",
-            //             onAction: function() {
-            //                 var xhttp = new XMLHttpRequest();
-            //                 xhttp.onreadystatechange = function() {
-            //                     if (this.readyState == 4 && this.status == 200) {
-            //                         document.getElementById("test").innerHTML = this.responseText;
-            //                     }
-            //                 };
-            //                 var message = editor.getContent();
-            //                 xhttp.open("GET", "./helpers/message.php?sender_id=<?= $user_id ?>&&asset_id=<?= $chat_asset_id ?>&&chat_id=<?= @$_GET['chat_id'] ?>&&message=" + message, true);
-            //                 xhttp.send();
-            //                 editor.resetContent();
-            //             },
-            //         });
-            //     },
-            // });
-        </script>
-        </div>
-        </div>
     </section>
     <style>
         #messages-main {
             position: relative;
             margin: 0 auto;
-            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
         }
 
         #messages-main:after,
@@ -662,7 +628,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
             position: absolute;
             left: 0;
             top: 0;
-            border-right: 2px solid #eee;
+            border-right: 1px solid #919191;
             padding-bottom: 50px;
             height: 100%;
             width: 240px;
@@ -767,7 +733,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
 
         .mf-content {
             padding: 12px 17px 13px;
-            border-radius: 2px;
+            border-radius: 0px;
             display: inline-block;
             max-width: 80%
         }

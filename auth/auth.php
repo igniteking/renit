@@ -153,15 +153,7 @@
                                 <small class="form-alert">Password must be 6 characters</small>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="signin-check">
-                                    <label class="custom-control-label" for="signin-check">Remember me</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
+                        <div class="col-12">
                             <div class="form-group text-right">
                                 <a href="./forget_password.php" class="form-forgot">Forgot password?</a>
                             </div>

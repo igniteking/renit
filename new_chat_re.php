@@ -91,27 +91,26 @@ if (isset($_POST['submite'])) {
     <section class="">
         <div class="">
             <div class="tile tile-alt" id="messages-main" style=" width: 100%;">
-                <div class="ms-menu" style="height: 100vh; overflow-y: none; background-color: #e5e5e5;">
-                    <div style="background-color: black; color: white; height: 69px;">
+                <div class="ms-menu" style="height: 100%; overflow-y: none; background-color: #e5e5e5;">
+                    <div style="background-color: black; color: white; height: 68px;">
                         <div class="card-body row justify-content-between align-items-between">
                             <div class="col-10">
                                 <center>
 
-                                    <h5 class="text-white" style="line-height: 32px; padding:2px; margin-left:-64px;">Your Chats</h5>
+                                    <h4 class="text-white">Your Chats</h4>
                                 </center>
                             </div>
-                            <button class="col-2 d-block d-md-none text-white" id="ms-menu-cross" style="border-radius: 100px; padding: 5px; bottom:1px;"><b>X</b></button>
+                            <button class="col-2 d-block d-md-none text-white" id="ms-menu-cross" style="border-radius: 100px; border: 1px solid white; padding: 5px"><b>X</b></button>
                         </div>
                     </div>
                     <style>
                         body {
-                            background-color: #e5e5e5;
                             overflow-x: hidden;
                             overflow-y: hidden;
                         }
                     </style>
                     <div class="card" style="background-color: #e5e5e5;">
-                        <input type="text" hx-get="./helpers/search_chat_user.php" hx-trigger="change" hx-target="#result_search" name="chat_name_search" style="border: 0px solid #e5e5e5; outline:none; background-color: #e5e5e5;" placeholder=" Search name here..." class="form-control">
+                        <input type="text" hx-get="./helpers/search_chat_user.php" hx-trigger="change" hx-target="#result_search" name="chat_name_search" style="border: 0px solid #e5e5e5; outline:none; background-color: #e5e5e5;" placeholder=" Search name here ..." class="form-control">
                     </div>
                     <div class="card"></div>
                     <div class="list-group lg-alt" style="background-color: #e5e5e5;" id="result_search">
@@ -220,7 +219,7 @@ if (isset($_POST['submite'])) {
                                 $get_user_picture = $rows['profile_picture'];
                             }
                         } ?>
-                        <div class="action-header clearfix" style="background-color: black; color: white; height: 70px;">
+                        <div class="action-header clearfix" style="background-color: black; color: white; height: 68px;">
                             <style>
                                 * {
                                     padding: 0;
@@ -251,32 +250,87 @@ if (isset($_POST['submite'])) {
                                     margin-left: -12px;
                                     margin-top: 15px;
                                     width: 350px;
-
                                 }
 
 
-
-                                @supports (-webkit-touch-callout: none) {
-
-                                    /* CSS specific to iOS devices */
+                                @media only screen and (min-height: 660px) and (max-height: 670px),
+                                (min-width: 370px) and (max-width: 375px) {
                                     #test {
-                                        height: calc(100vh - 31vh);
-                                        background-color: #2196f3;
-                                    }
-                                }
-
-                                @supports not (-webkit-touch-callout: none) {
-
-                                    /* CSS for other than iOS devices */
-                                    #test {
+                                        overflow-y: hidden;
                                         height: 75vh;
                                         background-color: #2196f3;
                                     }
                                 }
 
+                                @media only screen and (min-height: 890px) and (max-height: 900px),
+                                (min-width: 440px) and (max-width: 450px) {
+                                    #test {
+                                        overflow-y: hidden;
+                                        height: 55vh;
+                                        background-color: #2196f3;
+                                    }
+                                }
 
+                                @media only screen and (min-height: 840px) and (max-height: 850px),
+                                (min-width: 390px) and (max-width: 395px) {
+                                    #test {
+                                        overflow-y: hidden;
+                                        height: 70vh;
+                                        background-color: #2196f3;
+                                    }
+                                }
 
-                                
+                                @media only screen and (min-height: 740px) and (max-height: 750px),
+                                (min-width: 360px) and (max-width: 365px) {
+                                    #test {
+                                        overflow-y: hidden;
+                                        height: 67vh;
+                                        background-color: #2196f3;
+                                    }
+                                }
+
+                                @media only screen and (min-height: 915px) and (max-height: 920px),
+                                (min-width: 400px) and (max-width: 415px) {
+                                    #test {
+                                        overflow-y: hidden;
+                                        height: 55vh;
+                                        background-color: #2196f3;
+                                    }
+                                }
+
+                                @media only screen and (min-height: 720px) and (max-height: 725px),
+                                (min-width: 540px) and (max-width: 545px) {
+                                    #test {
+                                        overflow-y: hidden;
+                                        height: 70vh;
+                                        background-color: #2196f3;
+                                    }
+                                }
+
+                                @media only screen and (min-height: 600px) and (max-height: 610px),
+                                (min-width: 1275px) and (max-width: 1085px) {
+                                    #test {
+                                        overflow-y: hidden;
+                                        height: 77vh;
+                                        background-color: #2196f3;
+                                    }
+                                }
+
+                                @media only screen and (min-width: 1900px) and (max-width: 1930px) {
+                                    #test {
+                                        overflow-y: hidden;
+                                        height: 52vh;
+                                        background-color: #2196f3;
+                                    }
+                                }
+
+                                @media only screen and (min-width: 1200px) and (max-width: 2000px) {
+                                    #test {
+                                        overflow-y: hidden;
+                                        height: 80vh;
+                                        background-color: #2196f3;
+                                    }
+                                }
 
 
                                 @media only screen and (max-width: 600px) {
@@ -331,12 +385,12 @@ if (isset($_POST['submite'])) {
                                 }
                             </style>
                             <div class="row">
-                                <div class="col-2" id="hideonmobile" style="margin-top: -9px; margin-left: -5px; ">
+                                <div class="col-2" id="hideonmobile" style="margin-top: -12px; margin-left: -5px;">
                                     <div class="visible-xs" id="ms-menu-trigger">
                                         <i class="fa fa-bars"></i>
                                     </div>
                                 </div>
-                                <div class="col-5 profile_name">
+                                <div class="col-5" style="margin-left: -15px;">
                                     <div class="pull-left hidden-xs">
                                         <a href="./profile_view.php?user_id=<?= $get_user_name_id ?>"><img src="<?= $get_user_picture != '' ? $get_user_picture : './assets/images/user.png'  ?>" alt="" class="img-avatar rounded-circle avatar ml-1">
                                             <span class="text-white" id="amsndbams"><b><?= $get_user_name ?></b></span>
@@ -344,10 +398,6 @@ if (isset($_POST['submite'])) {
                                     </div>
                                 </div>
                                 <style>
-                                    .profile_name{
-                                        margin-left: 23px;
-                                        margin-top: 3px;
-                                    }
                                     @media only screen and (min-width: 1000px) {
                                         #amsndbams {
                                             margin-left: 12px
@@ -357,33 +407,27 @@ if (isset($_POST['submite'])) {
                                     @media only screen and (max-width: 350px) {
                                         #amsndbams {
                                             white-space: nowrap;
-                                            width: 75px;
+                                            width: 50px;
                                             overflow: hidden;
                                             text-overflow: ellipsis;
                                             float: right;
                                             margin-top: 5px;
                                         }
-                                       
                                     }
 
                                     @media only screen and (max-width: 800px) {
                                         #amsndbams {
                                             white-space: nowrap;
-                                            width: 75px;
+                                            width: 50px;
                                             overflow: hidden;
                                             text-overflow: ellipsis;
                                             float: right;
                                             margin-top: 7px;
-                                            margin-left: 10px
-                                        }
-
-                                        .profile_name{
-                                            margin-left: -28px;
+                                            margin-left: 12px
                                         }
                                     }
-                                   
                                 </style>
-                                <div class="col-5 row" style="margin-top: 10px; margin-left: 36px" id="newtest">
+                                <div class="col-5 row" style="margin-top: 10px; margin-left: 10px" id="newtest">
                                     <div class="col-4">
                                         <button onclick="showDialog()" class="text-white hidenstuff">
                                             <i class="fas fa-trash"></i>
@@ -456,7 +500,7 @@ if (isset($_POST['submite'])) {
                                     </dialog>
                                 </center>
                                 <center>
-                                    <dialog id="myDialog2" style="position: absolute; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);  border: none; width: 450px; z-index:50000;">
+                                    <dialog id="myDialog2" style="position: absolute; top: 500%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%);  border: none; width: 450px; z-index:50000;">
                                         <div class="card m-2">
                                             <div class="card-body">
                                                 <p class="px-5">
@@ -494,12 +538,11 @@ if (isset($_POST['submite'])) {
                 </div>
             </div>
         <?php } ?>
-        <div id="test" style="overflow-x: hidden; display: flex; flex-direction: column-reverse; background-color: #e5e5e5; position:static;" hx-trigger="load, every 2s" hx-get="./helpers/get_messages.php?chat_id=<?= @$_GET['chat_id'] ?>"></div>
+        <div id="test" style="overflow-y: auto; display: flex; flex-direction: column-reverse; background-color: #e5e5e5;" hx-trigger="load, every 2s" hx-get="./helpers/get_messages.php?chat_id=<?= @$_GET['chat_id'] ?>"></div>
         <?php
         if (@$_GET['chat_id']) { ?>
-            <div class="row navbar navbar-default" style="width: -webkit-fill-available; margin-left: 0px; background-color: #e5e5e5; border: 2px solid white; border-left: none; position:fixed; bottom:0; height:70px;">
-                <input type="text" id="chat-" name="message" autocomplete="off" class="form-control col-md-10 col-8 mr-md-5 message" placeholder="Type a message..." style="background-color: #e5e5e5; top
-                :1px;">
+            <div class="row navbar navbar-default navbar-fixed-bottom" style="width: 100%; margin-left: 0px; background-color: #e5e5e5; border: 2px solid white; border-left: none;">
+                <input type="text" id="chat-" name="message" autocomplete="off" class="form-control col-md-10 col-8 mr-md-5 message" placeholder="Type a message ..." style="background-color: #e5e5e5;">
                 <div class="col-md-1 col-3 form-control" style="margin-right: -50px; background-color: #e5e5e5;">
                     <?php
                     $uploadpic = @$_POST['uploadpic'];
@@ -525,7 +568,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
                         <i class="fas fa-paperclip random"></i>
                     </label>
                 </div>
-                <button class="form-control col-2 col-md-1 srt mt-1" id="buttonprop" onclick="upload()" style="margin-right: 10px; bottom:3px; border-radius:5px;">Send</button=>
+                <button class="form-control col-2 col-md-1 srt mt-1" id="buttonprop" onclick="upload()">Send</button=>
                     <style>
                         .image-upload>input {
                             display: none;
@@ -606,6 +649,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
         #messages-main {
             position: relative;
             margin: 0 auto;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
         }
 
         #messages-main:after,
@@ -618,7 +662,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
             position: absolute;
             left: 0;
             top: 0;
-            border-right: 1px solid     #919191;
+            border-right: 2px solid #eee;
             padding-bottom: 50px;
             height: 100%;
             width: 240px;
@@ -723,7 +767,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
 
         .mf-content {
             padding: 12px 17px 13px;
-            border-radius: 0px;
+            border-radius: 2px;
             display: inline-block;
             max-width: 80%
         }

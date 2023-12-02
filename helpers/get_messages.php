@@ -322,7 +322,7 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
                             <div class="mf-content" style="background-color: #2d2c31; border: 1px solid white; color: white; padding: 7px; border-radius: 10px; white-space: initial; word-wrap: break-word;  text-align: left;">
                             ' . $message . '
                             </div>
-                            <small class="mf-date" style="margin-top: -2px;"><i class="fa fa-clock-o"></i> ' . $message_date . '</small>
+                            <small class="mf-date" style="margin-top: -2px;"><i class="fa fa-check"></i> ' . $message_date . '</small>
                         </div>
                     </div>
                                     ';
