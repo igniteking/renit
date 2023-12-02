@@ -433,7 +433,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                         </li>
                         <li>
                             <h6>category:</h6>
-                            <p><?= $asset_category_name ?> / <?= $asset_sub_category_name ?></p>
+                            <p style="margin-left: 36px;"><?= $asset_category_name ?> / <?= $asset_sub_category_name ?></p>
                         </li>
                         <li>
                             <h6>asset model:</h6>
