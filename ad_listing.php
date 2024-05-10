@@ -52,22 +52,17 @@ if (@$_GET['status'] == 1) {
                                 while ($rows = mysqli_fetch_assoc($get_assets)) {
                                     @$asset_id = $rows["id"];
                                     @$asset_name = $rows["asset_name"];
-                                    @$asset_thumbnail = $rows["asset_thumbnail"];
+                                    @$asset_thumbnail = $rows["cropped_image_data"];
                                     @$asset_price = $rows["asset_price"];
                                     @$asset_location = $rows["asset_location"];
+                                    @$asset_condition = $rows["asset_condition"];
                                     $new_symbol = $rows['symbol'];
                                     @$asset_category = intval($rows["asset_category"]);
                                     @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                     @$asset_sub_category = intval($rows["asset_sub_category"]);
                                     @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                    (getimagesize('./' . $asset_thumbnail)[1]);
-                                    if (getimagesize('./' . $asset_thumbnail)[1] > 500) {
-                                        $width = "260";
-                                        $height = "200";
-                                        $margin = "0px";
-                                    } else {
-                                        $margin = "0px";
-                                    }
+                                    $width = "263px";
+                                    $height = "268px";
 
                                     if (@$_SESSION['user_email']) {
 
@@ -101,43 +96,7 @@ if (@$_GET['status'] == 1) {
                                         $ranasdklamsd = 0;
                                     }
                                     if ($ranasdklamsd  == $get_npo_stars) {
-                                        echo '
-                
-            <div class="col-md-4">
-                        <div class="product-card">
-                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
-                                <div class="product-media">
-                                    <div class="side_margin_for_card">
-                                    <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
-                                    </div>
-                                </div>
-                            </a>
-                        <div class="product-content">
-                            <ol class="breadcrumb product-category">
-                                <li><i class="fas fa-tags"></i></li>
-                                <li class="breadcrumb-item"><a href="#">' . $asset_category_name . '</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
-                            </ol>
-                            <h5 class="product-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
-                            </h5>
-                            <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-price">' . $new_symbol . $asset_price . '<span>/Per Day</span></h5>
-                                ';
-                                        if (@$_SESSION['user_email']) {
-                                            echo '<div id="notify' . $asset_id . '">
-                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
-                                </div>';
-                                        }
-                                        echo '
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                                ';
+                                        cardWidgetListing($asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon);
                                     }
                                 }
                             } else if (empty($asset_search_name)) {
@@ -150,24 +109,17 @@ if (@$_GET['status'] == 1) {
                                     while ($rows = mysqli_fetch_assoc($get_assets)) {
                                         @$asset_id = $rows["id"];
                                         @$asset_name = $rows["asset_name"];
-                                        @$asset_thumbnail = $rows["asset_thumbnail"];
+                                        @$asset_thumbnail = $rows["cropped_image_data"];
                                         @$asset_price = $rows["asset_price"];
                                         @$asset_location = $rows["asset_location"];
+                                        @$asset_condition = $rows["asset_condition"];
                                         $new_symbol = $rows['symbol'];
                                         @$asset_category = intval($rows["asset_category"]);
                                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                        (getimagesize($asset_thumbnail)[1]);
-                                        if (getimagesize($asset_thumbnail)[1] > 500) {
-                                            $width = "260";
-                                            $height = "200";
-                                            $margin = "0px";
-                                        } else {
-                                            $margin = "0px";
-                                            $height = "200";
-                                            $width = "";
-                                        }
+                                        $width = "263px";
+                                        $height = "268px";
                                         $get_bookmark = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `bookmark` WHERE user_id = '$user_id' AND asset_id = '$asset_id'"));
                                         if ($get_bookmark > 0) {
                                             $type = 'remove';
@@ -191,43 +143,7 @@ if (@$_GET['status'] == 1) {
                                             $ranasdklamsd = 0;
                                         }
                                         if ($ranasdklamsd  == $get_npo_stars) {
-                                            echo '
-                
-            <div class="col-md-4">
-                        <div class="product-card">
-                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
-                                <div class="product-media">
-                                    <div class="side_margin_for_card">
-                                    <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
-                                    </div>
-                                </div>
-                            </a>
-                        <div class="product-content">
-                            <ol class="breadcrumb product-category">
-                                <li><i class="fas fa-tags"></i></li>
-                                <li class="breadcrumb-item"><a href="#">' . $asset_category_name . '</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
-                            </ol>
-                            <h5 class="product-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
-                            </h5>
-                            <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-price">' . $new_symbol . $asset_price . '<span>/Per Day</span></h5>
-                                ';
-                                            if (@$_SESSION['user_email']) {
-                                                echo '<div id="notify' . $asset_id . '">
-                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
-                                </div>';
-                                            }
-                                            echo '
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                                ';
+                                            cardWidgetListing($asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon);
                                         }
                                     }
                                 } else {
@@ -247,22 +163,17 @@ if (@$_GET['status'] == 1) {
                                     while ($rows = mysqli_fetch_assoc($get_assets)) {
                                         @$asset_id = $rows["id"];
                                         @$asset_name = $rows["asset_name"];
-                                        @$asset_thumbnail = $rows["asset_thumbnail"];
+                                        @$asset_thumbnail = $rows["cropped_image_data"];
                                         @$asset_price = $rows["asset_price"];
                                         @$asset_location = $rows["asset_location"];
+                                        @$asset_condition = $rows["asset_condition"];
                                         $new_symbol = $rows['symbol'];
                                         @$asset_category = intval($rows["asset_category"]);
                                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                        (getimagesize('./' . $asset_thumbnail)[1]);
-                                        if (getimagesize('./' . $asset_thumbnail)[1] > 500) {
-                                            $width = "260";
-                                            $height = "200";
-                                            $margin = "0px";
-                                        } else {
-                                            $margin = "0px";
-                                        }
+                                        $width = "263px";
+                                        $height = "268px";
 
                                         if (@$_SESSION['user_email']) {
 
@@ -295,43 +206,7 @@ if (@$_GET['status'] == 1) {
                                             $ranasdklamsd = 0;
                                         }
                                         if ($ranasdklamsd  == $get_npo_stars) {
-                                            echo '
-                
-                                            <div class="col-md-4">
-                                                        <div class="product-card">
-                                                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
-                                                                <div class="product-media">
-                                                                    <div class="side_margin_for_card">
-                                                                    <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
-                                                                    </div>
-                                                                </div>
-                                                            </a>
-                                                        <div class="product-content">
-                                                            <ol class="breadcrumb product-category">
-                                                                <li><i class="fas fa-tags"></i></li>
-                                                                <li class="breadcrumb-item"><a href="#">' . $asset_category_name . '</a></li>
-                                                                <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
-                                                            </ol>
-                                                            <h5 class="product-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
-                                                            </h5>
-                                                            <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                                                <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
-                                                            </div>
-                                                            <div class="product-info">
-                                                                <h5 class="product-price">' . $new_symbol . $asset_price . '<span>/Per Day</span></h5>
-                                                                ';
-                                            if (@$_SESSION['user_email']) {
-                                                echo '<div id="notify' . $asset_id . '">
-                                                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
-                                                                </div>';
-                                            }
-                                            echo '
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                                ';
+                                            cardWidgetListing($asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon);
                                         }
                                     }
                                 } else {
@@ -347,24 +222,18 @@ if (@$_GET['status'] == 1) {
                                     while ($rows = mysqli_fetch_assoc($get_assets)) {
                                         @$asset_id = $rows["id"];
                                         @$asset_name = $rows["asset_name"];
-                                        @$asset_thumbnail = $rows["asset_thumbnail"];
+                                        @$asset_thumbnail = $rows["cropped_image_data"];
                                         @$asset_price = $rows["asset_price"];
                                         @$asset_location = $rows["asset_location"];
+                                        @$asset_condition = $rows["asset_condition"];
                                         $new_symbol = $rows['symbol'];
                                         @$asset_category = intval($rows["asset_category"]);
                                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                        (getimagesize($asset_thumbnail)[1]);
-                                        if (getimagesize($asset_thumbnail)[1] > 500) {
-                                            $width = "260";
-                                            $height = "200";
-                                            $margin = "0px";
-                                        } else {
-                                            $margin = "0px";
-                                            $height = "200";
-                                            $width = "";
-                                        }
+                                        $width = "263px";
+                                        $height = "268px";
+
                                         $get_bookmark = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `bookmark` WHERE user_id = '$user_id' AND asset_id = '$asset_id'"));
                                         if ($get_bookmark > 0) {
                                             $type = 'remove';
@@ -388,43 +257,7 @@ if (@$_GET['status'] == 1) {
                                             $ranasdklamsd = 0;
                                         }
                                         if ($ranasdklamsd  == $get_npo_stars) {
-                                            echo '
-                
-            <div class="col-md-4">
-                        <div class="product-card">
-                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
-                                <div class="product-media">
-                                    <div class="side_margin_for_card">
-                                    <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
-                                    </div>
-                                </div>
-                            </a>
-                        <div class="product-content">
-                            <ol class="breadcrumb product-category">
-                                <li><i class="fas fa-tags"></i></li>
-                                <li class="breadcrumb-item"><a href="#">' . $asset_category_name . '</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
-                            </ol>
-                            <h5 class="product-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
-                            </h5>
-                            <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-price">' . $new_symbol . $asset_price . '<span>/Per Day</span></h5>
-                                ';
-                                            if (@$_SESSION['user_email']) {
-                                                echo '<div id="notify' . $asset_id . '">
-                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
-                                </div>';
-                                            }
-                                            echo '
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                                ';
+                                            cardWidgetListing($asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon);
                                         }
                                     }
                                 } else {
@@ -447,22 +280,17 @@ if (@$_GET['status'] == 1) {
                                     while ($rows = mysqli_fetch_assoc($get_assets)) {
                                         @$asset_id = $rows["id"];
                                         @$asset_name = $rows["asset_name"];
-                                        @$asset_thumbnail = $rows["asset_thumbnail"];
+                                        @$asset_thumbnail = $rows["cropped_image_data"];
                                         @$asset_price = $rows["asset_price"];
                                         @$asset_location = $rows["asset_location"];
+                                        @$asset_condition = $rows["asset_condition"];
                                         $new_symbol = $rows['symbol'];
                                         @$asset_category = intval($rows["asset_category"]);
                                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                        (getimagesize('./' . $asset_thumbnail)[1]);
-                                        if (getimagesize('./' . $asset_thumbnail)[1] > 500) {
-                                            $width = "260";
-                                            $height = "200";
-                                            $margin = "0px";
-                                        } else {
-                                            $margin = "0px";
-                                        }
+                                        $width = "263px";
+                                        $height = "268px";
 
                                         if (@$_SESSION['user_email']) {
 
@@ -481,43 +309,7 @@ if (@$_GET['status'] == 1) {
                                             $user_id = "";
                                         }
 
-                                        echo '
-                
-            <div class="col-md-4">
-                        <div class="product-card">
-                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
-                                <div class="product-media">
-                                    <div class="side_margin_for_card">
-                                    <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
-                                    </div>
-                                </div>
-                            </a>
-                        <div class="product-content">
-                            <ol class="breadcrumb product-category">
-                                <li><i class="fas fa-tags"></i></li>
-                                <li class="breadcrumb-item"><a href="#">' . $asset_category_name . '</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
-                            </ol>
-                            <h5 class="product-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
-                            </h5>
-                            <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-price">' . $new_symbol . $asset_price . '<span>/Per Day</span></h5>
-                                ';
-                                        if (@$_SESSION['user_email']) {
-                                            echo '<div id="notify' . $asset_id . '">
-                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
-                                </div>';
-                                        }
-                                        echo '
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                                ';
+                                        cardWidgetListing($asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon);
                                     }
                                 } else {
                                     echo '<div class="row"><div class="card col-md-12"><div class="card-body"><h5>No Products Found!</h5></div></div></div>';
@@ -532,24 +324,18 @@ if (@$_GET['status'] == 1) {
                                     while ($rows = mysqli_fetch_assoc($get_assets)) {
                                         @$asset_id = $rows["id"];
                                         @$asset_name = $rows["asset_name"];
-                                        @$asset_thumbnail = $rows["asset_thumbnail"];
+                                        @$asset_thumbnail = $rows["cropped_image_data"];
                                         @$asset_price = $rows["asset_price"];
                                         @$asset_location = $rows["asset_location"];
+                                        @$asset_condition = $rows["asset_condition"];
                                         $new_symbol = $rows['symbol'];
                                         @$asset_category = intval($rows["asset_category"]);
                                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                        (getimagesize($asset_thumbnail)[1]);
-                                        if (getimagesize($asset_thumbnail)[1] > 500) {
-                                            $width = "260";
-                                            $height = "200";
-                                            $margin = "0px";
-                                        } else {
-                                            $margin = "0px";
-                                            $height = "200";
-                                            $width = "";
-                                        }
+                                        $width = "263px";
+                                        $height = "268px";
+
                                         $get_bookmark = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `bookmark` WHERE user_id = '$user_id' AND asset_id = '$asset_id'"));
                                         if ($get_bookmark > 0) {
                                             $type = 'remove';
@@ -559,43 +345,7 @@ if (@$_GET['status'] == 1) {
                                             $type = 'add';
                                         }
 
-                                        echo '
-                
-            <div class="col-md-4">
-                        <div class="product-card">
-                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
-                                <div class="product-media">
-                                    <div class="side_margin_for_card">
-                                    <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
-                                    </div>
-                                </div>
-                            </a>
-                        <div class="product-content">
-                            <ol class="breadcrumb product-category">
-                                <li><i class="fas fa-tags"></i></li>
-                                <li class="breadcrumb-item"><a href="#">' . $asset_category_name . '</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
-                            </ol>
-                            <h5 class="product-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
-                            </h5>
-                            <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-price">' . $new_symbol . $asset_price . '<span>/Per Day</span></h5>
-                                ';
-                                        if (@$_SESSION['user_email']) {
-                                            echo '<div id="notify' . $asset_id . '">
-                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
-                                </div>';
-                                        }
-                                        echo '
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                                ';
+                                        cardWidgetListing($asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon);
                                     }
                                 } else {
                                     echo '<div class="row"><div class="card col-md-12"><div class="card-body"><h5>No Products Found!</h5></div></div></div>';
@@ -614,22 +364,17 @@ if (@$_GET['status'] == 1) {
                                     while ($rows = mysqli_fetch_assoc($get_assets)) {
                                         @$asset_id = $rows["id"];
                                         @$asset_name = $rows["asset_name"];
-                                        @$asset_thumbnail = $rows["asset_thumbnail"];
+                                        @$asset_thumbnail = $rows["cropped_image_data"];
                                         @$asset_price = $rows["asset_price"];
                                         @$asset_location = $rows["asset_location"];
+                                        @$asset_condition = $rows["asset_condition"];
                                         $new_symbol = $rows['symbol'];
                                         @$asset_category = intval($rows["asset_category"]);
                                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                        (getimagesize('./' . $asset_thumbnail)[1]);
-                                        if (getimagesize('./' . $asset_thumbnail)[1] > 500) {
-                                            $width = "260";
-                                            $height = "200";
-                                            $margin = "0px";
-                                        } else {
-                                            $margin = "0px";
-                                        }
+                                        $width = "263px";
+                                        $height = "268px";
 
                                         if (@$_SESSION['user_email']) {
 
@@ -648,43 +393,7 @@ if (@$_GET['status'] == 1) {
                                             $user_id = "";
                                         }
 
-                                        echo '
-                
-                                        <div class="col-md-4">
-                                                    <div class="product-card">
-                                                        <a href="./ad_page.php?asset_id=' . $asset_id . '">
-                                                            <div class="product-media">
-                                                                <div class="side_margin_for_card">
-                                                                <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    <div class="product-content">
-                                                        <ol class="breadcrumb product-category">
-                                                            <li><i class="fas fa-tags"></i></li>
-                                                            <li class="breadcrumb-item"><a href="#">' . $asset_category_name . '</a></li>
-                                                            <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
-                                                        </ol>
-                                                        <h5 class="product-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                                            <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
-                                                        </h5>
-                                                        <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                                            <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <h5 class="product-price">' . $new_symbol . $asset_price . '<span>/Per Day</span></h5>
-                                                            ';
-                                        if (@$_SESSION['user_email']) {
-                                            echo '<div id="notify' . $asset_id . '">
-                                                                <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
-                                                            </div>';
-                                        }
-                                        echo '
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                            ';
+                                        cardWidgetListing($asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon);
                                     }
                                 } else {
                                     echo '<div class="row"><div class="card col-md-12"><div class="card-body"><h5>No Products Found!</h5></div></div></div>';
@@ -699,24 +408,18 @@ if (@$_GET['status'] == 1) {
                                     while ($rows = mysqli_fetch_assoc($get_assets)) {
                                         @$asset_id = $rows["id"];
                                         @$asset_name = $rows["asset_name"];
-                                        @$asset_thumbnail = $rows["asset_thumbnail"];
+                                        @$asset_thumbnail = $rows["cropped_image_data"];
                                         @$asset_price = $rows["asset_price"];
                                         @$asset_location = $rows["asset_location"];
+                                        @$asset_condition = $rows["asset_condition"];
                                         $new_symbol = $rows['symbol'];
                                         @$asset_category = intval($rows["asset_category"]);
                                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                        (getimagesize($asset_thumbnail)[1]);
-                                        if (getimagesize($asset_thumbnail)[1] > 500) {
-                                            $width = "260";
-                                            $height = "200";
-                                            $margin = "0px";
-                                        } else {
-                                            $margin = "0px";
-                                            $height = "200";
-                                            $width = "";
-                                        }
+                                        $width = "263px";
+                                        $height = "268px";
+
                                         if (@$_SESSION['user_email']) {
                                             $get_bookmark = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `bookmark` WHERE user_id = '$user_id' AND asset_id = '$asset_id'"));
                                             if ($get_bookmark > 0) {
@@ -733,43 +436,7 @@ if (@$_GET['status'] == 1) {
                                             $user_id = "";
                                         }
 
-                                        echo '
-                
-            <div class="col-md-4">
-                        <div class="product-card">
-                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
-                                <div class="product-media">
-                                    <div class="side_margin_for_card">
-                                    <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
-                                    </div>
-                                </div>
-                            </a>
-                        <div class="product-content">
-                            <ol class="breadcrumb product-category">
-                                <li><i class="fas fa-tags"></i></li>
-                                <li class="breadcrumb-item"><a href="#">' . $asset_category_name . '</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
-                            </ol>
-                            <h5 class="product-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
-                            </h5>
-                            <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-price">' . $new_symbol . $asset_price . '<span>/Per Day</span></h5>
-                                ';
-                                        if (@$_SESSION['user_email']) {
-                                            echo '<div id="notify' . $asset_id . '">
-                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
-                                </div>';
-                                        }
-                                        echo '
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                                ';
+                                        cardWidgetListing($asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon);
                                     }
                                 } else {
                                     echo '<div class="row"><div class="card col-md-12"><div class="card-body"><h5>No Products Found!</h5></div></div></div>';

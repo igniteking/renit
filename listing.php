@@ -24,22 +24,17 @@ CONTACT PART START
                 while ($rows = mysqli_fetch_assoc($get_asset2)) {
                     @$asset_id = $rows["id"];
                     @$asset_name = $rows["asset_name"];
-                    @$asset_thumbnail = $rows["asset_thumbnail"];
+                    @$asset_thumbnail = $rows["cropped_image_data"];
                     @$asset_price = $rows["asset_price"];
                     @$asset_location = $rows["asset_location"];
+                    @$asset_condition = $rows["asset_condition"];
                     $new_symbol = $rows['symbol'];
                     @$asset_category = intval($rows["asset_category"]);
                     @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                     @$asset_sub_category = intval($rows["asset_sub_category"]);
                     @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                    (getimagesize($asset_thumbnail)[1]);
-                    if (getimagesize($asset_thumbnail)[1] > 500) {
-                        $width = "260";
-                        $height = "200";
-                        $margin = "0px";
-                    } else {
-                        $margin = "0px";
-                    }
+                    $width = "263px";
+                    $height = "268px";
                     if (@$_SESSION['user_email']) {
                         $get_bookmark = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `bookmark` WHERE user_id = '$user_id' AND asset_id = '$asset_id'"));
                         if ($get_bookmark > 0) {

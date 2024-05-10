@@ -389,4 +389,45 @@
                     </div>
                                 ';
     }
+
+    function cardWidgetListing($asset_id, $width, $height, $asset_thumbnail, $asset_category_name, $asset_sub_category_name, $asset_name, $asset_location, $new_symbol, $asset_price, $type, $user_id, $icon)
+    {
+        echo '
+                
+            <div class="col-md-4">
+                        <div class="product-card">
+                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
+                                <div class="product-media">
+                                    <div class="side_margin_for_card">
+                                    <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="product-content">
+                            <ol class="breadcrumb product-category">
+                                <li><i class="fas fa-tags"></i></li>
+                                <li class="breadcrumb-item"><a href="#">' . $asset_category_name . '</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
+                            </ol>
+                            <h5 class="product-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
+                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
+                            </h5>
+                            <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
+                                <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-price">' . $new_symbol . $asset_price . '<span>/Per Day</span></h5>
+                                ';
+        if (@$_SESSION['user_email']) {
+            echo '<div id="notify' . $asset_id . '">
+                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
+                                </div>';
+        }
+        echo '
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                                ';
+    }
     ?>

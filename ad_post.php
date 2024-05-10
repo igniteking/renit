@@ -33,6 +33,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
         =======================================-->
 <?php include('./components/dash_comp.php'); ?>
 
+
 <!--=====================================
                     ADPOST PART START
         =======================================-->
@@ -497,7 +498,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
 </section>
 <!--=====================================
                     ADPOST PART END
-        =======================================-->
+=======================================-->
 <script>
     // vars
     let result = document.querySelector('.result'),
