@@ -61,7 +61,7 @@ if (@$_GET['status'] == 1) {
                                     @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                     @$asset_sub_category = intval($rows["asset_sub_category"]);
                                     @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                    $width = "263px";
+                                    $width = "268px";
                                     $height = "268px";
 
                                     if (@$_SESSION['user_email']) {
@@ -118,7 +118,7 @@ if (@$_GET['status'] == 1) {
                                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                        $width = "263px";
+                                        $width = "268px";
                                         $height = "268px";
                                         $get_bookmark = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `bookmark` WHERE user_id = '$user_id' AND asset_id = '$asset_id'"));
                                         if ($get_bookmark > 0) {
@@ -172,7 +172,7 @@ if (@$_GET['status'] == 1) {
                                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                        $width = "263px";
+                                        $width = "268px";
                                         $height = "268px";
 
                                         if (@$_SESSION['user_email']) {
@@ -231,7 +231,7 @@ if (@$_GET['status'] == 1) {
                                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                        $width = "263px";
+                                        $width = "268px";
                                         $height = "268px";
 
                                         $get_bookmark = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `bookmark` WHERE user_id = '$user_id' AND asset_id = '$asset_id'"));
@@ -289,7 +289,7 @@ if (@$_GET['status'] == 1) {
                                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                        $width = "263px";
+                                        $width = "268px";
                                         $height = "268px";
 
                                         if (@$_SESSION['user_email']) {
@@ -333,7 +333,7 @@ if (@$_GET['status'] == 1) {
                                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                        $width = "263px";
+                                        $width = "268px";
                                         $height = "268px";
 
                                         $get_bookmark = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `bookmark` WHERE user_id = '$user_id' AND asset_id = '$asset_id'"));
@@ -373,7 +373,7 @@ if (@$_GET['status'] == 1) {
                                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                        $width = "263px";
+                                        $width = "268px";
                                         $height = "268px";
 
                                         if (@$_SESSION['user_email']) {
@@ -417,7 +417,7 @@ if (@$_GET['status'] == 1) {
                                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                                        $width = "263px";
+                                        $width = "268px";
                                         $height = "268px";
 
                                         if (@$_SESSION['user_email']) {

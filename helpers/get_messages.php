@@ -6,12 +6,12 @@ function cardWidget($asset_id, $width, $height, $asset_thumbnail, $asset_categor
 {
     echo '
                 
-            <div class="col-md-12 card-width">
+            <div class="col-md-12 card-width" id="cardWidget">
                         <div class="product-card">
                             <a href="./ad_page.php?asset_id=' . $asset_id . '">
                                 <div class="product-media">
                                     <div class="side_margin_for_card">
-                                    <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
+                                        <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
                                     </div>
                                 </div>
                             </a>
@@ -47,7 +47,7 @@ function cardWidgetRight($asset_id, $width, $height, $asset_thumbnail, $asset_ca
 {
     echo '
                 
-            <div class="col-md-12 card-width-right">
+            <div class="col-md-12 card-width-right" id="cardWidgetRight">
                         <div class="product-card">
                             <a href="./ad_page.php?asset_id=' . $asset_id . '">
                                 <div class="product-media">
@@ -89,7 +89,7 @@ function DetailedCardWidget($message, $asset_id, $width, $height, $asset_thumbna
     $array = unserialize($message);
     echo '
                 
-            <div class="col-12 card-width">
+            <div class="col-12 card-width" id="DetailedCardWidget">
                         <div class="product-card">
                             <a href="./ad_page.php?asset_id=' . $asset_id . '">
                                 <div class="product-media">
@@ -126,7 +126,7 @@ function DetailedCardWidgetRight($message, $asset_id, $width, $height, $asset_th
     $array = unserialize($message);
     echo '
                 
-            <div class="col-12 card-width-right">
+            <div class="col-12 card-width-right" id="DetailedCardWidgetRight">
                         <div class="product-card">
                             <a href="./ad_page.php?asset_id=' . $asset_id . '">
                                 <div class="product-media">
@@ -175,7 +175,7 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
     while ($rows = mysqli_fetch_assoc($get_card)) {
         $asset_id = $rows["id"];
         $asset_name = $rows["asset_name"];
-        $asset_thumbnail = $rows["asset_thumbnail"];
+        $asset_thumbnail = $rows["cropped_image_data"];
         $asset_price = $rows["asset_price"];
         $asset_location = $rows["asset_location"];
         $new_symbol = $rows['symbol'];
@@ -185,16 +185,8 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
         $asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
     }
     if ($message_type == 'simple') {
-        (getimagesize("../" . $asset_thumbnail)[1]);
-        if (getimagesize("../" . $asset_thumbnail)[1] > 500) {
-            $width = "260";
-            $height = "200";
-            $margin = "50px";
-        } else {
-            $width = "200px";
-            $height = "200px";
-            $margin = "0px";
-        }
+        $width = "268px";
+        $height = "268px";
         if (@$_SESSION['user_email']) {
             $get_bookmark = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `bookmark` WHERE user_id = '$user_id' AND asset_id = '$asset_id'"));
             if ($get_bookmark > 0) {
@@ -232,16 +224,8 @@ while ($rows = mysqli_fetch_assoc($get_chat_messages)) {
             ';
         }
     } else if ($message_type == 'detailed') {
-        (getimagesize("../" . $asset_thumbnail)[1]);
-        if (getimagesize("../" . $asset_thumbnail)[1] > 500) {
-            $width = "260";
-            $height = "200";
-            $margin = "50px";
-        } else {
-            $width = "200px";
-            $height = "200px";
-            $margin = "0px";
-        }
+        $width = "268px";
+        $height = "268px";
         if (@$_SESSION['user_email']) {
             $get_bookmark = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `bookmark` WHERE user_id = '$user_id' AND asset_id = '$asset_id'"));
             if ($get_bookmark > 0) {

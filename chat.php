@@ -404,11 +404,11 @@ if (isset($_POST['submite'])) {
                                         .form-control {
                                             margin-right: -18px;
                                         }
-                                       
+
                                     }
 
                                     @media only screen and (max-width: 768px) {
-                                        .form-control{
+                                        .form-control {
                                             margin-right: -22px;
                                         }
                                     }
@@ -524,20 +524,21 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
                                             margin-left: -67px !important;
                                         }
                                     }
-                                    @media (min-width: 1281px) {                                    
-                                           .form-control {
-                                            margin-left: -16px ;
+
+                                    @media (min-width: 1281px) {
+                                        .form-control {
+                                            margin-left: -16px;
 
                                         }
 
-                                        .clip{
+                                        .clip {
                                             margin-left: 40px;
                                         }
                                     }
 
-                                    @media only screen and (max-width: 768px){
-                                        .clip{
-                                            margin-left:20px;
+                                    @media only screen and (max-width: 768px) {
+                                        .clip {
+                                            margin-left: 20px;
                                         }
                                     }
                                 </style>

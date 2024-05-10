@@ -76,7 +76,7 @@ include('./components/sidebar.php');
                 @$asset_sub_category = intval($rows["asset_sub_category"]);
                 @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
 
-                $width = "263px";
+                $width = "268px";
                 $height = "268px";
                 if (@$_SESSION['user_email']) {
                     $get_bookmark = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `bookmark` WHERE user_id = '$user_id' AND asset_id = '$asset_id'"));
@@ -127,7 +127,7 @@ include('./components/sidebar.php');
                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category'");
-                        $width = "263px";
+                        $width = "268px";
                         $height = "268px";
                         $get_recently_viewd_asset = $rows['id'];
                         $get_assets = mysqli_query($conn, "SELECT * FROM recently_viewed WHERE user_id = '$user_id' AND asset_id = '$get_recently_viewd_asset' ORDER BY id DESC LIMIT 8");
@@ -151,7 +151,7 @@ include('./components/sidebar.php');
                 $asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                 $asset_sub_category = intval($rows["asset_sub_category"]);
                 $asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                $width = "263px";
+                $width = "268px";
                 $height = "268px";
                 if (@$_SESSION['user_email']) {
                     $get_bookmark = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `bookmark` WHERE user_id = '$user_id' AND asset_id = '$asset_id'"));
@@ -189,7 +189,7 @@ include('./components/sidebar.php');
                         @$asset_category_name = fetch_single_row($conn, "SELECT `category_name` FROM `categories` WHERE id = '$asset_category'");
                         @$asset_sub_category = intval($rows["asset_sub_category"]);
                         @$asset_sub_category_name = fetch_single_row($conn, "SELECT `sub_category_name` FROM `sub_categories` WHERE id = '$asset_sub_category';");
-                        $width = "263px";
+                        $width = "268px";
                         $height = "268px";
                         if (@$_SESSION['user_email']) {
                             $get_bookmark = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `bookmark` WHERE user_id = '$user_id' AND asset_id = '$asset_id'"));
