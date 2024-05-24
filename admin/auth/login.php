@@ -47,7 +47,7 @@
                     <h1 class="auth-title">Log in.</h1>
                     <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
 
-                    <form method="POST" action="./login.php">
+                    <form method="POST" action="./login">
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="email" name="email" class="form-control form-control-xl" placeholder="Email">
                             <div class="form-control-icon">
@@ -63,7 +63,7 @@
                         <input type="submit" name="login" value="Log in" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">
                     </form>
                     <div class="text-center mt-5 text-lg fs-4">
-                        <!-- <p class="text-gray-600">Don't have an account? <a href="./register.php" class="font-bold">Sign
+                        <!-- <p class="text-gray-600">Don't have an account? <a href="./register" class="font-bold">Sign
                                 up</a>.</p>
                         <p><a class="font-bold" href="auth-forgot-password.html">Forgot password?</a>.</p> -->
                     </div>

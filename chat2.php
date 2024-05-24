@@ -32,7 +32,7 @@ include('./components/sidebar.php');
                     </div>
                 </div>
                 <div class="card" style="background-color: #e5e5e5;">
-                    <input type="text" hx-get="./helpers/search_chat_user.php" hx-trigger="change" hx-target="#result_search" name="chat_name_search" style="border:none; background-color: #e5e5e5;" placeholder=" Search name here ..." class="form-control">
+                    <input type="text" hx-get="./helpers/search_chat_user" hx-trigger="change" hx-target="#result_search" name="chat_name_search" style="border:none; background-color: #e5e5e5;" placeholder=" Search name here ..." class="form-control">
                 </div>
                 <div class="card"></div>
                 <div class="list-group lg-alt" style="background-color: #e5e5e5;" id="result_search">
@@ -154,7 +154,7 @@ include('./components/sidebar.php');
                         <div class="row">
                             <div class="col-8">
                                 <div class="pull-left hidden-xs">
-                                    <a href="./profile_view.php?user_id=<?= $get_user_name_id ?>"><img src="<?= $get_user_picture != '' ? $get_user_picture : './assets/images/user.png'  ?>" alt="" class="img-avatar rounded-circle avatar ml-2">
+                                    <a href="./profile_view?user_id=<?= $get_user_name_id ?>"><img src="<?= $get_user_picture != '' ? $get_user_picture : './assets/images/user.png'  ?>" alt="" class="img-avatar rounded-circle avatar ml-2">
                                         <span class="text-white ml-2"><b><?= $get_user_name ?></b></span>
                                     </a>
                                 </div>
@@ -189,7 +189,7 @@ include('./components/sidebar.php');
                                             <div class="row">
                                                 <div id="notify"></div>
                                                 <div class="col-md-6">
-                                                    <button hx-get="./helpers/delete_chat.php?chat_id=<?= @$_GET['chat_id'] ?>" hx-trigger="click" hx-target="#notify" class="btn btn-dark col-sm-12">YES</button>
+                                                    <button hx-get="./helpers/delete_chat?chat_id=<?= @$_GET['chat_id'] ?>" hx-trigger="click" hx-target="#notify" class="btn btn-dark col-sm-12">YES</button>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <button onclick="closeDialog()" class="btn btn-dark col-sm-12">NO</button>
@@ -218,7 +218,7 @@ include('./components/sidebar.php');
                                                 TELL US THE REASON FOR THE REPORT?
                                             </p>
                                             <br>
-                                            <form action="./chat.php?chat_id=<?= @$_GET['chat_id'] ?>" method="POST">
+                                            <form action="./chat?chat_id=<?= @$_GET['chat_id'] ?>" method="POST">
                                                 <textarea name="message" id="" cols="30" class="form-control" rows="10"></textarea>
                                                 <div class="card-footer">
                                                     <div class="row">
@@ -249,7 +249,7 @@ include('./components/sidebar.php');
             </div>
         </div>
     <?php } ?>
-    <div id="test" hx-trigger="load, every 2s" hx-get="./helpers/get_messages.php?chat_id=<?= @$_GET['chat_id'] ?>">
+    <div id="test" hx-trigger="load, every 2s" hx-get="./helpers/get_messages?chat_id=<?= @$_GET['chat_id'] ?>">
         <?php
         $chat_id = @$_GET['chat_id'];
         if ($chat_id) {
@@ -299,7 +299,7 @@ include('./components/sidebar.php');
             <p class="card-title">To: ' . $array['to'] . '</p>
 
             
-            <a href="https://renit.co.in/ad_page.php?asset_id=' . $array['link'] . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
+            <a href="https://renit.co.in/ad_page?asset_id=' . $array['link'] . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
             </div>
             </div>
             </div>
@@ -316,7 +316,7 @@ include('./components/sidebar.php');
             <p class="card-title">To: ' . $array['to'] . '</p>
 
             
-            <a href="https://renit.co.in/ad_page.php?asset_id=' . $array['link'] . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
+            <a href="https://renit.co.in/ad_page?asset_id=' . $array['link'] . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
             </div>
         </div>
         <div class="col-md-8"></div>
@@ -332,7 +332,7 @@ include('./components/sidebar.php');
             <img src="' . $asset_thumbnail . '" class="card-img-top object-fit-contain" style="object-position: center; object-fit: contain;">
             <div class="card-body">
             <h5 class="card-title">' . $asset_name . '</h5>
-            <a href="https://renit.co.in/ad_page.php?asset_id=' . $asset__get_id . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
+            <a href="https://renit.co.in/ad_page?asset_id=' . $asset__get_id . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
             </div>
             </div>
             </div>
@@ -344,7 +344,7 @@ include('./components/sidebar.php');
         <img src="' . $asset_thumbnail . '" class="card-img-top object-fit-contain" style="object-position: center; object-fit: contain;">
         <div class="card-body">
         <h5 class="card-title">' . $asset_name . '</h5>
-        <a href="https://renit.co.in/ad_page.php?asset_id=' . $asset__get_id . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
+        <a href="https://renit.co.in/ad_page?asset_id=' . $asset__get_id . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
         </div>
         </div>
         <div class="col-md-8"></div>
@@ -425,7 +425,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
                     }
                 }
                 ?>
-                <form action="./chat.php?chat_id=<?= $_GET['chat_id']; ?>" method="POST" enctype="multipart/form-data">
+                <form action="./chat?chat_id=<?= $_GET['chat_id']; ?>" method="POST" enctype="multipart/form-data">
                     <input id="file-input" name="attachment" onchange="this.form.submit()" type="file" style="display: none;" />
                     <input type="hidden" value="uploadpic" name="uploadpic" style="display: hidden;"></input>
                 </form>
@@ -433,7 +433,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
                     <i class="fas fa-paperclip" style="margin-top: 18px; margin-left: -25px;"></i>
                 </label>
             </div>
-            <button class="form-control col-md-1" style="background-color: #2d2c31; color: white; border-radius: 15px; margin-left: -12px; height: 45px; margin-top: 5px;" hx-get="./helpers/message.php?sender_id=<?= $user_id ?>&&asset_id=<?= $chat_asset_id ?>&&chat_id=<?= @$_GET['chat_id'] ?>" hx-trigger="click" hx-include="#chat-" hx-target="#test"><b>Send</b></button=>
+            <button class="form-control col-md-1" style="background-color: #2d2c31; color: white; border-radius: 15px; margin-left: -12px; height: 45px; margin-top: 5px;" hx-get="./helpers/message?sender_id=<?= $user_id ?>&&asset_id=<?= $chat_asset_id ?>&&chat_id=<?= @$_GET['chat_id'] ?>" hx-trigger="click" hx-include="#chat-" hx-target="#test"><b>Send</b></button=>
                 <style>
                     .image-upload>input {
                         display: none;
@@ -465,7 +465,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
         //                     }
         //                 };
         //                 var message = editor.getContent();
-        //                 xhttp.open("GET", "./helpers/message.php?sender_id=<?= $user_id ?>&&asset_id=<?= $chat_asset_id ?>&&chat_id=<?= @$_GET['chat_id'] ?>&&message=" + message, true);
+        //                 xhttp.open("GET", "./helpers/message?sender_id=<?= $user_id ?>&&asset_id=<?= $chat_asset_id ?>&&chat_id=<?= @$_GET['chat_id'] ?>&&message=" + message, true);
         //                 xhttp.send();
         //                 editor.resetContent();
         //             },

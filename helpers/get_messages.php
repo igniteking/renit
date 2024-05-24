@@ -8,7 +8,7 @@ function cardWidget($asset_id, $width, $height, $asset_thumbnail, $asset_categor
                 
             <div class="col-md-12 card-width" id="cardWidget">
                         <div class="product-card">
-                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
+                            <a href="./ad_page?asset_id=' . $asset_id . '">
                                 <div class="product-media">
                                     <div class="side_margin_for_card">
                                         <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
@@ -22,7 +22,7 @@ function cardWidget($asset_id, $width, $height, $asset_thumbnail, $asset_categor
                                 <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
                             </ol>
                             <h5 class="product-title card-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
+                                <a href="./ad_page?asset_id=' . $asset_id . '">' . $asset_name . '</a>
                             </h5>
                             <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
                                 <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
@@ -32,12 +32,12 @@ function cardWidget($asset_id, $width, $height, $asset_thumbnail, $asset_categor
                                 ';
     if (@$_SESSION['user_email']) {
         echo '<div id="notify' . $asset_id . '">
-                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
+                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
                                 </div>';
     }
     echo '
     </div>
-    <a href="https://renit.co.in/ad_page.php?asset_id=' . $asset_id . '" class="btn col-md-12 mb-2" style="background-color: #2d2c31; color: white;">View</a>
+    <a href="https://renit.co.in/ad_page?asset_id=' . $asset_id . '" class="btn col-md-12 mb-2" style="background-color: #2d2c31; color: white;">View</a>
                         </div>
                     </div>
                     </div>
@@ -49,7 +49,7 @@ function cardWidgetRight($asset_id, $width, $height, $asset_thumbnail, $asset_ca
                 
             <div class="col-md-12 card-width-right" id="cardWidgetRight">
                         <div class="product-card">
-                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
+                            <a href="./ad_page?asset_id=' . $asset_id . '">
                                 <div class="product-media">
                                     <div class="side_margin_for_card">
                                     <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
@@ -63,7 +63,7 @@ function cardWidgetRight($asset_id, $width, $height, $asset_thumbnail, $asset_ca
                                 <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
                             </ol>
                             <h5 class="product-title card-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
+                                <a href="./ad_page?asset_id=' . $asset_id . '">' . $asset_name . '</a>
                             </h5>
                             <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
                                 <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
@@ -73,12 +73,12 @@ function cardWidgetRight($asset_id, $width, $height, $asset_thumbnail, $asset_ca
                                 ';
     if (@$_SESSION['user_email']) {
         echo '<div id="notify' . $asset_id . '">
-                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
+                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
                                 </div>';
     }
     echo '
     </div>
-    <a href="https://renit.co.in/ad_page.php?asset_id=' . $asset_id . '" class="btn col-md-12 mb-2" style="background-color: #2d2c31; color: white;">View</a>
+    <a href="https://renit.co.in/ad_page?asset_id=' . $asset_id . '" class="btn col-md-12 mb-2" style="background-color: #2d2c31; color: white;">View</a>
                         </div>
                     </div>
                     </div>
@@ -91,7 +91,7 @@ function DetailedCardWidget($message, $asset_id, $width, $height, $asset_thumbna
                 
             <div class="col-12 card-width" id="DetailedCardWidget">
                         <div class="product-card">
-                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
+                            <a href="./ad_page?asset_id=' . $asset_id . '">
                                 <div class="product-media">
                                     <div class="side_margin_for_card">
                                     <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
@@ -105,7 +105,7 @@ function DetailedCardWidget($message, $asset_id, $width, $height, $asset_thumbna
                                 <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
                             </ol>
                             <h5 class="product-title card-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
+                                <a href="./ad_page?asset_id=' . $asset_id . '">' . $asset_name . '</a>
                             </h5>
                             <p class="text-secondary text-muted">Offer: '  . $new_symbol . $array['price'] . '</p>
                             <p class="text-secondary text-muted">From: ' . $array['from'] . '</p>
@@ -114,7 +114,7 @@ function DetailedCardWidget($message, $asset_id, $width, $height, $asset_thumbna
                                 <h5 class="product-price">' . $new_symbol . $asset_price . '<span>/Per Day</span></h5>
                                 
     </div>
-    <a href="https://renit.co.in/ad_page.php?asset_id=' . $asset_id . '" class="btn col-md-12 mb-2" style="background-color: #2d2c31; color: white;">View</a>
+    <a href="https://renit.co.in/ad_page?asset_id=' . $asset_id . '" class="btn col-md-12 mb-2" style="background-color: #2d2c31; color: white;">View</a>
                         </div>
                     </div>
                     </div>
@@ -128,7 +128,7 @@ function DetailedCardWidgetRight($message, $asset_id, $width, $height, $asset_th
                 
             <div class="col-12 card-width-right" id="DetailedCardWidgetRight">
                         <div class="product-card">
-                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
+                            <a href="./ad_page?asset_id=' . $asset_id . '">
                                 <div class="product-media">
                                     <div class="side_margin_for_card">
                                     <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
@@ -142,7 +142,7 @@ function DetailedCardWidgetRight($message, $asset_id, $width, $height, $asset_th
                                 <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
                             </ol>
                             <h5 class="product-title card-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
+                                <a href="./ad_page?asset_id=' . $asset_id . '">' . $asset_name . '</a>
                             </h5>
                             <p class="text-secondary text-muted">Offer: '  . $new_symbol . $array['price'] . '</p>
                             <p class="text-secondary text-muted">From: ' . $array['from'] . '</p>
@@ -151,7 +151,7 @@ function DetailedCardWidgetRight($message, $asset_id, $width, $height, $asset_th
                                 <h5 class="product-price">' . $new_symbol . $asset_price . '<span>/Per Day</span></h5>
                                 
     </div>
-    <a href="https://renit.co.in/ad_page.php?asset_id=' . $asset_id . '" class="btn col-md-12 mb-2" style="background-color: #2d2c31; color: white;">View</a>
+    <a href="https://renit.co.in/ad_page?asset_id=' . $asset_id . '" class="btn col-md-12 mb-2" style="background-color: #2d2c31; color: white;">View</a>
                         </div>
                     </div>
                     </div>

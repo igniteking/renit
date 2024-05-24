@@ -15,7 +15,7 @@ if (@$state == 'button') {
         if ($add_bookmark) {
             Toast('black', 'Bookmark has been created successfully ...');
             echo '<div id="notify">
-            <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?state=button&&type=remove&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify"><i class="fas fa-check"></i>bookmarked</button>
+            <button type="button" title="Wishlist" hx-get="./helpers/bookmark?state=button&&type=remove&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify"><i class="fas fa-check"></i>bookmarked</button>
             </div>';
         } else {
             Toast('danger', 'Error creating bookmark ...');
@@ -26,7 +26,7 @@ if (@$state == 'button') {
         if ($remove_bookmark) {
             Toast('danger', 'Bookmark has been removed successfully ...');
             echo '<div id="notify">
-            <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?state=button&&type=add&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify"><i class="fas fa-heart"></i>bookmark</button>
+            <button type="button" title="Wishlist" hx-get="./helpers/bookmark?state=button&&type=add&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify"><i class="fas fa-heart"></i>bookmark</button>
             </div>';
         } else {
             Toast('danger', 'Error removing bookmark ...');
@@ -39,7 +39,7 @@ if (@$state == 'button') {
 
         if ($add_bookmark) {
             Toast('black', 'Bookmark has been created successfully ...');
-            echo '<button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=remove&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="fas fa-heart"></button>';
+            echo '<button type="button" title="Wishlist" hx-get="./helpers/bookmark?type=remove&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="fas fa-heart"></button>';
         } else {
             Toast('danger', 'Error creating bookmark ...');
         }
@@ -48,7 +48,7 @@ if (@$state == 'button') {
 
         if ($remove_bookmark) {
             Toast('danger', 'Bookmark has been removed successfully ...');
-            echo '<button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=add&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="far fa-heart"></button>';
+            echo '<button type="button" title="Wishlist" hx-get="./helpers/bookmark?type=add&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="far fa-heart"></button>';
         } else {
             Toast('danger', 'Error removing bookmark ...');
         }

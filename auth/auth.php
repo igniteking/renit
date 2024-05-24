@@ -57,7 +57,7 @@
     <section class="user-form-part">
         <div class="user-form-banner">
             <div class="user-form-content">
-                <a href="../index.php">
+                <a href="../index">
                     <h2 class="text-white">Renit</h2>
                     <!-- <img src="../assets/images/renit-logo-removebg-preview.png" alt="logo"> -->
                 </a>
@@ -81,7 +81,7 @@
                         }
                     }
                 </style>
-                <a href="../index.php">
+                <a href="../index">
                     <h2 class="hideonmobile">Renit</h2>
                 </a>
             </div>
@@ -138,7 +138,7 @@
                     Login($conn, $email, $password);
                 }
                 ?>
-                <form method="post" action="./auth.php?tab=login">
+                <form method="post" action="./auth?tab=login">
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
@@ -155,7 +155,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-group text-right">
-                                <a href="./forget_password.php" class="form-forgot">Forgot password?</a>
+                                <a href="./forget_password" class="form-forgot">Forgot password?</a>
                             </div>
                         </div>
                         <div class="col-12">
@@ -166,6 +166,22 @@
                                 </button>
                             </div>
                         </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <p class="login-txt">Please login using the button below. You'll be redirected to Google.</p>
+
+                                <a href="google-oauth.php" class="google-login-btn">
+                                    <span class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 488 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
+                                        </svg>
+                                    </span>
+                                    Login with Google
+                                </a>
+                            </div>
+                        </div>
+
+
                     </div>
                 </form>
             </div>
@@ -200,7 +216,7 @@
                     }
                 }
                 ?>
-                <form method="POST" action="auth.php?tab=register">
+                <form method="POST" action="auth?tab=register">
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
@@ -246,7 +262,7 @@
                         </script>
                         <div class="col-12">
                             <div class="form-group">
-                                <input type="text" name="key" onfocus="show()" id="asset_location_search" hx-get="../helpers/location.php" hx-include="[id=asset_location_search]" hx-target="#asset_location_list" hx-trigger="keyup change" class="form-control" placeholder="Enter location">
+                                <input type="text" name="key" onfocus="show()" id="asset_location_search" hx-get="../helpers/location" hx-include="[id=asset_location_search]" hx-target="#asset_location_list" hx-trigger="keyup change" class="form-control" placeholder="Enter location">
                                 <script>
                                     window.addEventListener('click', function(e) {
                                         if (document.getElementById('asset_location_search').contains(e.target)) {
@@ -298,7 +314,7 @@
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" name="tadnc" id="signup-check">
-                                    <label class="custom-control-label" for="signup-check">By clicking, you accept all of Renit's <a href="../terms.php">terms & conditions</a> as well as its <a href="../privacy.php">privacy policy</a> of Renit.</label>
+                                    <label class="custom-control-label" for="signup-check">By clicking, you accept all of Renit's <a href="../terms">terms & conditions</a> as well as its <a href="../privacy">privacy policy</a> of Renit.</label>
                                 </div>
                             </div>
                         </div>

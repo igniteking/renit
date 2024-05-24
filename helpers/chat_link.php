@@ -28,7 +28,7 @@ if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM chat_link WHERE chat_reci
     $create_message = mysqli_query($conn, "INSERT INTO `message`(`asset_id`, `date`, `id`, `message`, `message_type`, `sender_id`, `status`, `chat_link_id`) 
          VALUES ('$asset_id','$date',NULL,'$link','$card_type','$reciver_id',0,'$new_id')");
     if ($create_message) {
-        echo "<meta http-equiv=\"refresh\" content=\"0; url=../chat.php?chat_id=$new_id\">";
+        echo "<meta http-equiv=\"refresh\" content=\"0; url=../chat?chat_id=$new_id\">";
     } else {
         "problem";
     }
@@ -39,7 +39,7 @@ if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM chat_link WHERE chat_reci
     $create_message = mysqli_query($conn, "INSERT INTO `message`(`asset_id`, `date`, `id`, `message`, `message_type`, `sender_id`, `status`, `chat_link_id`) 
     VALUES ('$asset_id','$date',NULL,'$link','$card_type','$reciver_id',0,'$new_id')");
     if ($create_message) {
-        echo "<meta http-equiv=\"refresh\" content=\"0; url=../chat.php?chat_id=$new_id\">";
+        echo "<meta http-equiv=\"refresh\" content=\"0; url=../chat?chat_id=$new_id\">";
     } else {
         "problem";
     }

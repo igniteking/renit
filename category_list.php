@@ -47,7 +47,7 @@ if (@$_GET['status'] == 1) {
                 <div class="category-card">
                     <div class="category-head">
                         <img src="' . $category_image . '" alt="category">
-                        <a href="listing.php?cat_id=' . $category_id . '" class="category-content">
+                        <a href="listing?cat_id=' . $category_id . '" class="category-content">
                             <h4>' . $category_name . '</h4>
                         </a>
                     </div>
@@ -58,7 +58,7 @@ if (@$_GET['status'] == 1) {
                     $sub_category_id = $rows1["id"];
                     $sub_category_name = $rows1["sub_category_name"];
                     echo '
-                        <li><a href="./sub_listing.php?cat_id=' . $sub_category_id . '">
+                        <li><a href="./sub_listing?cat_id=' . $sub_category_id . '">
                                 <h6>' . $sub_category_name . '</h6>
                                 <p>' . mysqli_num_rows(mysqli_query($conn, "SELECT * FROM assets WHERE asset_category = '$category_id' AND `asset_sub_category` = '$sub_category_id'")) . '</p>
                             </a></li>';

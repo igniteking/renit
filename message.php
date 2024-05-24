@@ -55,7 +55,7 @@ MESSAGE PART START
                             $unread_messages = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM message WHERE chat_link_id = '$chat_link_id' AND status = 0"));
                             echo '
                             <li class="message-item unread">
-                            <a href="message.php?chat_id=' . $chat_link_id . '" class="message-link">
+                            <a href="message?chat_id=' . $chat_link_id . '" class="message-link">
                                 <div class="message-img">
                                     <img src="' . $get_user_picture . '" alt="avatar">
                                 </div>
@@ -141,7 +141,7 @@ MESSAGE PART START
             <p class="card-title">To: ' . $array['to'] . '</p>
 
             
-            <a href="https://renit.co.in/ad_page.php?asset_id=' . $array['link'] . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
+            <a href="https://renit.co.in/ad_page?asset_id=' . $array['link'] . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
             </div>
             </div>
             </div>
@@ -158,7 +158,7 @@ MESSAGE PART START
             <p class="card-title">To: ' . $array['to'] . '</p>
 
             
-            <a href="https://renit.co.in/ad_page.php?asset_id=' . $array['link'] . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
+            <a href="https://renit.co.in/ad_page?asset_id=' . $array['link'] . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
             </div>
         </div>
         <div class="col-md-8"></div>
@@ -174,7 +174,7 @@ MESSAGE PART START
             <img src="' . $asset_thumbnail . '" class="card-img-top object-fit-contain" style="object-position: center; object-fit: contain;">
             <div class="card-body">
             <h5 class="card-title">' . $asset_name . '</h5>
-            <a href="https://renit.co.in/ad_page.php?asset_id=' . $asset__get_id . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
+            <a href="https://renit.co.in/ad_page?asset_id=' . $asset__get_id . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
             </div>
             </div>
             </div>
@@ -186,7 +186,7 @@ MESSAGE PART START
         <img src="' . $asset_thumbnail . '" class="card-img-top object-fit-contain" style="object-position: center; object-fit: contain;">
         <div class="card-body">
         <h5 class="card-title">' . $asset_name . '</h5>
-        <a href="https://renit.co.in/ad_page.php?asset_id=' . $asset__get_id . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
+        <a href="https://renit.co.in/ad_page?asset_id=' . $asset__get_id . '" class="btn btn-primary col-md-12 mt-2">View Product</a>
         </div>
         </div>
         <div class="col-md-8"></div>
@@ -255,7 +255,7 @@ MESSAGE PART START
                     if (@$_GET['chat_id']) { ?>
                         <div class="inbox-chat-form">
                             <textarea name="message" class="asdfghjkl" placeholder="Type a Message" id="chat-emoji"></textarea>
-                            <button><i onclick="clear()" hx-get="./helpers/message.php?sender_id=<?= $user_id ?>&&reciver_id=<?= $chat_owner_id ?>&&asset_id=<?= $chat_asset_id ?>&&chat_id=<?= @$_GET['chat_id'] ?>" hx-trigger="click" hx-include="[class='asdfghjkl']" hx-target="#test" class="fas fa-paper-plane"></i></button>
+                            <button><i onclick="clear()" hx-get="./helpers/message?sender_id=<?= $user_id ?>&&reciver_id=<?= $chat_owner_id ?>&&asset_id=<?= $chat_asset_id ?>&&chat_id=<?= @$_GET['chat_id'] ?>" hx-trigger="click" hx-include="[class='asdfghjkl']" hx-target="#test" class="fas fa-paper-plane"></i></button>
                         </div>
                     <?php } ?>
                     <script>

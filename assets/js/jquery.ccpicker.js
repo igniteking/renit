@@ -7,7 +7,7 @@
  *  
  * Copyright 2018
  * Licensed under the MIT license. 
- * http://www.opensource.org/licenses/mit-license.php 
+ * http://www.opensource.org/licenses/mit-license 
  */
  
 (function(factory) {

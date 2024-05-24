@@ -1,5 +1,5 @@
-<?php include("../connection/connection.php");
-session_start();
+<?php include("../connections/connection.php");
 session_unset();
 session_destroy();
-header("Location: ../auth/auth.php");
+header("Location: ../auth/auth");
+exit;

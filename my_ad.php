@@ -79,7 +79,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                     }
                     echo '<div class="col-md-3">
                         <div class="product-card">
-                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
+                            <a href="./ad_page?asset_id=' . $asset_id . '">
                                 <div class="product-media">
                                     <div class="side_margin_for_card">
                                     <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
@@ -93,7 +93,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                                 <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
                             </ol>
                             <h5 class="product-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
+                                <a href="./ad_page?asset_id=' . $asset_id . '">' . $asset_name . '</a>
                             </h5>
                             <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
                                 <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
@@ -103,17 +103,17 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                                 ';
                     if (@$_SESSION['user_email']) {
                         echo '<div id="notify' . $asset_id . '">
-                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
+                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
                                 </div>';
                     }
                     echo '
                             </div>
                             <div class="btn-group row m-2" role="group" aria-label="Basic example">
-                            <button type="button" class="btn-sm mr-2" style="background-color: black; color: white;"><a href="./edit.php?asset_id=' . $asset_id . '" class="text-white">Edit</a></button>
-                            <button type="button" hx-confirm="Are you sure you wish to delete this product?" title="Delete This Asset" hx-get="./helpers/delete_asset.php?asset_id=' . $asset_id . '"  hx-trigger="click" hx-target="#notify' . $asset_id . '" class="btn-sm btn-danger mr-2">Delete</button>
+                            <button type="button" class="btn-sm mr-2" style="background-color: black; color: white;"><a href="./edit?asset_id=' . $asset_id . '" class="text-white">Edit</a></button>
+                            <button type="button" hx-confirm="Are you sure you wish to delete this product?" title="Delete This Asset" hx-get="./helpers/delete_asset?asset_id=' . $asset_id . '"  hx-trigger="click" hx-target="#notify' . $asset_id . '" class="btn-sm btn-danger mr-2">Delete</button>
                             <div class="custom-control custom-switch">
                             <div id="rand' . $asset_id . '">
-                                <input type="checkbox" ' . $active_status . ' class="custom-control-input" id="customSwitches' . $asset_id . '" hx-get="./helpers/asset_status.php?asset_id=' . $asset_id . '&&status=' . $asset_condition . '"  hx-trigger="click" hx-target="#rand' . $asset_id . '">
+                                <input type="checkbox" ' . $active_status . ' class="custom-control-input" id="customSwitches' . $asset_id . '" hx-get="./helpers/asset_status?asset_id=' . $asset_id . '&&status=' . $asset_condition . '"  hx-trigger="click" hx-target="#rand' . $asset_id . '">
                             <label class="custom-control-label" for="customSwitches' . $asset_id . '">Status</label>
                             </div>
                         </div>

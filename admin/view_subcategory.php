@@ -43,7 +43,7 @@ if (@$_GET["status"] == 1) {
                         "sucess",
                         "Succesfully Submitted Recharge Request.."
                     );
-                    echo "<meta http-equiv=\"refresh\" content=\"0; url=./request_recharge.php\">";
+                    echo "<meta http-equiv=\"refresh\" content=\"0; url=./request_recharge\">";
                 }
             }
 
@@ -85,7 +85,7 @@ if (@$_GET["status"] == 1) {
                                                 <td>' . $category_description . '</td>
                                                 <td>' . $created_at . '</td>
                                                 <td>
-                                                <a href="./edit_subcategory.php?cat_id=' . $req_id . '"><button class="btn icon btn-success">Edit</button></a>
+                                                <a href="./edit_subcategory?cat_id=' . $req_id . '"><button class="btn icon btn-success">Edit</button></a>
                                                 <button onclick="accept(' . $req_id . ',' . $user_id . ')" class="btn icon btn-danger"><i class="bi bi-x-lg"></i></button>
                                                 </td>
                                                 </tr>
@@ -101,7 +101,7 @@ if (@$_GET["status"] == 1) {
                                                                 window.location.href = this.response;
                                                             }
                                                         };
-                                                        xhttp.open("GET", "./helpers/recharge.php?req_id=" + req_id + "&&amount=" + amount + "&&user_id=" + user_id + "&&status=accept", true);
+                                                        xhttp.open("GET", "./helpers/recharge?req_id=" + req_id + "&&amount=" + amount + "&&user_id=" + user_id + "&&status=accept", true);
                                                         xhttp.send();
                                                     }
 
@@ -112,7 +112,7 @@ if (@$_GET["status"] == 1) {
                                                                 window.location.href = this.response;
                                                             }
                                                         };
-                                                        xhttp.open("GET", "./helpers/recharge.php?req_id=" + req_id + "&&amount=" + amount + "&&user_id=" + user_id + "&&status=reject", true);
+                                                        xhttp.open("GET", "./helpers/recharge?req_id=" + req_id + "&&amount=" + amount + "&&user_id=" + user_id + "&&status=reject", true);
                                                         xhttp.send();
                                                     }
                                                 </script>

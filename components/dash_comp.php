@@ -7,12 +7,12 @@
                         <?php
                         if (!empty($logged_profile_picture)) { ?>
                             <div class="dash-avatar">
-                                <a href="setting.php"><img src="<?= $logged_profile_picture ?>" class="img img-avatar rounded-circle" height="150" style="object-fit: cover;" alt="avatar"></a>
+                                <a href="setting"><img src="<?= $logged_profile_picture ?>" class="img img-avatar rounded-circle" height="150" style="object-fit: cover;" alt="avatar"></a>
                             </div>
                         <?php } else {
                         ?>
                             <div class="dash-avatar">
-                                <a href="setting.php"><img src="./assets/images/user.png" alt="avatar"></a>
+                                <a href="setting"><img src="./assets/images/user.png" alt="avatar"></a>
                             </div>
                         <?php } ?>
                         <div class="dash-intro">
@@ -69,29 +69,29 @@
                         <ul>
                             <?php
                             $curPageName = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1);
-                            if ($curPageName == 'my_ad.php') {
+                            if ($curPageName == 'my_ad') {
                             ?>
-                                <li><a href="my_ad.php" class="active">My Products</a></li>
+                                <li><a href="my_ad" class="active">My Products</a></li>
                             <?php
                             } else {
                             ?>
-                                <li><a href="my_ad.php" class="">My Products</a></li>
+                                <li><a href="my_ad" class="">My Products</a></li>
                             <?php
                             }
                             ?>
                             <?php
                             $curPageName = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1);
-                            if ($curPageName == 'ad_post.php') {
+                            if ($curPageName == 'ad_post') {
                             ?>
-                                <li><a href="ad_post.php" class="active">Rent Out</a></li>
+                                <li><a href="ad_post" class="active">Rent Out</a></li>
                             <?php
                             } else {
                             ?>
-                                <li><a href="ad_post.php">Rent Out</a></li>
+                                <li><a href="ad_post">Rent Out</a></li>
                             <?php
                             }
                             ?>
-                            <li><a href="chat.php<?php
+                            <li><a href="chat<?php
                                                     $cont = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM chat_link WHERE chat_owner_id = '$user_id' OR chat_reciever_id = '$user_id'"));
 
                                                     if ($cont > 0) {
@@ -101,41 +101,41 @@
                                                     ?>">message</a></li>
                             <?php
                             $curPageName = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1);
-                            if ($curPageName == 'bookmark.php') {
+                            if ($curPageName == 'bookmark') {
                             ?>
-                                <li><a href="bookmark.php" class="active">bookmarks</a></li>
+                                <li><a href="bookmark" class="active">bookmarks</a></li>
                             <?php
                             } else {
                             ?>
-                                <li><a href="bookmark.php">bookmarks</a></li>
+                                <li><a href="bookmark">bookmarks</a></li>
                             <?php
                             }
                             ?>
                             <?php
                             $curPageName = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1);
-                            if ($curPageName == 'setting.php') {
+                            if ($curPageName == 'setting') {
                             ?>
-                                <li><a href="setting.php" class="active">settings</a></li>
+                                <li><a href="setting" class="active">settings</a></li>
                             <?php
                             } else {
                             ?>
-                                <li><a href="setting.php">settings</a></li>
+                                <li><a href="setting">settings</a></li>
                             <?php
                             }
                             ?>
                             <?php
                             $curPageName = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1);
-                            if ($curPageName == 'unavaibility_form.php') {
+                            if ($curPageName == 'unavaibility_form') {
                             ?>
-                                <li><a href="unavaibility_form.php" class="active">Unavailability Form</a></li>
+                                <li><a href="unavaibility_form" class="active">Unavailability Form</a></li>
                             <?php
                             } else {
                             ?>
-                                <li><a href="unavaibility_form.php">Unavailability Form</a></li>
+                                <li><a href="unavaibility_form">Unavailability Form</a></li>
                             <?php
                             }
                             ?>
-                            <li><a href="./helpers/logout.php">logout</a></li>
+                            <li><a href="./helpers/logout">logout</a></li>
 
 
                         </ul>

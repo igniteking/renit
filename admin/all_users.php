@@ -61,13 +61,13 @@ if (@$_GET['code'] == 1) {
                         xhttp.onreadystatechange = function() {
                             if (this.readyState == 4 && this.status == 200) {
                                 if (this.responseText == 'success') {
-                                    window.location.href = "./all_users.php?code=1";
+                                    window.location.href = "./all_users?code=1";
                                 } else {
-                                    window.location.href = "./all_users.php?code=2";
+                                    window.location.href = "./all_users?code=2";
                                 }
                             }
                         };
-                        xhttp.open("GET", "./helpers/delete_user.php?user_id=" + id, true);
+                        xhttp.open("GET", "./helpers/delete_user?user_id=" + id, true);
                         xhttp.send();
                     } else {
                         Toastify({
@@ -96,7 +96,7 @@ if (@$_GET['code'] == 1) {
         <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
         <script>
             new DataTable('#example', {
-                ajax: './api/users.php',
+                ajax: './api/users',
                 dom: 'Bfrtip',
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf', 'print'

@@ -92,8 +92,8 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                         <div class="p-2 row d-flex justify-content-md-center align-items-center">
                             <div class="card card-body col-md-12 mt-4">
                                 <div id="notify"></div>
-                                <button hx-get="./helpers/publish_ad.php?asset_id=<?= $_GET['asset_id'] ?>" hx-trigger="click" hx-target='#notify' class="btn text-white" style="background-color: black;">Publish</button>
-                                <button hx-get="./helpers/delete_asset.php?asset_id=<?= $_GET['asset_id'] ?>" hx-trigger="click" hx-target='#notify' class="btn btn-danger mt-2">Delete</button>
+                                <button hx-get="./helpers/publish_ad?asset_id=<?= $_GET['asset_id'] ?>" hx-trigger="click" hx-target='#notify' class="btn text-white" style="background-color: black;">Publish</button>
+                                <button hx-get="./helpers/delete_asset?asset_id=<?= $_GET['asset_id'] ?>" hx-trigger="click" hx-target='#notify' class="btn btn-danger mt-2">Delete</button>
                             </div>
                         </div>
                     <?php } ?>
@@ -118,8 +118,8 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                         </div>
                         <div class="author-widget">
                             <div id="refresh"></div>
-                            <a href="./profile_view.php?user_id=<?= $asset_user_id ?>" title="Profile" class="fas fa-eye"></a>
-                            <a href="./helpers/chat_link.php?asset_id=<?= $get_asset_id ?>&&owner_id=<?= $asset_user ?>&&reciver_id=<?= $user_id ?>" title="Chat" class="fas fa-envelope"></a>
+                            <a href="./profile_view?user_id=<?= $asset_user_id ?>" title="Profile" class="fas fa-eye"></a>
+                            <a href="./helpers/chat_link?asset_id=<?= $get_asset_id ?>&&owner_id=<?= $asset_user ?>&&reciver_id=<?= $user_id ?>" title="Chat" class="fas fa-envelope"></a>
                             <!-- <button type="button" title="Follow" class="follow fas fa-heart"></button> -->
                             <!-- <button type="button" title="Number" class="fas fa-phone" data-toggle="modal" data-target="#number"></button> -->
                             <button type="button" title="Profile Share" class="fas fa-share-alt" data-toggle="modal" data-target="#profile-share"></button>
@@ -254,7 +254,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                         }
                         if (@$_SESSION['user_email']) {
                             echo '<div id="notify">
-                                <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?state=button&&type=' . $type . '&&asset_id=' . $asset__get_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify">' . $var . '</button>
+                                <button type="button" title="Wishlist" hx-get="./helpers/bookmark?state=button&&type=' . $type . '&&asset_id=' . $asset__get_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify">' . $var . '</button>
                                 </div>
                                 '; ?>
                             <?php
@@ -262,14 +262,14 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                                 echo '<a href="#" style="all: unset;" title="Owned By You"><button type="button">Owned By You</button></a>';
                             } else {
                             ?>
-                                <a href="./helpers/chat_link.php?asset_id=<?= $get_asset_id ?>&&owner_id=<?= $asset_user ?>&&reciver_id=<?= $user_id ?>" style="all: unset;" title="Chat"><button type="button"><i class="fa fa-comment"></i>Chat</button></a>
+                                <a href="./helpers/chat_link?asset_id=<?= $get_asset_id ?>&&owner_id=<?= $asset_user ?>&&reciver_id=<?= $user_id ?>" style="all: unset;" title="Chat"><button type="button"><i class="fa fa-comment"></i>Chat</button></a>
                             <?php } ?>
-                            <a href="./contact.php" style="all: unset;" title="Report"><button type="button"><i class="fas fa-exclamation-triangle"></i>report</button></a>
+                            <a href="./contact" style="all: unset;" title="Report"><button type="button"><i class="fas fa-exclamation-triangle"></i>report</button></a>
                         <?php
                         } else { ?>
-                            <a href="./auth/auth.php" style="all: unset;" title="Bookmark"><button type="button"><i class="fas fa-heart"></i>bookmark</button></a>
-                            <a href="./auth/auth.php" style="all: unset;" title="Chat"><button type="button"><i class="fa fa-comment"></i>Chat</button></a>
-                            <a href="./contact.php" style="all: unset;" title="Report"><button type="button"><i class="fas fa-exclamation-triangle"></i>report</button></a>
+                            <a href="./auth/auth" style="all: unset;" title="Bookmark"><button type="button"><i class="fas fa-heart"></i>bookmark</button></a>
+                            <a href="./auth/auth" style="all: unset;" title="Chat"><button type="button"><i class="fa fa-comment"></i>Chat</button></a>
+                            <a href="./contact" style="all: unset;" title="Report"><button type="button"><i class="fas fa-exclamation-triangle"></i>report</button></a>
 
                         <?php } ?>
 

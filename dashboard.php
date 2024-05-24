@@ -13,7 +13,7 @@ if (@$_SESSION['user_email']) {
 <?php
 if (isset($_SESSION['user_email'])) {
 } else {
-    echo "<meta http-equiv=\"refresh\" content=\"0; url=./helpers/logout.php\">";
+    echo "<meta http-equiv=\"refresh\" content=\"0; url=./helpers/logout\">";
     exit();
 }
 ?>
@@ -50,7 +50,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                             <button data-dismiss="alert">close</button>
                         </div>
                         <div class="dash-content">
-                            <p>Your Email is not verified. <a href="./helpers/sendMail.php?user_id=<?= $user_email ?>">Click Here to verify</a></p>
+                            <p>Your Email is not verified. <a href="./helpers/sendMail?user_id=<?= $user_email ?>">Click Here to verify</a></p>
                         </div>
                     </div>
                 <?php } ?>

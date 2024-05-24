@@ -37,7 +37,7 @@
                 <li class="sidebar-title">Menu</li>
 
                 <li class="sidebar-item active ">
-                    <a href="index.php" class='sidebar-link'>
+                    <a href="index" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
@@ -45,7 +45,7 @@
 
                 <li class="sidebar-title">Users</li>
                 <li class="sidebar-item ">
-                    <a href="./all_users.php" class='sidebar-link'>
+                    <a href="./all_users" class='sidebar-link'>
                         <i class="bi bi-grid-1x2-fill"></i>
                         <span>All Users</span>
                     </a>
@@ -53,7 +53,7 @@
 
                 <li class="sidebar-title">Products</li>
                 <li class="sidebar-item ">
-                    <a href="./all_products.php" class='sidebar-link'>
+                    <a href="./all_products" class='sidebar-link'>
                         <i class="bi bi-grid-1x2-fill"></i>
                         <span>All Products</span>
                     </a>
@@ -61,13 +61,13 @@
 
                 <li class="sidebar-title">Categories</li>
                 <li class="sidebar-item ">
-                    <a href="add_categories.php" class='sidebar-link'>
+                    <a href="add_categories" class='sidebar-link'>
                         <i class="bi bi-grid-1x2-fill"></i>
                         <span>Add Categories</span>
                     </a>
                 </li>
                 <li class="sidebar-item ">
-                    <a href="view_categories.php" class='sidebar-link'>
+                    <a href="view_categories" class='sidebar-link'>
                         <i class="bi bi-grid-1x2-fill"></i>
                         <span>View Categories</span>
                     </a>
@@ -75,20 +75,20 @@
 
                 <li class="sidebar-title">Sub Categories</li>
                 <li class="sidebar-item ">
-                    <a href="add_sub_category.php" class='sidebar-link'>
+                    <a href="add_sub_category" class='sidebar-link'>
                         <i class="bi bi-tree-fill"></i>
                         <span>Add Sub-Categories</span>
                     </a>
                 </li>
                 <li class="sidebar-item ">
-                    <a href="./view_subcategory.php" class='sidebar-link'>
+                    <a href="./view_subcategory" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>View Sub Categories</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item ">
-                    <a href="./unavail.php" class='sidebar-link'>
+                    <a href="./unavail" class='sidebar-link'>
                         <i class="bi bi-tree-fill"></i>
                         <span>Unavailbility Form</span>
                     </a>
@@ -96,13 +96,13 @@
                 <li class="sidebar-title">Settings</li>
 
                 <!-- <li class="sidebar-item">
-                    <a href="./profile.php" class='sidebar-link'>
+                    <a href="./profile" class='sidebar-link'>
                         <i class="bi bi-person-fill" style="font-size: 20px;"></i>
                         <span>Profile</span>
                     </a>
                 </li> -->
                 <li class="sidebar-item">
-                    <a href="./helpers/logout.php" class='sidebar-link'>
+                    <a href="./helpers/logout" class='sidebar-link'>
                         <i class="bi bi-x-octagon-fill"></i>
                         <span>Log Out</span>
                     </a>

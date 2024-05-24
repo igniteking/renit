@@ -70,7 +70,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                         }
                     }
                     ?>
-                    <form class="contact-form" method="post" action="./unavaibility_form.php">
+                    <form class="contact-form" method="post" action="./unavaibility_form">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group">
@@ -93,7 +93,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="">Does it belong to any of the below categories?*</label>
-                                    <select class="form-control custom-select" name="asset_category" hx-get="./helpers/get_sub_category.php" hx-trigger="change" hx-target="#asset_sub_category">
+                                    <select class="form-control custom-select" name="asset_category" hx-get="./helpers/get_sub_category" hx-trigger="change" hx-target="#asset_sub_category">
                                         <option value="">Please Select</option>
                                         <?php
                                         $get_categories = mysqli_query($conn, "SELECT * FROM `categories`");
@@ -118,7 +118,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="form-label">Where do you need it?</label>
-                                    <input type="text" name="key" autocomplete="off" id="asset_location_search" hx-get="./helpers/location.php" hx-include="[id=asset_location_search]" hx-target="#asset_location_list" hx-trigger="keyup change" class="form-control" placeholder="Enter location">
+                                    <input type="text" name="key" autocomplete="off" id="asset_location_search" hx-get="./helpers/location" hx-include="[id=asset_location_search]" hx-target="#asset_location_list" hx-trigger="keyup change" class="form-control" placeholder="Enter location">
                                 </div>
                                 <script>
                                     document.body.addEventListener('click', function(e) {

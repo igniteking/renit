@@ -1628,7 +1628,7 @@
           var number = /\b0b[01]+(?:_[01]+)*\b|\b0o[0-7]+(?:_[0-7]+)*\b|\b0x[\da-f]+(?:_[\da-f]+)*\b|(?:\b\d+(?:_\d+)*\.?(?:\d+(?:_\d+)*)?|\B\.\d+)(?:e[+-]?\d+)?/i;
           var operator = /<?=>|\?\?=?|\.{3}|\??->|[!=]=?=?|::|\*\*=?|--|\+\+|&&|\|\||<<|>>|[?~]|[/^|%*&<>.+-]=?/;
           var punctuation = /[{}\[\](),:;]/;
-          Prism.languages.php = {
+          Prism.languages = {
             'delimiter': {
               pattern: /\?>$|^<\?(?:php(?=\s)|=)?/i,
               alias: 'important'
@@ -1824,7 +1824,7 @@
           var string_interpolation = {
             pattern: /\{\$(?:\{(?:\{[^{}]+\}|[^{}]+)\}|[^{}])+\}|(^|[^\\{])\$+(?:\w+(?:\[[^\r\n\[\]]+\]|->\w+)?)/,
             lookbehind: true,
-            inside: Prism.languages.php
+            inside: Prism.languages
           };
           var string = [
             {

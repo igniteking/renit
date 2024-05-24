@@ -131,7 +131,7 @@ if (@$_GET["status"] == 1) {
                                                         text-overflow: ellipsis;">' . $asset_description . '</p>
                                                     </td>
                                                     <td class="col-auto">
-                                                        <a href="../ad_page.php?asset_id=' . $asset_id . '"><button class="btn btn-block btn-md btn-outline-primary font-bold mt-3">View Product</button></a>
+                                                        <a href="../ad_page?asset_id=' . $asset_id . '"><button class="btn btn-block btn-md btn-outline-primary font-bold mt-3">View Product</button></a>
                                                     </td>
                                                 </tr>';
                                                 }
@@ -139,7 +139,7 @@ if (@$_GET["status"] == 1) {
                                             </tbody>
                                         </table>
                                         <tfoot>
-                                            <a href="./all_products.php"><button class="btn btn-block btn-md btn-outline-primary font-bold mt-3">View All Product</button></a>
+                                            <a href="./all_products"><button class="btn btn-block btn-md btn-outline-primary font-bold mt-3">View All Product</button></a>
                                         </tfoot>
                                     </div>
                                 </div>

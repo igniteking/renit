@@ -95,7 +95,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                         </div>
                         <div class="author-widget">
                             <div id="refresh"></div>
-                            <a href="./profile_view.php?user_id=<?= $asset_user_id ?>" title="Profile" class="fas fa-eye"></a>
+                            <a href="./profile_view?user_id=<?= $asset_user_id ?>" title="Profile" class="fas fa-eye"></a>
                             <button type="button" title="Copy Profile Link" class="link fas fa-link" onclick="myFunction()"></button>
                         </div>
                         <ul class="author-list">
@@ -128,7 +128,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                                 <h5 class="card-title">Make An Offer</h5>
                             </div>
                             <div class="ad-details-safety">
-                                <form action="./helpers/chat_link.php" method="get">
+                                <form action="./helpers/chat_link" method="get">
                                     <div class="form-group">
                                         <label for="from">From</label>
                                         <input type="date" name="from" onchange="change_min_date()" min="<?= date('Y-m-d') ?>" id="from_date" class="form-control" placeholder="Email">
@@ -174,7 +174,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                                     <label for="from">Your Price</label>
                                     <input type="number" name="price" class="form-control" placeholder="00.00">
                                 </div>
-                                <a href="./auth/auth.php" style="all: unset;">
+                                <a href="./auth/auth" style="all: unset;">
                                     <button type="submit" name="offer" class="btn btn-inline review-submit">
                                         <i class="fas fa-clipboard"></i>
                                         <span>Make An Offer</span>
@@ -250,7 +250,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                                 }
                                 echo '
                             <div class="product-card">
-                                <a href="./ad_page.php?asset_id=' . $just_asset_id . '" class="feature-img">
+                                <a href="./ad_page?asset_id=' . $just_asset_id . '" class="feature-img">
                                 <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $just_asset_thumbnail . '" alt="product">
                                 </a>
                             <div class="product-content">
@@ -260,7 +260,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                                 <li class="breadcrumb-item active" aria-current="page">' . $just_asset_sub_category_name . '</li>
                                 </ol>
                                 <h5 class="product-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <a href="./ad_page.php?asset_id=' . $just_asset_id . '">' . $just_asset_name . '</a>
+                                <a href="./ad_page?asset_id=' . $just_asset_id . '">' . $just_asset_name . '</a>
                                 </h5>
                             <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
                                 <span><i class="fas fa-map-marker-alt"></i>' . $just_asset_location . '</span>
@@ -270,7 +270,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                                 ';
                                 if (@$_SESSION['user_email']) {
                                     echo '<div id="notify' . $just_asset_id . '">
-                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $just_asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $just_asset_id . '" class="' . $icon . ' fa-heart"></button>
+                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark?type=' . $type . '&&asset_id=' . $just_asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $just_asset_id . '" class="' . $icon . ' fa-heart"></button>
                                     </div>';
                                 }
                                 echo '
@@ -395,7 +395,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                         }
                         if (@$_SESSION['user_email']) {
                             echo '<div id="notify">
-                                <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?state=button&&type=' . $type . '&&asset_id=' . $asset__get_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify">' . $var . '</button>
+                                <button type="button" title="Wishlist" hx-get="./helpers/bookmark?state=button&&type=' . $type . '&&asset_id=' . $asset__get_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify">' . $var . '</button>
                                 </div>
                                 '; ?>
                             <?php
@@ -403,14 +403,14 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                                 echo '<a href="#" style="all: unset;" title="Owned By You"><button type="button">Owned By You</button></a>';
                             } else {
                             ?>
-                                <a href="./helpers/chat_link.php?asset_id=<?= $get_asset_id ?>&&owner_id=<?= $asset_user ?>&&reciver_id=<?= $user_id ?>" style="all: unset;" title="Chat"><button type="button"><i class="fa fa-comment"></i>Chat</button></a>
+                                <a href="./helpers/chat_link?asset_id=<?= $get_asset_id ?>&&owner_id=<?= $asset_user ?>&&reciver_id=<?= $user_id ?>" style="all: unset;" title="Chat"><button type="button"><i class="fa fa-comment"></i>Chat</button></a>
                             <?php } ?>
-                            <a href="./contact.php" style="all: unset;" title="Report"><button type="button"><i class="fas fa-exclamation-triangle"></i>report</button></a>
+                            <a href="./contact" style="all: unset;" title="Report"><button type="button"><i class="fas fa-exclamation-triangle"></i>report</button></a>
                         <?php
                         } else { ?>
-                            <a href="./auth/auth.php" style="all: unset;" title="Bookmark"><button type="button"><i class="fas fa-heart"></i>bookmark</button></a>
-                            <a href="./auth/auth.php" style="all: unset;" title="Chat"><button type="button"><i class="fa fa-comment"></i>Chat</button></a>
-                            <a href="./contact.php" style="all: unset;" title="Report"><button type="button"><i class="fas fa-exclamation-triangle"></i>report</button></a>
+                            <a href="./auth/auth" style="all: unset;" title="Bookmark"><button type="button"><i class="fas fa-heart"></i>bookmark</button></a>
+                            <a href="./auth/auth" style="all: unset;" title="Chat"><button type="button"><i class="fa fa-comment"></i>Chat</button></a>
+                            <a href="./contact" style="all: unset;" title="Report"><button type="button"><i class="fas fa-exclamation-triangle"></i>report</button></a>
 
                         <?php } ?>
 
@@ -473,8 +473,8 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                         </li>
                         <li>
                             <h6>to:</h6>
-                            <input type="hidden" hx-get="./helpers/currence_convertion.php?get_curr_code=1" hx-target="#valuesin" hx-trigger="load keyup changed" id="">
-                            <select class="form-control" id="valuesin" name="var" hx-get="./helpers/currence_convertion.php" hx-target="#randometjdgj" hx-include="[id='key'],[id='amount']" hx-trigger="click changed">
+                            <input type="hidden" hx-get="./helpers/currence_convertion?get_curr_code=1" hx-target="#valuesin" hx-trigger="load keyup changed" id="">
+                            <select class="form-control" id="valuesin" name="var" hx-get="./helpers/currence_convertion" hx-target="#randometjdgj" hx-include="[id='key'],[id='amount']" hx-trigger="click changed">
                                 <option value=""></option>
                             </select>
                         </li>
@@ -508,7 +508,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                                 <h5 class="card-title">Make An Offer</h5>
                             </div>
                             <div class="ad-details-safety">
-                                <form action="./helpers/chat_link.php" method="get">
+                                <form action="./helpers/chat_link" method="get">
                                     <div class="form-group">
                                         <label for="from">From</label>
                                         <input type="date" name="from" id="date_from" onchange="change_min_date2()" min="<?= date('Y-m-d') ?>" class="form-control" placeholder="Email">
@@ -555,7 +555,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                                     <label for="from">Your Price</label>
                                     <input type="number" name="price" class="form-control" placeholder="00.00">
                                 </div>
-                                <a href="./auth/auth.php" style="all: unset;">
+                                <a href="./auth/auth" style="all: unset;">
                                     <button type="submit" name="offer" class="btn btn-inline review-submit">
                                         <i class="fas fa-clipboard"></i>
                                         <span>Make An Offer</span>
@@ -661,12 +661,12 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                              VALUES ('$rendom_id','$content','$created_at', NULL,'$star','$user_id')");
                             if ($insert_review) {
                                 $kasjdnskdjgnskdjgnskn = $_GET['asset_id'];
-                                echo "<meta http-equiv=\"refresh\" content=\"0; url=./ad_page.php?asset_id=$kasjdnskdjgnskdjgnskn&&review=1\">";
+                                echo "<meta http-equiv=\"refresh\" content=\"0; url=./ad_page?asset_id=$kasjdnskdjgnskdjgnskn&&review=1\">";
                             }
                         }
                         if (@$_SESSION['user_email']) {
                             if (mysqli_num_rows(mysqli_query($conn, "SELECT id FROM review WHERE asset_id = '$get_asset_id' AND user_id = '$user_id'")) <= 0) { ?>
-                                <form class="review-form" method="post" action="./ad_page.php?asset_id=<?= $get_asset_id ?>">
+                                <form class="review-form" method="post" action="./ad_page?asset_id=<?= $get_asset_id ?>">
                                     <div class="star-rating">
                                         <input type="radio" name="rating" value="5" id="star-5"><label for="star-5"></label>
                                         <input type="radio" name="rating" value="4" id="star-4"><label for="star-4"></label>
@@ -694,7 +694,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
     function myFunction() {
 
         // Copy the text inside the text field
-        navigator.clipboard.writeText('https://renit.co.in/profile_view.php?user_id="<?= $asset_user_id; ?>"');
+        navigator.clipboard.writeText('https://renit.co.in/profile_view?user_id="<?= $asset_user_id; ?>"');
 
         // Alert the copied text
         alert("Link Copied");

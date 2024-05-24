@@ -82,7 +82,7 @@
                     </button>
                     <?php
                     if (isset($_SESSION['user_email'])) { ?>
-                        <a href="index.php" class="">
+                        <a href="index" class="">
                             <h2 id="logo" class="text-white">Renit</h2>
                             <!-- <img width="150px" style="margin-right: 50px;margin-left: 50px;" src="./assets/images/Renit-logo.jpeg" alt="logo"> -->
                         </a>
@@ -126,7 +126,7 @@
                                 }
                             }
                         </style>
-                        <a href="index.php" class="">
+                        <a href="index" class="">
                             <h2 id="logo" class="text-white">Renit</h2>
                             <!-- <img width="150px" style="margin-right: 50px;margin-left: 50px;" src="./assets/images/Renit-logo.jpeg" alt="logo"> -->
                         </a>
@@ -134,7 +134,7 @@
                     <?php
                     if (!@$_SESSION['user_email']) {
                         echo '
-                        <a href="./auth/auth.php" id="hideonombile" class="btn btn-inline post-btn" style="padding: 10px; width: 135px; margin-left: -30px; font-size: 12px;">
+                        <a href="./auth/auth" id="hideonombile" class="btn btn-inline post-btn" style="padding: 10px; width: 135px; margin-left: -30px; font-size: 12px;">
                                 <i class="fas fa-lock"></i>
                                 <span>Sign In</span>
                             </a>
@@ -195,10 +195,10 @@
                     }
                 </style>
                 <div class="header-form">
-                    <form action="./ad_listing.php" method="get">
+                    <form action="./ad_listing" method="get">
                         <div class="row mt-3">
-                            <input value="<?= @$_GET['asset'] ?>" name="asset" autocomplete="off" id="asset_search" hx-get="./helpers/asset.php" hx-include="[id=asset_search]" hx-target="#location_list" hx-trigger="keyup" class="col-md-5 form-control-sm ms-md-4 m-xsm-4" style="border-radius: 7px; padding: 20px;" placeholder="Search, what you need..."> <br><br>
-                            <input value="<?= @$_GET['key'] ?>" name="key" autocomplete="off" hx-get="./helpers/location.php" hx-include="[id=location_search]" hx-target="#location_list" hx-trigger="keyup" class="col-md-5 form-control-sm ml-md-2" style="border-radius: 7px; padding: 20px;" id="location_search" placeholder="Search, where you need it...">
+                            <input value="<?= @$_GET['asset'] ?>" name="asset" autocomplete="off" id="asset_search" hx-get="./helpers/asset" hx-include="[id=asset_search]" hx-target="#location_list" hx-trigger="keyup" class="col-md-5 form-control-sm ms-md-4 m-xsm-4" style="border-radius: 7px; padding: 20px;" placeholder="Search, what you need..."> <br><br>
+                            <input value="<?= @$_GET['key'] ?>" name="key" autocomplete="off" hx-get="./helpers/location" hx-include="[id=location_search]" hx-target="#location_list" hx-trigger="keyup" class="col-md-5 form-control-sm ml-md-2" style="border-radius: 7px; padding: 20px;" id="location_search" placeholder="Search, where you need it...">
                             <button class="col-md-5 form-control mt-2" id="search_show" style="color:white; background-color: black; border:2px solid white; border-radius: 7px; font-size: large;">Search</button>
                             <button type="submit" class="header-widget" id="search_hide" style="margin-left: 7px; margin-top: -12px;">
                                 <i class="fas fa-search"></i>
@@ -262,7 +262,7 @@
                     if (isset($_SESSION['user_email'])) { ?>
                         <ul class="header-list" style="margin-top: 3px;">
                             <li class="header-item">
-                                <a href="./bookmark.php" class="header-widget">
+                                <a href="./bookmark" class="header-widget">
                                     <i class="fas fa-heart"></i>
                                 </a>
                             </li>
@@ -272,7 +272,7 @@
 
                                 if ($cont > 0) {
                                     $vari = fetch_single_row($conn, "SELECT id FROM chat_link WHERE chat_owner_id = '$user_id' OR chat_reciever_id = '$user_id'");
-                                    echo '<a href="./chat.php?chat_id=' . $vari . '"><button type="button" class="header-widget">
+                                    echo '<a href="./chat?chat_id=' . $vari . '"><button type="button" class="header-widget">
                                     <i class="fas fa-envelope"></i>
                                 </button></a>';
                                 } else {
@@ -303,12 +303,12 @@
                     <?php } else { ?>
                         <ul class="header-list" style="margin-right: 7px;">
                             <li class="header-item">
-                                <a href="./auth/auth.php" class="header-widget">
+                                <a href="./auth/auth" class="header-widget">
                                     <i class="fas fa-heart"></i>
                                 </a>
                             </li>
                             <li class="header-item">
-                                <a href="./auth/auth.php"><button type="button" class="header-widget">
+                                <a href="./auth/auth"><button type="button" class="header-widget">
                                         <i class="fas fa-envelope"></i>
                                     </button>
                                 </a>
@@ -316,12 +316,12 @@
                         <?php } ?>
                         <?php
                         if (isset($_SESSION['user_email'])) { ?>
-                            <a href="./ad_post.php" class="btn btn-inline post-btn" style="padding: 10px; width: 135px; font-size: 12px;">
+                            <a href="./ad_post" class="btn btn-inline post-btn" style="padding: 10px; width: 135px; font-size: 12px;">
                                 <i class="fas fa-plus-circle"></i>
                                 <span>Rent Out</span>
                             </a>
                         <?php } else { ?>
-                            <a href="./auth/auth.php" class="btn btn-inline post-btn" style="padding: 10px; width: 135px; font-size: 12px;">
+                            <a href="./auth/auth" class="btn btn-inline post-btn" style="padding: 10px; width: 135px; font-size: 12px;">
                                 <i class="fas fa-plus-circle"></i>
                                 <span>Rent Out</span>
                             </a>
@@ -355,7 +355,7 @@
                 
             <div class="col-md-3">
                         <div class="product-card">
-                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
+                            <a href="./ad_page?asset_id=' . $asset_id . '">
                                 <div class="product-media">
                                     <div class="side_margin_for_card">
                                     <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
@@ -369,7 +369,7 @@
                                 <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
                             </ol>
                             <h5 class="product-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
+                                <a href="./ad_page?asset_id=' . $asset_id . '">' . $asset_name . '</a>
                             </h5>
                             <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
                                 <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
@@ -379,7 +379,7 @@
                                 ';
         if (@$_SESSION['user_email']) {
             echo '<div id="notify' . $asset_id . '">
-                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
+                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
                                 </div>';
         }
         echo '
@@ -396,7 +396,7 @@
                 
             <div class="col-md-4">
                         <div class="product-card">
-                            <a href="./ad_page.php?asset_id=' . $asset_id . '">
+                            <a href="./ad_page?asset_id=' . $asset_id . '">
                                 <div class="product-media">
                                     <div class="side_margin_for_card">
                                     <img class="object-fit-contain" style="object-position: center; object-fit: contain;" width="' . $width . '" height="' . $height . '" src="' . $asset_thumbnail . '" alt="product">
@@ -410,7 +410,7 @@
                                 <li class="breadcrumb-item active" aria-current="page">' . $asset_sub_category_name . '</li>
                             </ol>
                             <h5 class="product-title" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
-                                <a href="./ad_page.php?asset_id=' . $asset_id . '">' . $asset_name . '</a>
+                                <a href="./ad_page?asset_id=' . $asset_id . '">' . $asset_name . '</a>
                             </h5>
                             <div class="product-meta" style="white-space: nowrap; width: 100%; overflow: hidden; text-overflow: ellipsis; ">
                                 <span><i class="fas fa-map-marker-alt"></i>' . $asset_location . '</span>
@@ -420,7 +420,7 @@
                                 ';
         if (@$_SESSION['user_email']) {
             echo '<div id="notify' . $asset_id . '">
-                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark.php?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
+                                    <button type="button" title="Wishlist" hx-get="./helpers/bookmark?type=' . $type . '&&asset_id=' . $asset_id . '&&user_id=' . $user_id . '" hx-trigger="click" hx-target="#notify' . $asset_id . '" class="' . $icon . ' fa-heart"></button>
                                 </div>';
         }
         echo '

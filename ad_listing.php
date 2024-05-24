@@ -101,7 +101,7 @@ if (@$_GET['status'] == 1) {
                                 }
                             } else if (empty($asset_search_name)) {
                     ?>
-                                <input type="hidden" hx-get="./helpers/convert.php?asset=<?= @$_GET['asset'] ?>&&min_price<?= @$_GET['min_price'] ?>&&max_price=<?= @$_GET['max_price'] ?>&&stars=<?= @$_GET['stars'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
+                                <input type="hidden" hx-get="./helpers/convert?asset=<?= @$_GET['asset'] ?>&&min_price<?= @$_GET['min_price'] ?>&&max_price=<?= @$_GET['max_price'] ?>&&stars=<?= @$_GET['stars'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
                             <?php
                             } else if (empty($asset_key)) {
                                 $get_assets = mysqli_query($conn, "SELECT * FROM assets WHERE asset_name LIKE '%$asset_search_name%' AND asset_condition = 'active' AND asset_price BETWEEN $min_price AND $max_price ORDER BY id DESC LIMIT 15");
@@ -151,7 +151,7 @@ if (@$_GET['status'] == 1) {
                                 }
                             } else if (!empty($asset_search_name) && !empty($asset_key)) {
                             ?>
-                                <input type="hidden" hx-get="./helpers/convert.php?asset=<?= @$_GET['asset'] ?>&&min_price<?= @$_GET['min_price'] ?>&&max_price=<?= @$_GET['max_price'] ?>&&stars=<?= @$_GET['stars'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
+                                <input type="hidden" hx-get="./helpers/convert?asset=<?= @$_GET['asset'] ?>&&min_price<?= @$_GET['min_price'] ?>&&max_price=<?= @$_GET['max_price'] ?>&&stars=<?= @$_GET['stars'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
                             <?php
                             } else {
                                 echo '<div class="row"><div class="card col-md-12"><div class="card-body"><h5>No Products Found!</h5></div></div></div>';
@@ -214,7 +214,7 @@ if (@$_GET['status'] == 1) {
                                 }
                             } else if (empty($asset_search_name)) {
                             ?>
-                                <input type="hidden" hx-get="./helpers/convert.php?asset=<?= @$_GET['asset'] ?>&&stars=<?= @$_GET['stars'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
+                                <input type="hidden" hx-get="./helpers/convert?asset=<?= @$_GET['asset'] ?>&&stars=<?= @$_GET['stars'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
                             <?php
                             } else if (empty($asset_key)) {
                                 $get_assets = mysqli_query($conn, "SELECT * FROM assets WHERE asset_name LIKE '%$asset_search_name%' AND asset_condition = 'active' ORDER BY id DESC LIMIT 15");
@@ -265,7 +265,7 @@ if (@$_GET['status'] == 1) {
                                 }
                             } else if (!empty($asset_search_name) && !empty($asset_key)) {
                             ?>
-                                <input type="hidden" hx-get="./helpers/convert.php?asset=<?= @$_GET['asset'] ?>&&stars=<?= @$_GET['stars'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
+                                <input type="hidden" hx-get="./helpers/convert?asset=<?= @$_GET['asset'] ?>&&stars=<?= @$_GET['stars'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
                             <?php
                             } else {
                                 echo '<div class="row"><div class="card col-md-12"><div class="card-body"><h5>No Products Found!</h5></div></div></div>';
@@ -316,7 +316,7 @@ if (@$_GET['status'] == 1) {
                                 }
                             } else if (empty($asset_search_name)) {
                             ?>
-                                <input type="hidden" hx-get="./helpers/convert.php?asset=<?= @$_GET['asset'] ?>&&min_price<?= @$_GET['min_price'] ?>&&max_price=<?= @$_GET['max_price'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
+                                <input type="hidden" hx-get="./helpers/convert?asset=<?= @$_GET['asset'] ?>&&min_price<?= @$_GET['min_price'] ?>&&max_price=<?= @$_GET['max_price'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
                             <?php
                             } else if (empty($asset_key)) {
                                 $get_assets = mysqli_query($conn, "SELECT * FROM assets WHERE asset_name LIKE '%$asset_search_name%' AND asset_condition = 'active' AND asset_price BETWEEN $min_price AND $max_price ORDER BY id DESC LIMIT 15");
@@ -352,7 +352,7 @@ if (@$_GET['status'] == 1) {
                                 }
                             } else if (!empty($asset_search_name) && !empty($asset_key)) {
                             ?>
-                                <input type="hidden" hx-get="./helpers/convert.php?asset=<?= @$_GET['asset'] ?>&&min_price<?= @$_GET['min_price'] ?>&&max_price=<?= @$_GET['max_price'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
+                                <input type="hidden" hx-get="./helpers/convert?asset=<?= @$_GET['asset'] ?>&&min_price<?= @$_GET['min_price'] ?>&&max_price=<?= @$_GET['max_price'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
                             <?php
                             } else {
                                 echo '<div class="row"><div class="card col-md-12"><div class="card-body"><h5>No Products Found!</h5></div></div></div>';
@@ -400,7 +400,7 @@ if (@$_GET['status'] == 1) {
                                 }
                             } else if (empty($asset_search_name)) {
                             ?>
-                                <input type="hidden" hx-get="./helpers/convert.php?asset=<?= @$_GET['asset'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
+                                <input type="hidden" hx-get="./helpers/convert?asset=<?= @$_GET['asset'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
                             <?php
                             } else if (empty($asset_key)) {
                                 $get_assets = mysqli_query($conn, "SELECT * FROM assets WHERE asset_name LIKE '%$asset_search_name%' AND asset_condition = 'active' ORDER BY id DESC LIMIT 15");
@@ -443,7 +443,7 @@ if (@$_GET['status'] == 1) {
                                 }
                             } else if (!empty($asset_search_name) && !empty($asset_key)) {
                             ?>
-                                <input type="hidden" hx-get="./helpers/convert.php?asset=<?= @$_GET['asset'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
+                                <input type="hidden" hx-get="./helpers/convert?asset=<?= @$_GET['asset'] ?>" hx-include="[id='location']" hx-target="#notify" hx-trigger="load keyup changed" id="location" value="<?= str_replace(" ", "", $_GET['key']) ?>" class="form-control" name="address">
                     <?php
                             } else {
                                 echo '<div class="row"><div class="card col-md-12"><div class="card-body"><h5>No Products Found!</h5></div></div></div>';
@@ -488,7 +488,7 @@ if (@$_GET['status'] == 1) {
                     <div class="col-md-6 col-lg-12">
                         <div class="product-widget">
                             <h6 class="product-widget-title">Filter by Price</h6>
-                            <form class="product-widget-form" action="./ad_listing.php" method="get">
+                            <form class="product-widget-form" action="./ad_listing" method="get">
                                 <div class="product-widget-group">
                                     <input type="number" name="min_price" min="0" placeholder="min - 00">
                                     <input type="number" name="max_price" max="100000" placeholder="max - 1L">
@@ -506,7 +506,7 @@ if (@$_GET['status'] == 1) {
                     <div class="col-md-6 col-lg-12">
                         <div class="product-widget">
                             <h6 class="product-widget-title">Filter by rating</h6>
-                            <form class="product-widget-form" method="get" action="./ad_listing.php">
+                            <form class="product-widget-form" method="get" action="./ad_listing">
                                 <ul class="product-widget-list">
                                     <li class="product-widget-item">
                                         <input type="hidden" name="asset" value="<?= @$_GET['asset'] ?>">

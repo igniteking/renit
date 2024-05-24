@@ -114,14 +114,14 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                     $created_at =  date('Y-m-d H:i:s');
                     $inset_asset = mysqli_query($conn, "UPDATE `assets` SET `asset_brand`='$brand_name',`asset_by_address`='$asset_by_address',`asset_by_name`='$asset_by_name',`asset_by_number`='$asset_by_number',`asset_category`='$asset_category',`asset_description`='$asset_description',`asset_location`='$asset_location',`asset_model`='$asset_model',`asset_name`='$asset_name',`asset_price`='$asset_price',`asset_safety_deposite`='$asset_safety_deposite',`asset_sub_category`='$asset_sub_category',`asset_useage_description`='$asset_useage_description',`asset_user`='$asset_user',`asset_price_type`='$asset_price_type',`asset_category_type`='$asset_category_type',`asset_condition`='$asset_condition',`curr_code`='$curr_code' WHERE id= '$get_asset_id'");
                     if ($inset_asset) {
-                        refresh('./preview_page.php?asset_id=' . $get_asset_id . '', '0');
+                        refresh('./preview_page?asset_id=' . $get_asset_id . '', '0');
                     } else {
                         Toast('info', 'All Feilds are required!');
                     }
                 }
                 // }
                 ?>
-                <form class="adpost-form" method="POST" action="./edit.php?asset_id=<?= $get_asset_id; ?>" enctype="multipart/form-data">
+                <form class="adpost-form" method="POST" action="./edit?asset_id=<?= $get_asset_id; ?>" enctype="multipart/form-data">
                     <div class="adpost-card">
                         <div class="adpost-title">
                             <h3>Ad Information</h3>
@@ -130,7 +130,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-label">Product Title</label>
-                                    <input type="text" value="<?= $asset_name ?>" onchange="block(1)" hx-get="./helpers/content_mod.php?name=asset_name&" hx-trigger="keyup changed" hx-target="#notify1" id="title" class="form-control" name="asset_name" placeholder="Type your product title here">
+                                    <input type="text" value="<?= $asset_name ?>" onchange="block(1)" hx-get="./helpers/content_mod?name=asset_name&" hx-trigger="keyup changed" hx-target="#notify1" id="title" class="form-control" name="asset_name" placeholder="Type your product title here">
                                     <div id="notify1"></div>
                                 </div>
                             </div>
@@ -148,21 +148,21 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-label">Brand Name</label>
-                                    <input type="text" value="<?= $asset_brand ?>" onchange="block(2)" hx-get="./helpers/content_mod.php?name=brand_name&" hx-trigger="keyup changed" hx-target="#notify2" class="form-control" name="brand_name" placeholder="Type your brand name here">
+                                    <input type="text" value="<?= $asset_brand ?>" onchange="block(2)" hx-get="./helpers/content_mod?name=brand_name&" hx-trigger="keyup changed" hx-target="#notify2" class="form-control" name="brand_name" placeholder="Type your brand name here">
                                     <div id="notify2"></div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="form-label">Model Name / Number</label>
-                                    <input type="text" value="<?= $asset_model ?>" onchange="block(3)" hx-get="./helpers/content_mod.php?name=asset_model&" hx-trigger="keyup changed" hx-target="#notify3" class="form-control" name="asset_model" placeholder="Type your model name / number here">
+                                    <input type="text" value="<?= $asset_model ?>" onchange="block(3)" hx-get="./helpers/content_mod?name=asset_model&" hx-trigger="keyup changed" hx-target="#notify3" class="form-control" name="asset_model" placeholder="Type your model name / number here">
                                     <div id="notify3"></div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="form-label">Product Category</label>
-                                    <select class="form-control custom-select" name="asset_category" hx-get="./helpers/get_sub_category.php" hx-trigger="change" hx-target="#asset_sub_category">
+                                    <select class="form-control custom-select" name="asset_category" hx-get="./helpers/get_sub_category" hx-trigger="change" hx-target="#asset_sub_category">
                                         <option value="<?= fetch_single_row($conn, "SELECT id FROM categories WHERE id = '$asset_category'") ?>"><?= fetch_single_row($conn, "SELECT category_name FROM categories WHERE id = '$asset_category'") ?></option>
                                         <?php
                                         $get_categories = mysqli_query($conn, "SELECT * FROM `categories` LIMIT 9");
@@ -198,7 +198,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label class="form-label">Location</label>
-                                    <input type="text" value="<?= $asset_location ?>" name="key" autocomplete="off" id="asset_location_search" hx-get="./helpers/location.php" hx-include="[id=asset_location_search]" hx-target="#asset_location_list" hx-trigger="keyup change" class="form-control" placeholder="Enter location">
+                                    <input type="text" value="<?= $asset_location ?>" name="key" autocomplete="off" id="asset_location_search" hx-get="./helpers/location" hx-include="[id=asset_location_search]" hx-target="#asset_location_list" hx-trigger="keyup change" class="form-control" placeholder="Enter location">
                                 </div>
                                 <script>
                                     document.body.addEventListener('click', function(e) {
@@ -251,7 +251,7 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">@</span>
                                         </div>
-                                        <input value="<?= $asset_price ?>" hx-get="./helpers/get_country.php" hx-include="[id=asset_location_search]" hx-target="#basic-addon1" hx-trigger="click keyup change" type="number" class="form-control" name="asset_price" placeholder="Enter your pricing amount">
+                                        <input value="<?= $asset_price ?>" hx-get="./helpers/get_country" hx-include="[id=asset_location_search]" hx-target="#basic-addon1" hx-trigger="click keyup change" type="number" class="form-control" name="asset_price" placeholder="Enter your pricing amount">
                                     </div>
                                 </div>
                             </div>
@@ -262,21 +262,21 @@ while ($rows = mysqli_fetch_assoc($get_asset)) {
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon2">@</span>
                                         </div>
-                                        <input value="<?= $asset_safety_deposite ?>" hx-get="./helpers/get_country.php" hx-include="[id=asset_location_search]" hx-target="#basic-addon2" hx-trigger="click keyup change" type="number" class="form-control" type="number" class="form-control" id="asset_safety_deposite" name="asset_safety_deposite" placeholder="Enter your pricing amount">
+                                        <input value="<?= $asset_safety_deposite ?>" hx-get="./helpers/get_country" hx-include="[id=asset_location_search]" hx-target="#basic-addon2" hx-trigger="click keyup change" type="number" class="form-control" type="number" class="form-control" id="asset_safety_deposite" name="asset_safety_deposite" placeholder="Enter your pricing amount">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="form-label">Product Description</label>
-                                    <textarea class="form-control" onchange="block(4)" hx-get="./helpers/content_mod.php?name=asset_description&" hx-trigger="keyup changed" hx-target="#notify4" name="asset_description" placeholder="Describe your message"><?= $asset_description ?></textarea>
+                                    <textarea class="form-control" onchange="block(4)" hx-get="./helpers/content_mod?name=asset_description&" hx-trigger="keyup changed" hx-target="#notify4" name="asset_description" placeholder="Describe your message"><?= $asset_description ?></textarea>
                                     <div id="notify4"></div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="form-label">Product Usage Description</label>
-                                    <textarea class="form-control" onchange="block(5)" hx-get="./helpers/content_mod.php?name=asset_userage_description&" hx-trigger="keyup changed" hx-target="#notify5" name="asset_userage_description" placeholder="Describe your message"><?= $asset_useage_description ?></textarea>
+                                    <textarea class="form-control" onchange="block(5)" hx-get="./helpers/content_mod?name=asset_userage_description&" hx-trigger="keyup changed" hx-target="#notify5" name="asset_userage_description" placeholder="Describe your message"><?= $asset_useage_description ?></textarea>
                                     <div id="notify5"></div>
                                 </div>
                             </div>

@@ -22,11 +22,11 @@
     if (isset($_SESSION['user_email'])) {
         if ($user_type == 'admin') {
         } else {
-            echo "<meta http-equiv=\"refresh\" content=\"0; url=./helpers/logout.php\">";
+            echo "<meta http-equiv=\"refresh\" content=\"0; url=./helpers/logout\">";
             exit();
         }
     } else {
-        echo "<meta http-equiv=\"refresh\" content=\"0; url=./helpers/logout.php\">";
+        echo "<meta http-equiv=\"refresh\" content=\"0; url=./helpers/logout\">";
         exit();
     }
     ?>

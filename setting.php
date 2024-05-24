@@ -63,7 +63,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
 
                     if ($mysqli_query) {
                         Toast('black', 'Record Updated Successfully ...');
-                        refresh('./setting.php', '2');
+                        refresh('./setting', '2');
                     } else {
                         Toast('danger', 'Error Updating Record ...');
                     }
@@ -74,7 +74,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                         <h3>Edit Profile</h3>
                         <button data-dismiss="alert">close</button>
                     </div>
-                    <form class="setting-form" method="post" action="./setting.php" enctype="multipart/form-data">
+                    <form class="setting-form" method="post" action="./setting" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group">

@@ -99,14 +99,14 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                     VALUES ('$created_at','$asset_price_type','','','$brand_name','$asset_by_address','$asset_by_name','$asset_by_number','$asset_category','$asset_description','$newFilePath2','$asset_location','$asset_model','$asset_name','$asset_price','$asset_safety_deposite','$asset_sub_category','$asset_thumbnail_location', '$asset_cropped_thumbnail', '$asset_userage_description','$user_id',NULL, '$curr_sumbol','$curr_code')");
                         if ($inset_asset) {
                             $geo = fetch_single_row($conn, "SELECT id FROM assets WHERE asset_user = '$user_id' ORDER BY id DESC");
-                            refresh('./preview_page.php?asset_id=' . $geo . '', '0');
+                            refresh('./preview_page?asset_id=' . $geo . '', '0');
                         }
                     } else {
                         Toast('info', 'Please mark all * compulsory feilds.');
                     }
                 }
                 ?>
-                <form class="adpost-form" method="POST" action="./ad_post.php" enctype="multipart/form-data">
+                <form class="adpost-form" method="POST" action="./ad_post" enctype="multipart/form-data">
                     <div class="adpost-card">
                         <div class="adpost-title">
                             <h3>Product Information</h3>
@@ -115,7 +115,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-label">Product Title <span style="color: red;">*</span></label>
-                                    <input type="text" onchange="block(1)" hx-get="./helpers/content_mod.php?name=asset_name&" hx-trigger="keyup changed" hx-target="#notify1" id="title" class="form-control" name="asset_name" placeholder="Type your product title here">
+                                    <input type="text" onchange="block(1)" hx-get="./helpers/content_mod?name=asset_name&" hx-trigger="keyup changed" hx-target="#notify1" id="title" class="form-control" name="asset_name" placeholder="Type your product title here">
                                     <div id="notify1"></div>
                                 </div>
                             </div>
@@ -133,14 +133,14 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-label">Brand Name</label>
-                                    <input type="text" onchange="block(2)" hx-get="./helpers/content_mod.php?name=brand_name&" hx-trigger="keyup changed" hx-target="#notify2" class="form-control" name="brand_name" placeholder="Type your brand name here">
+                                    <input type="text" onchange="block(2)" hx-get="./helpers/content_mod?name=brand_name&" hx-trigger="keyup changed" hx-target="#notify2" class="form-control" name="brand_name" placeholder="Type your brand name here">
                                     <div id="notify2"></div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="form-label">Model Name / Number</label>
-                                    <input type="text" onchange="block(3)" hx-get="./helpers/content_mod.php?name=asset_model&" hx-trigger="keyup changed" hx-target="#notify3" class="form-control" name="asset_model" placeholder="Type your model name / number here">
+                                    <input type="text" onchange="block(3)" hx-get="./helpers/content_mod?name=asset_model&" hx-trigger="keyup changed" hx-target="#notify3" class="form-control" name="asset_model" placeholder="Type your model name / number here">
                                     <div id="notify3"></div>
                                 </div>
                             </div>
@@ -232,7 +232,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="form-label">Product Category <span style="color: red;">*</span></label>
-                                    <select class="form-control custom-select" name="asset_category" hx-get="./helpers/get_sub_category.php" hx-trigger="change" hx-target="#asset_sub_category">
+                                    <select class="form-control custom-select" name="asset_category" hx-get="./helpers/get_sub_category" hx-trigger="change" hx-target="#asset_sub_category">
                                         <option value="">Please Select</option>
                                         <?php
                                         $get_categories = mysqli_query($conn, "SELECT * FROM `categories` LIMIT 9");
@@ -266,7 +266,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label class="form-label">Location <span style="color: red;">*</span></label>
-                                    <input type="text" name="key" autocomplete="off" id="asset_location_search" hx-get="./helpers/location.php" hx-include="[id=asset_location_search]" hx-target="#asset_location_list" hx-trigger="keyup change" class="form-control" placeholder="Enter location">
+                                    <input type="text" name="key" autocomplete="off" id="asset_location_search" hx-get="./helpers/location" hx-include="[id=asset_location_search]" hx-target="#asset_location_list" hx-trigger="keyup change" class="form-control" placeholder="Enter location">
                                 </div>
                                 <script>
                                     document.body.addEventListener('click', function(e) {
@@ -314,7 +314,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">@</span>
                                         </div>
-                                        <input style="z-index: 1;" hx-get="./helpers/get_country.php" hx-include="[id=asset_location_search]" hx-target="#basic-addon1" hx-trigger="click keyup change" type="number" class="form-control" name="asset_price" placeholder="Enter your pricing amount">
+                                        <input style="z-index: 1;" hx-get="./helpers/get_country" hx-include="[id=asset_location_search]" hx-target="#basic-addon1" hx-trigger="click keyup change" type="number" class="form-control" name="asset_price" placeholder="Enter your pricing amount">
                                     </div>
                                 </div>
                             </div>
@@ -325,7 +325,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon2">@</span>
                                         </div>
-                                        <input style="z-index: 1;" hx-get="./helpers/get_country.php" hx-include="[id=asset_location_search]" hx-target="#basic-addon2" hx-trigger="click keyup change" type="number" class="form-control" type="number" class="form-control" id="asset_safety_deposite" name="asset_safety_deposite" placeholder="Enter your pricing amount">
+                                        <input style="z-index: 1;" hx-get="./helpers/get_country" hx-include="[id=asset_location_search]" hx-target="#basic-addon2" hx-trigger="click keyup change" type="number" class="form-control" type="number" class="form-control" id="asset_safety_deposite" name="asset_safety_deposite" placeholder="Enter your pricing amount">
                                     </div>
                                 </div>
                             </div>
@@ -351,14 +351,14 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="form-label">Product Description</label>
-                                    <textarea class="form-control" onchange="block(4)" hx-get="./helpers/content_mod.php?name=asset_description&" hx-trigger="keyup changed" hx-target="#notify4" name="asset_description" placeholder="Describe your message"></textarea>
+                                    <textarea class="form-control" onchange="block(4)" hx-get="./helpers/content_mod?name=asset_description&" hx-trigger="keyup changed" hx-target="#notify4" name="asset_description" placeholder="Describe your message"></textarea>
                                     <div id="notify4"></div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="form-label">Product Usage Description</label>
-                                    <textarea class="form-control" onchange="block(5)" hx-get="./helpers/content_mod.php?name=asset_userage_description&" hx-trigger="keyup changed" hx-target="#notify5" name="asset_userage_description" placeholder="Describe your message"></textarea>
+                                    <textarea class="form-control" onchange="block(5)" hx-get="./helpers/content_mod?name=asset_userage_description&" hx-trigger="keyup changed" hx-target="#notify5" name="asset_userage_description" placeholder="Describe your message"></textarea>
                                     <div id="notify5"></div>
                                 </div>
                             </div>
@@ -457,7 +457,7 @@ while ($rows = mysqli_fetch_assoc($get_user)) {
                             <div class="form-group">
                                 <input type="checkbox" class="form-check">
                             </div>
-                            <p>By clicking, you agree to Renit's <a href="./terms.php">Terms of Use</a> as well as its <a href="./privacy.php">Privacy Policy</a>; and acknowledge that you are the rightful owner of this item.</p>
+                            <p>By clicking, you agree to Renit's <a href="./terms">Terms of Use</a> as well as its <a href="./privacy">Privacy Policy</a>; and acknowledge that you are the rightful owner of this item.</p>
                         </div>
                         <div class="form-group text-right">
                             <button type="submit" value="submit" id="recall" name="submit" class="btn btn-inline">

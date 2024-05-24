@@ -11,7 +11,7 @@ if (@$_GET['status'] == 1) {
 <?php
 if (isset($_SESSION['user_email'])) {
 } else {
-    echo "<meta http-equiv=\"refresh\" content=\"0; url=./helpers/logout.php\">";
+    echo "<meta http-equiv=\"refresh\" content=\"0; url=./helpers/logout\">";
     exit();
 }
 ?>
@@ -110,7 +110,7 @@ if (isset($_POST['submite'])) {
                         }
                     </style>
                     <div class="card" style="background-color: #e5e5e5;">
-                        <input type="text" hx-get="./helpers/search_chat_user.php" hx-trigger="change" hx-target="#result_search" name="chat_name_search" style="border: 0px solid #e5e5e5; outline:none; background-color: #e5e5e5;" placeholder=" Search name here ..." class="form-control">
+                        <input type="text" hx-get="./helpers/search_chat_user" hx-trigger="change" hx-target="#result_search" name="chat_name_search" style="border: 0px solid #e5e5e5; outline:none; background-color: #e5e5e5;" placeholder=" Search name here ..." class="form-control">
                     </div>
                     <div class="card"></div>
                     <div class="list-group lg-alt" style="background-color: #e5e5e5;" id="result_search">
@@ -392,7 +392,7 @@ if (isset($_POST['submite'])) {
                                 </div>
                                 <div class="col-5" style="margin-left: -15px;">
                                     <div class="pull-left hidden-xs">
-                                        <a href="./profile_view.php?user_id=<?= $get_user_name_id ?>"><img src="<?= $get_user_picture != '' ? $get_user_picture : './assets/images/user.png'  ?>" alt="" class="img-avatar rounded-circle avatar ml-1">
+                                        <a href="./profile_view?user_id=<?= $get_user_name_id ?>"><img src="<?= $get_user_picture != '' ? $get_user_picture : './assets/images/user.png'  ?>" alt="" class="img-avatar rounded-circle avatar ml-1">
                                             <span class="text-white" id="amsndbams"><b><?= $get_user_name ?></b></span>
                                         </a>
                                     </div>
@@ -439,7 +439,7 @@ if (isset($_POST['submite'])) {
                                         </button>
                                     </div>
                                     <div class="col-4">
-                                        <a href="./index.php">
+                                        <a href="./index">
                                             <button class="text-white hidenstuff">
                                                 <i class="fas fa-home"></i>
                                             </button>
@@ -459,7 +459,7 @@ if (isset($_POST['submite'])) {
                                         </button>
                                     </div>
                                     <div class="col-1">
-                                        <a href="./index.php">
+                                        <a href="./index">
                                             <button class="header-widget show">
                                                 <i class="fas fa-home"></i>
                                             </button>
@@ -478,7 +478,7 @@ if (isset($_POST['submite'])) {
                                                 <div class="row">
                                                     <div id="notify"></div>
                                                     <div class="col-md-6">
-                                                        <button hx-get="./helpers/delete_chat.php?chat_id=<?= @$_GET['chat_id'] ?>" hx-trigger="click" hx-target="#notify" class="btn btn-dark col-sm-12">YES</button>
+                                                        <button hx-get="./helpers/delete_chat?chat_id=<?= @$_GET['chat_id'] ?>" hx-trigger="click" hx-target="#notify" class="btn btn-dark col-sm-12">YES</button>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <button onclick="closeDialog()" class="btn btn-dark col-sm-12">NO</button>
@@ -507,7 +507,7 @@ if (isset($_POST['submite'])) {
                                                     TELL US THE REASON FOR THE REPORT?
                                                 </p>
                                                 <br>
-                                                <form action="./chat.php?chat_id=<?= @$_GET['chat_id'] ?>" method="POST">
+                                                <form action="./chat?chat_id=<?= @$_GET['chat_id'] ?>" method="POST">
                                                     <textarea name="message" id="" cols="30" class="form-control" rows="10"></textarea>
                                                     <div class="card-footer">
                                                         <div class="row">
@@ -538,7 +538,7 @@ if (isset($_POST['submite'])) {
                 </div>
             </div>
         <?php } ?>
-        <div id="test" style="overflow-y: auto; display: flex; flex-direction: column-reverse; background-color: #e5e5e5;" hx-trigger="load, every 2s" hx-get="./helpers/get_messages.php?chat_id=<?= @$_GET['chat_id'] ?>"></div>
+        <div id="test" style="overflow-y: auto; display: flex; flex-direction: column-reverse; background-color: #e5e5e5;" hx-trigger="load, every 2s" hx-get="./helpers/get_messages?chat_id=<?= @$_GET['chat_id'] ?>"></div>
         <?php
         if (@$_GET['chat_id']) { ?>
             <div class="row navbar navbar-default navbar-fixed-bottom" style="width: 100%; margin-left: 0px; background-color: #e5e5e5; border: 2px solid white; border-left: none;">
@@ -560,7 +560,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
                         }
                     }
                     ?>
-                    <form action="./chat.php?chat_id=<?= $_GET['chat_id']; ?>" method="POST" enctype="multipart/form-data">
+                    <form action="./chat?chat_id=<?= $_GET['chat_id']; ?>" method="POST" enctype="multipart/form-data">
                         <input id="file-input" name="attachment" onchange="this.form.submit()" type="file" style="display: none;" />
                         <input type="hidden" value="uploadpic" name="uploadpic" style="display: hidden;"></input>
                     </form>
@@ -601,7 +601,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
                     }
                 };
                 var message = input.value;
-                xhttp.open("GET", "./helpers/message.php?sender_id=<?= $user_id ?>&&asset_id=<?= $chat_asset_id ?>&&chat_id=<?= @$_GET['chat_id'] ?>&&message=" + message, true);
+                xhttp.open("GET", "./helpers/message?sender_id=<?= $user_id ?>&&asset_id=<?= $chat_asset_id ?>&&chat_id=<?= @$_GET['chat_id'] ?>&&message=" + message, true);
                 xhttp.send();
                 input.value = "";
 
@@ -634,7 +634,7 @@ VALUES ('$chat_asset_id','$date',NULL,'$done','image','$user_id',0,'$chat_id')")
             //                     }
             //                 };
             //                 var message = editor.getContent();
-            //                 xhttp.open("GET", "./helpers/message.php?sender_id=<?= $user_id ?>&&asset_id=<?= $chat_asset_id ?>&&chat_id=<?= @$_GET['chat_id'] ?>&&message=" + message, true);
+            //                 xhttp.open("GET", "./helpers/message?sender_id=<?= $user_id ?>&&asset_id=<?= $chat_asset_id ?>&&chat_id=<?= @$_GET['chat_id'] ?>&&message=" + message, true);
             //                 xhttp.send();
             //                 editor.resetContent();
             //             },

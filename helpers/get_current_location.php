@@ -26,4 +26,4 @@ $my_location = ($dataArray['results'][0]['address_components'][7]['long_name']);
 
 mysqli_query($conn, "UPDATE `user_data` SET `user_country`='$my_location' WHERE id= '$user_id'");
 
-echo "<meta http-equiv=\"refresh\" content=\"0; url=../index.php?status=1\">";
+echo "<meta http-equiv=\"refresh\" content=\"0; url=../index?status=1\">";

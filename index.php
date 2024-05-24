@@ -39,7 +39,7 @@ include('./components/sidebar.php');
                 $category_name = $rows["category_name"];
                 $category_icon = $rows["category_icon"];
                 echo '
-                <a href="listing.php?cat_id=' . $category_id . '" class="suggest-card" style="background-color: #000; border: 2px solid white;">
+                <a href="listing?cat_id=' . $category_id . '" class="suggest-card" style="background-color: #000; border: 2px solid white;">
                 <img src="' . $category_icon . '" alt="car">
                 <h6 class="text-white">' . $category_name . '</h6>
                 <p class="text-white">' . mysqli_num_rows(mysqli_query($conn, "SELECT * FROM assets WHERE asset_category = '$category_id' AND asset_condition = 'active'")) . ' ads</p>
@@ -237,7 +237,7 @@ include('./components/sidebar.php');
                 <div class="category-card">
                     <div class="category-head">
                         <img src="' . $category_image . '" alt="category">
-                        <a href="./listing.php?cat_id=' . $category_id . '" class="category-content">
+                        <a href="./listing?cat_id=' . $category_id . '" class="category-content">
                             <h4>' . $category_name . '</h4>
                             <p>' . mysqli_num_rows(mysqli_query($conn, "SELECT * FROM assets WHERE asset_category = '$category_id' AND asset_condition = 'active'")) . '</p>
                         </a>
@@ -249,7 +249,7 @@ include('./components/sidebar.php');
                     $sub_category_id = $rows["id"];
                     $sub_category_name = $rows["sub_category_name"];
                     echo '
-                        <li><a href="./sub_listing.php?cat_id=' . $sub_category_id . '">
+                        <li><a href="./sub_listing?cat_id=' . $sub_category_id . '">
                                 <h6>' . $sub_category_name . '</h6>
                                 <p>' . mysqli_num_rows(mysqli_query($conn, "SELECT * FROM assets WHERE asset_sub_category = '$sub_category_id' AND asset_condition = 'active'")) . '</p>
                             </a></li>';
@@ -265,7 +265,7 @@ include('./components/sidebar.php');
         <div class="row">
             <div class="col-lg-12">
                 <div class="center-20">
-                    <a href="./category_list.php" class="btn btn-inline">
+                    <a href="./category_list" class="btn btn-inline">
                         <i class="fas fa-eye"></i>
                         <span>view all categories</span>
                     </a>
@@ -284,12 +284,12 @@ include('./components/sidebar.php');
                     <h2>Do you have something to share and rent to others?</h2>
                     <?php
                     if (isset($_SESSION['user_email'])) { ?>
-                        <a href="./ad_post.php" class="btn btn-outline">
+                        <a href="./ad_post" class="btn btn-outline">
                             <i class="fas fa-plus-circle"></i>
                             <span>Rent Out</span>
                         </a>
                     <?php } else { ?>
-                        <a href="./auth/auth.php" class="btn btn-outline">
+                        <a href="./auth/auth" class="btn btn-outline">
                             <i class="fas fa-plus-circle"></i>
                             <span>Rent Out</span>
                         </a>

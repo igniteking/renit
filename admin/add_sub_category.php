@@ -41,7 +41,7 @@ if (@$_GET["status"] == 1) {
                                             VALUES ('$sub_category_discription','$sub_category_name','$created_at',NULL, '$category_id')");
 
                                             if ($insert_request) {
-                                                echo "<meta http-equiv=\"refresh\" content=\"0; url=./add_sub_category.php?code=1\">";
+                                                echo "<meta http-equiv=\"refresh\" content=\"0; url=./add_sub_category?code=1\">";
                                             }
                                         }
                                         if (@$_GET['code'] == 1) {
@@ -52,7 +52,7 @@ if (@$_GET["status"] == 1) {
                                         }
 
                                         ?>
-                                        <form class="form form-horizontal" method="post" action="./add_sub_category.php" enctype="multipart/form-data">
+                                        <form class="form form-horizontal" method="post" action="./add_sub_category" enctype="multipart/form-data">
                                             <div class="form-body">
                                                 <div class="row">
                                                     <div class="col-md-4">

@@ -44,7 +44,7 @@ if (@$_GET["status"] == 1) {
                                             VALUES ('$category_discription','$category_icon_location','$category_image_location','$category_name','$created_at',NULL)");
 
                                             if ($insert_request) {
-                                                echo "<meta http-equiv=\"refresh\" content=\"0; url=./add_categories.php?code=1\">";
+                                                echo "<meta http-equiv=\"refresh\" content=\"0; url=./add_categories?code=1\">";
                                             }
                                         }
                                         if (@$_GET['code'] == 1) {
@@ -55,7 +55,7 @@ if (@$_GET["status"] == 1) {
                                         }
 
                                         ?>
-                                        <form class="form form-horizontal" method="post" action="./add_categories.php" enctype="multipart/form-data">
+                                        <form class="form form-horizontal" method="post" action="./add_categories" enctype="multipart/form-data">
                                             <div class="form-body">
                                                 <div class="row">
                                                     <div class="col-md-4">

@@ -62,7 +62,7 @@ CONTACT PART START
                     }
                 }
                 ?>
-                <form class="contact-form" method="post" action="./contact.php">
+                <form class="contact-form" method="post" action="./contact">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">

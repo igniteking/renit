@@ -23057,7 +23057,7 @@
    * https://github.com/imranghory/treemap-squared/
    *
    * Copyright (c) 2012 Imran Ghory (imranghory@gmail.com)
-   * Licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) license.
+   * Licensed under the MIT (http://www.opensource.org/licenses/mit-license) license.
    *
    *
    * Implementation of the squarify treemap algorithm described in:
@@ -29704,7 +29704,7 @@
       // using this formula: t = sqrt(r^2 - c^2 / 4)
       // where t is the distance between the cirle center and the chord midpoint,
       //       r is the rayon of the circle and c is the chord length
-      // From: http://www.ajdesigner.com/phpcircle/circle_segment_chord_t.php
+      // From: http://www.ajdesigner.com/phpcircle/circle_segment_chord_t
       // Because of the imprecision of floating point numbers, cSquare might end
       // up being slightly above 4 which would result in a negative radicand
       // To prevent that, a test is made before computing the square root

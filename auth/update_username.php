@@ -21,7 +21,7 @@
         =======================================-->
 
     <!-- FOR WEBPAGE TITLE -->
-    <title>Renit - Forget Password</title>
+    <title>Renit - User Form</title>
 
     <!--=====================================
                     CSS LINK PART START
@@ -57,10 +57,11 @@
     <section class="user-form-part">
         <div class="user-form-banner">
             <div class="user-form-content">
-                <h2 class="text-white">Renit</h2>
-                <!-- <a href="#"><img src="../assets/images/renit-logo-removebg-preview.png" alt="logo"></a> -->
-                <h1>Advertise your assets <span>Buy what are you needs.</span></h1>
-                <p>Biggest Online Advertising Marketplace in the World.</p>
+                <a href="../index">
+                    <h2 class="text-white">Renit</h2>
+                    <!-- <img src="../assets/images/renit-logo-removebg-preview.png" alt="logo"> -->
+                </a>
+                <h1>"Simply Rent It"</span></h1>
             </div>
         </div>
 
@@ -80,67 +81,65 @@
                         }
                     }
                 </style>
-                <h2 class="hideonmobile">Renit</h2>
-            </div>
-            <div class="user-form-category-btn">
+                <a href="../index">
+                    <h2 class="hideonmobile">Renit</h2>
+                </a>
             </div>
             <?php
             if (@$_GET['status'] == 1) {
                 Toast("success", "You Can Now Login To your Account!");
             }
-            if (@$_GET['tab'] == '') {
+            if (@$_GET['tab'] == 'login') {
                 $class = "tab-pane active";
-            } else if (@$_GET['tab'] == "1") {
+            } else if (@$_GET['tab'] == "register") {
                 $class = "tab-pane";
             } else {
                 $class = "tab-pane active";
             }
             ?>
-            <div class="<?= $class ?>" id="login-tab">
+            <div class="<?= $class ?> mt-5" id="login-tab">
                 <div class="user-form-title">
                     <h2>Welcome!</h2>
-                    <p>Use your email credentials to reset your account's password.</p>
+                    <p>Upadte your user credentials to access your account.</p>
                 </div>
                 <?php
-                $login = @$_POST['login'];
-                if ($login) {
-                    $email_address = security_check(@$_POST['email']);
-                    if (filter_var($email_address, FILTER_VALIDATE_EMAIL)) {
-                        $email = $email_address;
-                    } else {
-                        echo "This is an INVALID email address.\n";
+                $update_username = @$_POST['update_username'];
+                if ($update_username) {
+                    $new_username = security_check(@$_POST['new_username']);
+                    $insert = mysqli_query($conn, "UPDATE user_data SET `user_name` = '$new_username' WHERE `user_email` = '" . $_SESSION["user_email"] . "'");
+                    if ($insert) {
+                        $_SESSION["username"] = $new_username;
+                        Toast("default", "Username Upadated Successfully...");
+                        header("Location: " . "../");
                     }
-
-                    EFMail($email, 'Reset Password', '<a href="https://renit.co.in/auth/forget_password?auth=1&email=' . $email . '&tab=1">Click here to reset your password</a>');
                 }
                 ?>
-                <form method="post" action="./forget_password">
+                <form method="post" action="./update_username">
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" placeholder="Email">
-                                <small class="form-alert">Please follow this example - email@email.com</small>
+                                <input type="text" class="form-control" name="new_username" placeholder="Full Name">
+                                <small class="form-alert">Please follow this example - Full Name</small>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <button name="login" value="login" type="submit" class="btn btn-inline">
+                                <button name="update_username" value="update_username" type="submit" class="btn btn-inline">
                                     <i class="fas fa-unlock"></i>
-                                    <span>Reset Your Password</span>
+                                    <span>Enter your account</span>
                                 </button>
                             </div>
                         </div>
+
+
                     </div>
                 </form>
-                <div class="user-form-direction">
-                    <p>Don't have an account? click on <span><a href="./auth">( sign up )</a></span></p>
-                </div>
             </div>
 
             <?php
-            if (@$_GET['tab'] == '1') {
+            if (@$_GET['tab'] == 'register') {
                 $class = "tab-pane active";
-            } else if (@$_GET['tab'] == "") {
+            } else if (@$_GET['tab'] == "register") {
                 $class = "tab-pane";
             } else {
                 $class = "tab-pane";
@@ -148,58 +147,39 @@
             ?>
             <div class="<?= $class ?>" id="register-tab">
                 <div class="user-form-title">
-                    <h2>Set your new password</h2>
+                    <h2>Register</h2>
                 </div>
                 <?php
                 $reg = @$_POST['reg'];
                 if ($reg) {
-                    if (@$_GET['auth'] == 1) {
-                        $email = security_check(@$_GET['email']);
+                    if (@$_POST['tadnc']) {
+                        $email = security_check(@$_POST['email']);
                         $username = security_check(@$_POST['username']);
                         $password = security_check(@$_POST['password']);
                         $re_pass = security_check(@$_POST['re-pass']);
-                        if ($password == $re_pass) {
-                            if (preg_match("/\d/", $password)) {
-                                if (preg_match("/[A-Z]/", $password)) {
-                                    if (preg_match("/[a-z]/", $password)) {
-                                        if (preg_match("/\W/", $password)) {
-                                            $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-                                            if (mysqli_query($conn, "UPDATE `user_data` SET `user_password`='$hashedPwd' WHERE user_email = '$email'")) {
-                                                Toast('success', 'Password changed successfully');
-                                                refresh('./auth', 2);
-                                            }
-                                        } else {
-                                            echo "<div class='error-styler'><center>
-                                                        <p style='padding: 10px; margin: 10px; font-size: 14px; color: #fff; font-weight: 600; border-radius: 8px; text-align: center; background: #ff7474;'>Password should contain at least one special character!</p>;
-                                                        </center></div>";
-                                        }
-                                    } else {
-                                        echo "<div class='error-styler'><center>
-                                                    <p style='padding: 10px; margin: 10px; font-size: 14px; color: #fff; font-weight: 600; border-radius: 8px; text-align: center; background: #ff7474;'>Password should contain at least one small Letter</p>
-                                </center></div>";
-                                    }
-                                } else {
-                                    echo "<div class='error-styler'><center>
-                                                <p style='padding: 10px; margin: 10px; font-size: 14px; color: #fff; font-weight: 600; border-radius: 8px; text-align: center; background: #ff7474;'>Password should contain at least one Capital Letter</p>
-                                </center></div>";
-                                }
-                            } else {
-                                echo "<div class='error-styler'><center>
-                                            <p style='padding: 10px; margin: 10px; font-size: 14px; color: #fff; font-weight: 600; border-radius: 8px; text-align: center; background: #ff7474;'>Password should contain at least one digit</p>
-                            </center></div>";
-                            }
-                        } else {
-                            echo "<div class='error-styler'><center>
-                                        <p style='padding: 10px; margin: 10px; font-size: 14px; color: #fff; font-weight: 600; border-radius: 8px; text-align: center; background: #ff7474;'>Both Password's Dont Match!</p>
-                            </center></div>";
-                        }
+                        $location = security_check(@$_POST['key']);
+                        $user_type = "user";
+                        $ip = getenv("REMOTE_ADDR");
+                        Register($user_type, $username, $password, $re_pass, $conn, $email, $location);
                     } else {
-                        refresh('../index', 0);
+                        Toast("warning", "Please Accept The Terms and Conditions");
                     }
                 }
                 ?>
-                <form method="POST" action="./forget_password?auth=<?= $_GET['auth'] ?>&email=<?= $_GET['email'] ?>&tab=<?= $_GET['tab'] ?>">
+                <form method="POST" action="auth?tab=register">
                     <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="username" placeholder="Username">
+                                <small class="form-alert">Please follow this example - Username</small>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" placeholder="Email">
+                                <small class="form-alert">Please follow this example - email@email.com</small>
+                            </div>
+                        </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <input type="password" id="form-icon1" class="form-control" name="password" placeholder="Password">
@@ -232,9 +212,67 @@
                         </script>
                         <div class="col-12">
                             <div class="form-group">
+                                <input type="text" name="key" onfocus="show()" id="asset_location_search" hx-get="../helpers/location" hx-include="[id=asset_location_search]" hx-target="#asset_location_list" hx-trigger="keyup change" class="form-control" placeholder="Enter location">
+                                <script>
+                                    window.addEventListener('click', function(e) {
+                                        if (document.getElementById('asset_location_search').contains(e.target)) {
+
+                                        } else if (document.getElementById('here').contains(e.target)) {
+                                            // Clicked in box
+                                        } else {
+                                            // Clicked outside the box
+                                            var x = document.getElementById('here');
+                                            if (x.style.display == 'block') {
+                                                console.log('yes');
+                                                x.style.display = 'none';
+                                            }
+                                        }
+                                    });
+
+
+                                    function show() {
+                                        var x = document.getElementById('here');
+                                        if (x.style.display == 'none') {
+                                            console.log('yes');
+                                            x.style.display = 'block';
+                                        }
+                                    }
+
+                                    function insert_value(val) {
+                                        var location_search = document.getElementById('asset_location_search').value = val;
+                                        var parent = document.getElementById('location_list');
+                                        var x = document.getElementById('here');
+                                        if (x.style.display == 'block') {
+                                            console.log('yes');
+                                            x.style.display = 'none';
+                                        }
+                                        while (parent.hasChildNodes())
+                                            parent.firstChild.remove()
+                                    }
+                                </script>
+                                <div class="" id="here" style="display: none;">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div id="asset_location_list"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" name="tadnc" id="signup-check">
+                                    <label class="custom-control-label" for="signup-check">By clicking, you accept all of Renit's <a href="../terms">terms & conditions</a> as well as its <a href="../privacy">privacy policy</a> of Renit.</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
                                 <button type="submit" value="reg" name="reg" class="btn btn-inline">
                                     <i class="fas fa-user-check"></i>
-                                    <span>Create new passwrod</span>
+                                    <span>Create new account</span>
                                 </button>
                             </div>
                         </div>

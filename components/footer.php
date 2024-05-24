@@ -25,11 +25,11 @@
                 <div class="footer-content">
                     <h3>Information</h3>
                     <ul class="footer-widget">
-                        <li><a href="./index.php" class="text-white">Home</a></li>
-                        <li><a href="./about.php" class="text-white">About Us</a></li>
-                        <li><a href="./terms.php" class="text-white">Terms & Conditions</a></li>
-                        <li><a href="./privacy.php" class="text-white">Privacy Policy</a></li>
-                        <li><a href="./contact.php" class="text-white">Contact Us</a></li>
+                        <li><a href="./index" class="text-white">Home</a></li>
+                        <li><a href="./about" class="text-white">About Us</a></li>
+                        <li><a href="./terms" class="text-white">Terms & Conditions</a></li>
+                        <li><a href="./privacy" class="text-white">Privacy Policy</a></li>
+                        <li><a href="./contact" class="text-white">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -68,7 +68,7 @@
     <div class="footer-end" id="akldal">
         <div class="container">
             <div class="footer-end-content text-white">
-                <p>All Rights Reserved &copy; by <a href="./index.php" class="text-white">Renit Classifieds LLP</a> <?= date('Y'); ?>
+                <p>All Rights Reserved &copy; by <a href="./index" class="text-white">Renit Classifieds LLP</a> <?= date('Y'); ?>
                 <ul class="footer-social">
                     <li><a target="_blank" href="https://www.facebook.com/people/Renit/100083612162204/"><i class="text-white fab fa-facebook-f"></i></a></li>
                     <li><a target="_blank" href="https://twitter.com/Renit_Inc"><img src="./assets/twitterx.png" width="20px" style="margin: 10px;" alt="" srcset=""></a></li>

@@ -42,7 +42,7 @@ if (@$_GET["status"] == 1) {
                                             $insert_request = mysqli_query($conn, "UPDATE `sub_categories` SET `sub_category_description`='$sub_category_discription',`sub_category_name`='$sub_category_name',`category_id`='$category_id' WHERE id = '$cat_id'");
 
                                             if ($insert_request) {
-                                                echo "<meta http-equiv=\"refresh\" content=\"0; url=./edit_subcategory.php?cat_id=$cat_id&&code=1\">";
+                                                echo "<meta http-equiv=\"refresh\" content=\"0; url=./edit_subcategory?cat_id=$cat_id&&code=1\">";
                                             }
                                         }
                                         if (@$_GET['code'] == 1) {
@@ -62,7 +62,7 @@ if (@$_GET["status"] == 1) {
                                             $created_at = $row['created_at'];
                                         }
                                         ?>
-                                        <form class="form form-horizontal" method="post" action="./edit_subcategory.php?cat_id=<?= $cat_id ?>" enctype="multipart/form-data">
+                                        <form class="form form-horizontal" method="post" action="./edit_subcategory?cat_id=<?= $cat_id ?>" enctype="multipart/form-data">
                                             <div class="form-body">
                                                 <div class="row">
                                                     <div class="col-md-4">

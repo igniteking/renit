@@ -77,12 +77,12 @@ if (@$_GET["status"] == 1) {
                                         if ($location and $username) {
                                             $update_row = mysqli_query($conn, "UPDATE `user_data` SET `user_name`='$username', `profile_picture`='$location' WHERE id = '$user_id'");
                                             if ($update_row) {
-                                                echo "<meta http-equiv=\"refresh\" content=\"0; url=./profile.php?code=1\">";
+                                                echo "<meta http-equiv=\"refresh\" content=\"0; url=./profile?code=1\">";
                                             } else {
-                                                echo "<meta http-equiv=\"refresh\" content=\"0; url=./profile.php?code=2\">";
+                                                echo "<meta http-equiv=\"refresh\" content=\"0; url=./profile?code=2\">";
                                             }
                                         } else {
-                                            echo "<meta http-equiv=\"refresh\" content=\"0; url=./profile.php?code=3\">";
+                                            echo "<meta http-equiv=\"refresh\" content=\"0; url=./profile?code=3\">";
                                         }
                                     } ?>
                                 </div>
@@ -97,7 +97,7 @@ if (@$_GET["status"] == 1) {
                                                         <i data-feather="x"></i>
                                                     </button>
                                                 </div>
-                                                <form action="./profile.php" method="post" enctype="multipart/form-data">
+                                                <form action="./profile" method="post" enctype="multipart/form-data">
                                                     <div class="modal-body">
                                                         <label>Username: </label>
                                                         <div class="form-group">
